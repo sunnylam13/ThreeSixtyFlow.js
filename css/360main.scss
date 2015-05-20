@@ -8,33 +8,24 @@
 ////////////////////////////////////////////
 
 section#carousel {
-	/* need to set a perspective on the parent of all elements and children here */
+	// /* need to set a perspective on the parent of all elements and children here */
 	perspective: 200px;
 	background: #100000;
-	padding-top: 20%;
-	font-size: 0;
+	// padding-top: 20%;
 	/*margin-bottom: 3rem;*/
+	// height:100vh;
 	height:100vh;
+	// height:300px;
+	height: 50vh;
 	overflow: hidden;
+
+	position: relative;
+
+	@include flexboxColumn1;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
 }
-
-	section#carousel ~ span {
-		color: #fff;
-		margin: 5%;
-		display: inline-block;
-		text-decoration: none;
-		font-size: 2rem;
-		transition: 0.6s color;
-		position: relative;
-		margin-top: -6rem;
-		border-bottom: none;
-		line-height: 0;
-	}
-
-		section#carousel ~ span:hover {
-			color: #888;
-			cursor: pointer;
-		}
 
 ////////////////////////////////////////////
 // 		END CAROUSEL
@@ -55,14 +46,14 @@ ul#spinner {
 
 	/* change the plane of view so it seems like you're looking partially from the top at an angle... you must also add this to your Javascript otherwise it will be overwritten...
 	may mean I need to set this on the images? */
-	transform: rotateX(-7deg);
+	// transform: rotateX(-7deg);
 
-	/* display flex has no effect */
-	/*display:flex;
+	// /* display flex has no effect */
+	display:flex;
 	flex-flow:row nowrap;
 	justify-content:center;
 	align-content:center;
-	align-items:center;*/
+	align-items:center;
 }
 
 // ----------------------------------------
@@ -73,6 +64,7 @@ ul#spinner img {
 	width: 40%;
 	max-width: 425px;
 	position: absolute;
+	background: #100000;
 	left: 30%;
 	transform-origin: 50% 50% -2000px;
 	outline: 1px solid transparent;
@@ -136,5 +128,76 @@ ul#spinner img:nth-child(11) {
 
 ////////////////////////////////////////////
 // 		END FIGURE SPINNER
+////////////////////////////////////////////
+
+////////////////////////////////////////////
+// 		CONTROLS
+////////////////////////////////////////////
+
+section#carousel .controlframe {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	bottom:0;
+	right:0;
+	left:0;
+
+	@include flexboxColumn1;
+}
+
+section#carousel .controls {
+	// position: absolute;
+	width: 100%;
+	color: white;
+
+	//position
+	top: 50%;
+
+	//flexbox parent
+	@include flexboxRow1;
+	flex-flow: row nowrap;
+	justify-content: center;
+
+	div {
+		//flex child
+		flex: 1 50%;
+	}
+
+	div:nth-child(1) {
+		margin-left: 3%;
+	}
+
+	div:nth-child(2) {
+		@include flexboxRow1;
+		justify-content: flex-end;
+		align-content: flex-end;
+		margin-right: 3%;
+	}
+}
+
+section#carousel span.fa {
+	border-radius: 50%;
+}
+
+// section#carousel ~ span {
+// 	color: #fff;
+// 	margin: 5%;
+// 	display: inline-block;
+// 	text-decoration: none;
+// 	font-size: 2rem;
+// 	transition: 0.6s color;
+// 	position: relative;
+// 	margin-top: -6rem;
+// 	border-bottom: none;
+// 	line-height: 0;
+// }
+
+// section#carousel ~ span:hover {
+// 	color: #888;
+// 	cursor: pointer;
+// }
+
+////////////////////////////////////////////
+// 		END CONTROLS
 ////////////////////////////////////////////
 
