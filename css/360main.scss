@@ -53,7 +53,9 @@ ul#spinner {
 	// USER SELECTABLE
 	// change the plane of view so it seems like you're looking partially from the top at an angle... you must also add this to your Javascript otherwise it will be overwritten...
 	// may mean I need to set this on the images?
-	// transform: rotateX(-7deg);
+	// we may have to manually translate ul#spinner x and y to the correct position
+	// the translation seems to correct the wobbling
+	transform: rotateY(0deg) rotateX(0deg) translateY(-6.5em) translateX(-9em);
 
 	// disabling/enabling flexbox has no effect since elements are now absolute positioned
 	// @include flexboxRow1;
@@ -76,7 +78,8 @@ ul#spinner li {
 	max-width: 425px;
 	// position: absolute;
 	// background: #100000;
-	left: 30%;
+	// using absolute positioning here doesn't do anything
+	// left: 30%;
 	// transform-origin: 50% 50% -2000px;
 	outline: 1px solid transparent;
 }
@@ -86,6 +89,7 @@ ul#spinner img {
 	max-width: 425px;
 	position: absolute;
 	// background: #100000;
+	// using absolute positioning here doesn't do anything
 	// left: 30%;
 	transform-origin: 50% 50% -2000px;
 	outline: 1px solid transparent;
