@@ -16,7 +16,7 @@ section#carousel {
 	// height:100vh;
 	height:100vh;
 	// height:300px;
-	height: 50vh;
+	// height: 50vh;
 	overflow: hidden;
 
 	position: relative;
@@ -25,6 +25,9 @@ section#carousel {
 	justify-content: center;
 	align-content: center;
 	align-items: center;
+
+	// temporary margins
+	// margin-top: 17%;
 }
 
 ////////////////////////////////////////////
@@ -41,7 +44,7 @@ ul#spinner {
 	// height: 300px;
 	/*change the origin for the animation... The transform-origin CSS property lets you modify the origin for transformations of an element.  A -ve z-offset means into the page usually unless the element has already been rotated, while +ve means towards the user's eye. */
 	/*the z-offset of the ul#spinner must match those of the img's within it*/
-	// transform-origin: 50% 50% -2000px;
+	transform-origin: 50% 50% -2000px;
 	// transition: 1s;
 	@include transitionEffectAllEaseIn(1s);
 
