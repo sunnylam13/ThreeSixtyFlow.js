@@ -1,0 +1,100 @@
+////////////////////////////////////////////
+// 		IMPORTS
+////////////////////////////////////////////
+
+@import 'normalize';
+@import 'grid';
+@import 'responsive';
+@import 'variables.global.041415.1';
+@import 'columns';
+@import 'typography';
+@import 'mixins.universal';
+@import 'mixins.project';
+
+////////////////////////////////////////////
+// 		END IMPORTS
+////////////////////////////////////////////
+
+////////////////////////////////////////////
+// 		VARIABLES
+////////////////////////////////////////////
+
+// see typography.scss
+
+////////////////////////////////////////////
+// 		END VARIABLES
+////////////////////////////////////////////
+
+////////////////////////////////////////////
+///// 		MIXINS
+///////////////////////////////////////////////
+
+@mixin baseParagraphStyle {
+	line-height: $baselineheight*1.66;
+	margin-bottom: 20px;
+	font-size: $basefontsize;
+}
+
+////////////////////////////////////////////
+///// 		END MIXINS
+///////////////////////////////////////////////
+
+////////////////////////////////////////////
+// 		SETUP STUFF
+////////////////////////////////////////////
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, main, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	margin: 0;
+	padding: 0; 
+	background: transparent;
+}
+
+body {
+	font-family: $basefontfamily;
+	font-size: $basefontsize;
+	background: $basebackcolor;
+	position: relative;
+	// z-index: 10;
+}
+
+.wrapper {
+	max-width: 95%;
+	margin: 0 auto;
+	position: relative;
+	// z-index: 10;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+// for some mysterious reason a dot kept appearing in the header fixed nav menu so I decided to set that global li's would be default list-style-type: none unless specified otherwise.
+
+li {
+	list-style-type: none;
+}
+
+p {
+	// to adjust this change the mixin
+	@include baseParagraphStyle;
+}
+
+////////////////////////////////////////////
+// 		END SETUP STUFF
+////////////////////////////////////////////
+
+////////////////////////////////////////////
+// 		MAIN CODE
+////////////////////////////////////////////
+
+@import '360main.scss';
+@import 'index.scss';
+
+////////////////////////////////////////////
+// 		END MAIN CODE
+////////////////////////////////////////////

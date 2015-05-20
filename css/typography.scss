@@ -1,0 +1,90 @@
+////////////////////////////////////////////
+// 		SETUP STUFF
+////////////////////////////////////////////
+
+
+////////////////////////////////////////////
+// 		IMPORTS
+////////////////////////////////////////////
+
+// you can import web/local fonts here instead of in the links.jade file
+// <link href='http://fonts.googleapis.com/css?family=Marvel:700,400' rel='stylesheet' type='text/css'>
+// @import url('http://fonts.googleapis.com/css?family=Marvel:700,400');
+
+////////////////////////////////////////////
+// 		VARIABLES
+////////////////////////////////////////////
+
+// FONTS  ------------------------------------------------
+// for headers
+// $montserrat: 'Montserrat', sans-serif;
+// for text
+// $lora: 'Lora', serif;
+// // END FONTS ------------------------------------------------
+
+// COLOURS  ------------------------------------------------
+// colours must go before the base
+
+$titleBlockTransparency: 0.6;
+
+$phaedraRed:rgba(255, 66, 16,1);
+$phaedraRedShade1:rgba(255, 66, 16,$titleBlockTransparency);
+$phaedraYellow:rgba(251, 255, 152,1);
+$phaedraYellowShade1:rgba(251, 255, 152,$titleBlockTransparency);
+$phaedraGreen1:rgba(175, 243, 158,1);
+$phaedraGreen2:rgba(96, 196, 144,1);
+$phaedraGreen3:rgba(0, 171, 138,1);
+$phaedraGreen3Shade1:rgba(0, 171, 138,$titleBlockTransparency);
+$belizeHole: rgba(41, 128, 185,1.0);
+$peterRiver: rgba(52, 152, 219,1.0);
+// // END COLOURS ------------------------------------------------
+
+// BASE  ------------------------------------------------
+
+// NOTE:  the font family may have been placed on all elements for the base and header... see style.scss
+
+$basefontfamily:'Open Sans', sans-serif;
+$basefontsize:16px;
+$baselineheight:16px;
+$baseFontColor: lighten(#653082,10%);
+$baseHoverColor: #ab4d63;
+$basebackcolor: grey;
+// // END BASE ------------------------------------------------
+
+
+////////////////////////////////////////////
+///// 		MIXINS
+///////////////////////////////////////////////
+
+
+////////////////////////////////////////////
+// 		MAIN CODE
+////////////////////////////////////////////
+
+// suggest you build some classes ahead of time which you can assign as required
+
+// I almost always get rid of text decoration so why no just get rid of it by default?
+a {
+	text-decoration: none;
+}
+
+.italicIt {
+	font-style: italic;
+}
+
+.boldIt {
+	font-weight: 900;
+}
+
+.yellowHighlight {
+	background: yellow;
+}
+
+.orangeHighlight {
+	background: #ffbe74;
+}
+
+.crimsonWords {
+	color: red;
+}
+

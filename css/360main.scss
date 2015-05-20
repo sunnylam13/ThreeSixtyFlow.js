@@ -1,0 +1,140 @@
+////////////////////////////////////////////
+///// 		360 CAROUSEL PLUGIN
+///////////////////////////////////////////////
+/// this file's CSS should not be compressed
+
+////////////////////////////////////////////
+// 		CAROUSEL
+////////////////////////////////////////////
+
+section#carousel {
+	/* need to set a perspective on the parent of all elements and children here */
+	perspective: 200px;
+	background: #100000;
+	padding-top: 20%;
+	font-size: 0;
+	/*margin-bottom: 3rem;*/
+	height:100vh;
+	overflow: hidden;
+}
+
+	section#carousel ~ span {
+		color: #fff;
+		margin: 5%;
+		display: inline-block;
+		text-decoration: none;
+		font-size: 2rem;
+		transition: 0.6s color;
+		position: relative;
+		margin-top: -6rem;
+		border-bottom: none;
+		line-height: 0;
+	}
+
+		section#carousel ~ span:hover {
+			color: #888;
+			cursor: pointer;
+		}
+
+////////////////////////////////////////////
+// 		END CAROUSEL
+////////////////////////////////////////////
+
+
+////////////////////////////////////////////
+// 		FIGURE SPINNER
+////////////////////////////////////////////
+
+ul#spinner {
+	transform-style: preserve-3d;
+	height: 300px;
+	/*change the origin for the animation... The transform-origin CSS property lets you modify the origin for transformations of an element.  A -ve z-offset means into the page usually unless the element has already been rotated, while +ve means towards the user's eye. */
+	/*the z-offset of the ul#spinner must match those of the img's within it*/
+	transform-origin: 50% 50% -2000px;
+	transition: 1s;
+
+	/* change the plane of view so it seems like you're looking partially from the top at an angle... you must also add this to your Javascript otherwise it will be overwritten...
+	may mean I need to set this on the images? */
+	transform: rotateX(-7deg);
+
+	/* display flex has no effect */
+	/*display:flex;
+	flex-flow:row nowrap;
+	justify-content:center;
+	align-content:center;
+	align-items:center;*/
+}
+
+// ----------------------------------------
+// IMAGES  ------------------
+// ----------------------------------------
+
+ul#spinner img {
+	width: 40%;
+	max-width: 425px;
+	position: absolute;
+	left: 30%;
+	transform-origin: 50% 50% -2000px;
+	outline: 1px solid transparent;
+}
+
+// since we'll be using JS to set the rotateY of each image, this isn't necessary
+
+ul#spinner img:nth-child(1) {
+	transform: rotateY(0deg);
+}
+
+ul#spinner img:nth-child(2) {
+	/*-ve degrees are counter clockwise*/
+	transform: rotateY(-45deg);
+}
+
+ul#spinner img:nth-child(3) {
+	transform: rotateY(-90deg);
+}
+
+ul#spinner img:nth-child(4) {
+	transform: rotateY(-135deg);
+}
+
+ul#spinner img:nth-child(5) {
+	transform: rotateY(-180deg);
+}
+
+ul#spinner img:nth-child(6) {
+	transform: rotateY(-225deg);
+}
+
+ul#spinner img:nth-child(7) {
+	transform: rotateY(-270deg);
+}
+
+ul#spinner img:nth-child(8) {
+	transform: rotateY(-315deg);
+}
+
+// /* you can only have a maximum of 360 degrees worth of images */
+
+/*ul#spinner img:nth-child(9) {
+	transform: rotateY(-360deg);
+}*/
+
+
+/*ul#spinner img:nth-child(10) {
+	transform: rotateY(-405deg);
+}
+
+ul#spinner img:nth-child(11) {
+	transform: rotateY(-450deg);
+}*/
+
+// ----------------------------------------
+// END IMAGES  ------------------
+// ----------------------------------------
+
+
+
+////////////////////////////////////////////
+// 		END FIGURE SPINNER
+////////////////////////////////////////////
+
