@@ -52,13 +52,14 @@ ul#spinner {
 	may mean I need to set this on the images? */
 	// transform: rotateX(-7deg);
 
-	// /* display flex has no effect */
-	display:flex;
-	flex-flow:row nowrap;
-	// flex-flow:row wrap;
-	justify-content:center;
-	align-content:center;
-	align-items:center;
+	// @include flexboxRow1;
+	// flex-flow:row nowrap;
+	// // flex-flow:row wrap;
+	// justify-content:center;
+	// align-content:center;
+	// align-items:center;
+	
+	z-index: 5;
 }
 
 // ----------------------------------------
@@ -66,59 +67,65 @@ ul#spinner {
 // ----------------------------------------
 
 // ul#spinner li {
-// 	width: 40%;
+// 	// width: 40%;
 // 	max-width: 425px;
-// 	position: absolute;
-// 	background: #100000;
+// 	// position: absolute;
+// 	// background: #100000;
 // 	left: 30%;
-// 	transform-origin: 50% 50% -2000px;
+// 	// transform-origin: 50% 50% -2000px;
 // 	outline: 1px solid transparent;
 // }
 
 ul#spinner img {
-	width: 40%;
+	// width: 40%;
 	max-width: 425px;
-	// position: absolute;
-	background: #100000;
-	left: 30%;
+	position: absolute;
+	// background: #100000;
+	// left: 30%;
 	transform-origin: 50% 50% -2000px;
 	outline: 1px solid transparent;
+
 }
 
 // since we'll be using JS to set the rotateY of each image, this isn't necessary
+// NOTE:  if using ul li then the nth-child must be placed on the li and not the img
 
-ul#spinner img:nth-child(1) {
+ul#spinner li:nth-child(1) img {
 	transform: rotateY(0deg);
 }
 
-ul#spinner img:nth-child(2) {
+ul#spinner li:nth-child(2) img {
 	/*-ve degrees are counter clockwise*/
 	transform: rotateY(-45deg);
 }
 
-ul#spinner img:nth-child(3) {
+ul#spinner li:nth-child(3) img {
 	transform: rotateY(-90deg);
 }
 
-ul#spinner img:nth-child(4) {
+ul#spinner li:nth-child(4) img {
 	transform: rotateY(-135deg);
 }
 
-ul#spinner img:nth-child(5) {
+ul#spinner li:nth-child(5) img {
 	transform: rotateY(-180deg);
 }
 
-ul#spinner img:nth-child(6) {
+ul#spinner li:nth-child(6) img {
 	transform: rotateY(-225deg);
 }
 
-ul#spinner img:nth-child(7) {
+ul#spinner li:nth-child(7) img {
 	transform: rotateY(-270deg);
 }
 
-ul#spinner img:nth-child(8) {
+ul#spinner li:nth-child(8) img {
 	transform: rotateY(-315deg);
 }
+
+// ul#spinner li:nth-child(9) img {
+// 	transform: rotateY(-360deg);
+// }
 
 // /* you can only have a maximum of 360 degrees worth of images */
 
