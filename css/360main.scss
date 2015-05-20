@@ -21,6 +21,8 @@ section#carousel {
 
 	position: relative;
 
+	//flexbox parent
+	//this is used to centre ul#spinner which has no dimensions, it is just a point on the page
 	@include flexboxColumn1;
 	justify-content: center;
 	align-content: center;
@@ -48,10 +50,12 @@ ul#spinner {
 	// transition: 1s;
 	@include transitionEffectAllEaseIn(1s);
 
-	/* change the plane of view so it seems like you're looking partially from the top at an angle... you must also add this to your Javascript otherwise it will be overwritten...
-	may mean I need to set this on the images? */
+	// USER SELECTABLE
+	// change the plane of view so it seems like you're looking partially from the top at an angle... you must also add this to your Javascript otherwise it will be overwritten...
+	// may mean I need to set this on the images?
 	// transform: rotateX(-7deg);
 
+	// disabling/enabling flexbox has no effect since elements are now absolute positioned
 	// @include flexboxRow1;
 	// flex-flow:row nowrap;
 	// // flex-flow:row wrap;
@@ -59,6 +63,7 @@ ul#spinner {
 	// align-content:center;
 	// align-items:center;
 	
+	// make ul#spinner above the div.controlframe
 	z-index: 5;
 }
 
@@ -66,15 +71,15 @@ ul#spinner {
 // IMAGES  ------------------
 // ----------------------------------------
 
-// ul#spinner li {
-// 	// width: 40%;
-// 	max-width: 425px;
-// 	// position: absolute;
-// 	// background: #100000;
-// 	left: 30%;
-// 	// transform-origin: 50% 50% -2000px;
-// 	outline: 1px solid transparent;
-// }
+ul#spinner li {
+	// width: 40%;
+	max-width: 425px;
+	// position: absolute;
+	// background: #100000;
+	left: 30%;
+	// transform-origin: 50% 50% -2000px;
+	outline: 1px solid transparent;
+}
 
 ul#spinner img {
 	// width: 40%;
@@ -84,7 +89,6 @@ ul#spinner img {
 	// left: 30%;
 	transform-origin: 50% 50% -2000px;
 	outline: 1px solid transparent;
-
 }
 
 // since we'll be using JS to set the rotateY of each image, this isn't necessary
