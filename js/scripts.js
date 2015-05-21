@@ -9,7 +9,9 @@
 // 		VARIABLES
 ////////////////////////////////////////////
 
-var mcaApp = {};
+var t6D2 = {};
+
+t6D2.carouselRef = $('#carousel');
 
 ////////////////////////////////////////////
 // 		END VARIABLES
@@ -19,13 +21,24 @@ var mcaApp = {};
 ////////////////////////////////////////////
 // 		FUNCTIONS
 ////////////////////////////////////////////
-// don't forget to call the function in EXECUTION CODE area before running
 
-// NOTE:  in terms of organization, Ryan prefers to put all other functions and variables above the object.init() method however in reality it doesn't matter
 
 
 ////////////////////////////////////////////
 // 		END FUNCTIONS
+////////////////////////////////////////////
+
+
+////////////////////////////////////////////
+// 		360 CAROUSEL
+////////////////////////////////////////////
+
+t6D2.threeSixCarouselEvents = function () {
+	t6D2.carouselRef.threeSixtyDim();
+}
+
+////////////////////////////////////////////
+// 		END 360 CAROUSEL
 ////////////////////////////////////////////
 
 
@@ -37,7 +50,7 @@ var mcaApp = {};
 // method to initialize our application
 // all our code will be put inside here
 // you should not be defining things in here
-mcaApp.init = function () {
+t6D2.init = function () {
 	//
 }
 ////////////////////////////////////////////
@@ -48,7 +61,7 @@ mcaApp.init = function () {
 // 		EXECUTION CODE
 ////////////////////////////////////////////
 jQuery(document).ready(function($) {
-	mcaApp.init();
+	t6D2.init();
 });  //end doc.onready function
 ////////////////////////////////////////////
 // 		END EXECUTION CODE
