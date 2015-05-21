@@ -11,6 +11,9 @@
 
 var t6D2 = {};
 
+// this object is used to hold functions for testing
+var t6DTest1 = {};
+
 t6D2.carouselRef = $('#carousel');
 
 ////////////////////////////////////////////
@@ -26,6 +29,96 @@ t6D2.carouselRef = $('#carousel');
 
 ////////////////////////////////////////////
 // 		END FUNCTIONS
+////////////////////////////////////////////
+
+
+////////////////////////////////////////////
+// 		TEST THESE FUNCTIONS
+////////////////////////////////////////////
+// we're testing the plugin's functions more easily by placing a copy here
+
+// verified
+t6DTest1.transformStringBuilder = function (actString,axisString,valueN,unit) {
+
+	// where actString is rotate,translate,scale (string)
+	// where axisString is X,Y (string)
+	// where valueN is the value (integer)
+	// where unit is deg, em, px, % (string)
+	
+	// EXAMPLE:  rotateY(0deg)
+	// EXAMPLE:  scaleX(2)
+
+	if (!unit) {
+		// !unit is only true if using scaleX,scaleY which don't use units
+		var finalString = actString + axisString + "(" + valueN + ")";
+	} else {
+		var finalString = actString + axisString + "(" + valueN + unit + ")";
+	}
+
+	return finalString;
+}
+
+// verified operational
+// all args must be supplied
+// 0,0,-6.5,-9
+t6DTest1.craftSpinnerString = function (rotY, rotX, transY, transX) {
+	// EXAMPLE:  transform: rotateY(0deg) rotateX(0deg) translateY(-6.5em) translateX(-9em);
+	
+	// include the vendor prefixes in case
+	// primary string
+	
+	console.log('Desired Target: transform: rotateY(0deg) rotateX(0deg) translateY(-6.5em) translateX(-9em)');
+
+	if (rotY) {
+		// if the value is true, build a string with that value
+		var rY = t6DTest1.transformStringBuilder("rotate","Y",rotY,"deg");
+	} else {
+		// default
+		var rY = t6DTest1.transformStringBuilder("rotate","Y",0,"deg");
+	}
+	
+	if (rotX) {
+		// if the value is true, build a string with that value
+		var rX = t6DTest1.transformStringBuilder("rotate","X",rotX,"deg");
+	} else {
+		// default
+		var rX = t6DTest1.transformStringBuilder("rotate","X",0,"deg");
+	}
+	
+	if (transY) {
+		// if the value is true, build a string with that value
+		var tY = t6DTest1.transformStringBuilder("translate","Y",transY,"em");
+	} else {
+		// default
+		var tY = t6DTest1.transformStringBuilder("translate","Y",-6.5,"em");
+	}
+
+	if (transX) {
+		// if the value is true, build a string with that value
+		var tX = t6DTest1.transformStringBuilder("translate","X",transX,"em");
+	} else {
+		// default
+		var tX = t6DTest1.transformStringBuilder("translate","X",-9,"em");
+	}
+
+	// EXAMPLE:  transform: rotateY(0deg) rotateX(0deg) translateY(-6.5em) translateX(-9em);
+
+	var transformObj = {
+		'-webkit-transform': rY + " " + rX + " " + tY + " " + tX,
+		'-moz-transform': rY + " " + rX + " " + tY + " " + tX,
+		'-ms-transform': rY + " " + rX + " " + tY + " " + tX,
+		'-o-transform': rY + " " + rX + " " + tY + " " + tX,
+		'transform': rY + " " + rX + " " + tY + " " + tX
+	};
+
+	// return an object that is passed to the css() method
+	// Tween would have been ideal however you'd have to be dependant on another plugin library
+	return transformObj;
+}
+
+
+////////////////////////////////////////////
+// 		END TEST THESE FUNCTIONS
 ////////////////////////////////////////////
 
 
@@ -51,7 +144,7 @@ t6D2.threeSixCarouselEvents = function () {
 // all our code will be put inside here
 // you should not be defining things in here
 t6D2.init = function () {
-	//
+	t6D2.threeSixCarouselEvents();
 }
 ////////////////////////////////////////////
 // 		END INIT

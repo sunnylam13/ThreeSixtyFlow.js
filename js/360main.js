@@ -14,9 +14,6 @@ console.log('threeSixtyDim plugin active.');
 
 if (!this.length) { return this; }
 
-// default options are found at bottom of file
-var opts = $.extend(true, {}, $.fn.pluginName.defaults, options);
-
 ////////////////////////////////////////////
 // 		VARIABLES & REFERENCES
 ////////////////////////////////////////////
@@ -28,6 +25,19 @@ var t6D1 = {};
 t6D1.angleYVer = 0;
 t6D1.angleXHor = 0;
 t6D1.netDegrees = 360;
+
+// default options
+t6D1.defaults1 = {
+	upDownIncrement: 7,
+	// these are the default values for starting position of #spinner
+	rotateX: 0,
+	rotateY: 0,
+	translateY: -6.5,
+	translateX: -9
+};
+
+// default options are found at bottom of file
+var opts = $.extend(t6D1.defaults1, options);
 
 // ----------------------------------------
 // Spinner  ------------------
@@ -202,25 +212,111 @@ t6D1.galleryspin = function (horString,verString,transformObj) {
 	if (horString == "left") {
 		t6D1.angleYVer -= t6D1.degreeConstant;
 		console.log(t6D1.angleYVer);
-	} else {
+	} else if (horString == "right") {
 		t6D1.angleYVer += t6D1.degreeConstant;
 		
 		console.log(t6D1.angleYVer);
 	}
 
+	// if (horString == "left") {
+	// 	t6D1.angleYVer -= t6D1.degreeConstant;
+	// 	console.log(t6D1.angleYVer);
+	// } else {
+	// 	t6D1.angleYVer += t6D1.degreeConstant;
+		
+	// 	console.log(t6D1.angleYVer);
+	// }
+
 	// this is used for up and down buttons
 	if (verString == "down") {
 		t6D1.angleXHor -= opts.upDownIncrement;
 		console.log(t6D1.angleXHor);
-	} else {
+	} else if (verString == "up") {
 		t6D1.angleXHor += opts.upDownIncrement;
 		console.log(t6D1.angleXHor);
 	}
 
+	// if (verString == "down") {
+	// 	t6D1.angleXHor -= opts.upDownIncrement;
+	// 	console.log(t6D1.angleXHor);
+	// } else {
+	// 	t6D1.angleXHor += opts.upDownIncrement;
+	// 	console.log(t6D1.angleXHor);
+	// }
+
 	// EXAMPLE:  transform: rotateY(0deg) rotateX(0deg) translateY(-6.5em) translateX(-9em);
 
 	t6D1.spinner.css(transformObj);
+}
 
+t6D1.galleryspinLeftRight = function (horString) {
+
+	// where horString is the "left" or "right" string passed from the previous/next buttons
+	// where verString is the "up" or "down" string passed from the up/down buttons
+
+	// just realized that the angle adjustments must match the angle increments you calculated in object.itemAngles() method
+
+	// a user is only likely to click one button at a time
+
+	// this is used for the previous and next buttons
+	// if none of the conditions match then default values are used
+	if (horString == "left") {
+		opts.rotateY -= t6D1.degreeConstant;
+		console.log(opts.rotateY);
+	} else if (horString == "right") {
+		opts.rotateY += t6D1.degreeConstant;
+		
+		console.log(opts.rotateY);
+	}
+
+	// if (horString == "left") {
+	// 	t6D1.angleYVer -= t6D1.degreeConstant;
+	// 	console.log(t6D1.angleYVer);
+	// } else {
+	// 	t6D1.angleYVer += t6D1.degreeConstant;
+		
+	// 	console.log(t6D1.angleYVer);
+	// }
+
+	// EXAMPLE:  transform: rotateY(0deg) rotateX(0deg) translateY(-6.5em) translateX(-9em);
+
+	var finalCSSObj = t6D1.craftSpinnerString(opts.rotateY, opts.rotateX, opts.translateY, opts.translateX);
+
+	t6D1.spinner.css(finalCSSObj);
+}
+
+t6D1.galleryspinUpDown = function (verString) {
+
+	// where horString is the "left" or "right" string passed from the previous/next buttons
+	// where verString is the "up" or "down" string passed from the up/down buttons
+
+	// just realized that the angle adjustments must match the angle increments you calculated in object.itemAngles() method
+
+	// a user is only likely to click one button at a time
+
+	// this is used for up and down buttons
+	// if none of the conditions match then default values are used
+	if (verString == "down") {
+		opts.rotateX -= opts.upDownIncrement;
+		console.log(opts.rotateX);
+	} else if (verString == "up") {
+		opts.rotateX += opts.upDownIncrement;
+		console.log(opts.rotateX);
+	}
+
+	// if (verString == "down") {
+	// 	t6D1.angleXHor -= opts.upDownIncrement;
+	// 	console.log(t6D1.angleXHor);
+	// } else {
+	// 	t6D1.angleXHor += opts.upDownIncrement;
+	// 	console.log(t6D1.angleXHor);
+	// }
+
+	// EXAMPLE:  transform: rotateY(0deg) rotateX(0deg) translateY(-6.5em) translateX(-9em);
+
+	var finalCSSObj = t6D1.craftSpinnerString(opts.rotateY, opts.rotateX, opts.translateY, opts.translateX);
+
+	t6D1.spinner.css(finalCSSObj);
 }
 
 t6D1.horizontalEvents = function () {
@@ -230,7 +326,8 @@ t6D1.horizontalEvents = function () {
 		// var dirString = t6D1.leftPrev.attr('data-dir1').val();
 		// console.log(dirString);
 		// t6D1.galleryspin(dirString);
-		t6D1.galleryspin("left");
+		// t6D1.galleryspin("left");
+		t6D1.galleryspinLeftRight("left");
 	});
 
 	$(t6D1.rightNext).on('click', function(e) {
@@ -239,29 +336,47 @@ t6D1.horizontalEvents = function () {
 		// var dirString = t6D1.rightNext.attr('data-dir1').val();
 		// console.log(dirString);
 		// t6D1.galleryspin(dirString);
-		t6D1.galleryspin("right");
+		// t6D1.galleryspin("right");
+		t6D1.galleryspinLeftRight("right");
 	});
 }
 
 t6D1.verticalEvents = function () {
-	// body...
+	$(t6D1.upRotate).on('click', function(e) {
+		e.preventDefault();
+		console.log('clicked up');
+		// var dirString = t6D1.leftPrev.attr('data-dir1').val();
+		// console.log(dirString);
+		// t6D1.galleryspin(dirString);
+		// t6D1.galleryspin("left");
+		t6D1.galleryspinUpDown("up");
+	});
+
+	$(t6D1.downRotate).on('click', function(e) {
+		e.preventDefault();
+		console.log('clicked down');
+		// var dirString = t6D1.rightNext.attr('data-dir1').val();
+		// console.log(dirString);
+		// t6D1.galleryspin(dirString);
+		// t6D1.galleryspin("right");
+		t6D1.galleryspinUpDown("down");
+	});
 }
 
-t6D1.init = function () {
-	t6D1.horizontalEvents();
-}
+////////////////////////////////////////////
+// 		INIT
+////////////////////////////////////////////
+// simply call the relevant methods/functions
 
-$(function() {
-	t6D1.init();
-});
+t6D1.itemAngles();
+t6D1.horizontalEvents();
+t6D1.verticalEvents();
+
+////////////////////////////////////////////
+// 		END INIT
+////////////////////////////////////////////
 
 return this;
 
 };
 
-// default options
-$.fn.threeSixtyDim.defaults = {
-	upDownIncrement: 7,
-	translateY: -6.5,
-	translateX: -9
-};
