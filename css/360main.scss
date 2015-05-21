@@ -68,6 +68,9 @@ section#carousel {
 // 		FIGURE SPINNER
 ////////////////////////////////////////////
 
+// NOTE:  
+// Thursday, May 21, 2015 3:09 PM:  the wobbling occurs because the first image is where the origin point begins, once you rotate to another image that isn't the first, then when you rotate on the X axis the point of origin has changed
+
 ul#spinner {
 	transform-style: preserve-3d;
 	// height: 300px;
@@ -202,6 +205,9 @@ section#carousel .controlframe.horizontal {
 	right:0;
 	left:0;
 
+	// we want the control frame horizontal to be over top of the #spinner in case images cross the buttons later... yet it must be below the vertical control frame
+	// z-index: 7;
+
 	@include flexboxColumn1;
 
 	.controls {
@@ -275,6 +281,10 @@ section#carousel .controlframe.vertical {
 	position: absolute;
 	width: 100%;
 	bottom: 0;
+
+	// when the carousel crosses over the buttons, the control buttons are below
+	// we need to set them above the image
+	z-index: 10;
 
 	@include flexboxRow1;
 
