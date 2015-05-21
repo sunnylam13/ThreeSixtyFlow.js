@@ -259,58 +259,35 @@ section#carousel .controlframe.horizontal {
 // ----------------------------------------
 section#carousel .controlframe.vertical {
 	position: absolute;
-	top: 0;
-	bottom:0;
-	right:0;
-	left:0;
+	width: 100%;
+	bottom: 0;
 
-	// z-index: 1;
+	@include flexboxRow1;
 
-	@include flexboxColumn1;
-	justify-content: flex-end;
-	align-content: flex-end;
-	align-items: center;
+	.controls div {}
 
-	.controls {
-		// position: absolute;
-		// width: 100%;
+	.controls span.fa {
+		color: black;
+		background: white;
+		width: 2em;
+		height: 2em;
+		padding: 2%;
+		border-radius: 50%;
+		margin-bottom: 25%;
 
-		//position
-		// top: 50%;
-		// bottom:5%;
-
-		color: white;
-
-		//flexbox parent
 		@include flexboxColumn1;
 		justify-content: center;
 		align-content: center;
 		align-items: center;
 
-	}
-
-	.controls .span.fa {
-		border-radius: 50%;
-		background: white;
-		color: white;
-		padding: 2%;
 		@include transitionEffectAllEaseIn(0.5s);
-		width:2em;
-		height:2em;
-		@include flexboxRow1;
-		justify-content: center;
-		align-content: center;
 
 		&.fa-chevron-up {
-			border-radius: 50%;
-			// background: white;
-			// color: black;
+			padding: 0 0 12% 4%;
 		}
 
 		&.fa-chevron-down {
-			border-radius: 50%;
-			// background: white;
-			// color: black;
+			padding: 0 0 2% 4%;
 		}
 	}
 
