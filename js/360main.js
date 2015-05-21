@@ -193,6 +193,9 @@ t6D1.craftSpinnerString = function (rotY, rotX, transY, transX) {
 
 t6D1.galleryspin = function (horString,verString,transformObj) {
 
+	// where horString is the "left" or "right" string passed from the previous/next buttons
+	// where verString is the "up" or "down" string passed from the up/down buttons
+
 	// just realized that the angle adjustments must match the angle increments you calculated in object.itemAngles() method
 
 	// this is used for the previous and next buttons
