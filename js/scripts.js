@@ -116,6 +116,31 @@ t6DTest1.craftSpinnerString = function (rotY, rotX, transY, transX) {
 	return transformObj;
 }
 
+// verified
+t6DTest1.getTransOriginZOffset = function () {
+	// call this function in init
+
+	// grabs the Z-offset value of the #spinner
+
+	// EXAMPLE:  transform-origin: 50% 50% $transOriginZOffset;
+	// EXAMPLE:  transform-origin: 50% 50% -2000px;
+	
+	// get the current z-offset
+	var currentZOffSet = t6D2.carouselRef.find('#spinner').css('transform-origin');
+
+	// extract the actual vallue of the z-offset for changing using regex
+	// currentZOffSet = currentZOffSet.match(/(\-?)(\d+)(\w+)(\W*?)$/gm);
+	currentZOffSet = currentZOffSet.match(/(\-*)(\d+)(\D{1,3})$/gm);
+	// should result in "-2000px"
+	
+	// now extract the number as a string and convert to a number
+	currentZOffSet = currentZOffSet.toString().match(/^(\-*)(\d+)/gm);
+
+	// convert string to integer
+	currentZOffSet = parseInt(currentZOffSet.toString());
+
+	return currentZOffSet;
+}
 
 ////////////////////////////////////////////
 // 		END TEST THESE FUNCTIONS

@@ -45,7 +45,9 @@ t6D1.defaults1 = {
 	autoScrollToRight: true,
 	autoScrollToLeft: false,
 	autoScrollToTop: true,
-	autoScrollToBottom: false
+	autoScrollToBottom: false,
+	baseZOffset: "50% 50% -2000px",
+	baseZOffsetValue: "-2000px"
 };
 
 // default options
@@ -355,6 +357,31 @@ t6D1.autoScrollVertical = function () {
 		}
 
 	}
+}
+
+t6D1.getTransOriginZOffset = function () {
+	// call this function in init
+
+	// grabs the Z-offset value of the #spinner
+
+	// EXAMPLE:  transform-origin: 50% 50% $transOriginZOffset;
+	// EXAMPLE:  transform-origin: 50% 50% -2000px;
+	
+	// get the current z-offset
+	var currentZOffSet = t6D1.spinner.css('transform-origin');
+
+	// extract the actual vallue of the z-offset for changing using regex
+	// currentZOffSet = currentZOffSet.match(/(\-?)(\d+)(\w+)(\W*?)$/gm);
+	currentZOffSet = currentZOffSet.match(/(\-*)(\d+)(\D{1,3})$/gm);
+	// should result in "-2000px"
+	
+	// now extract the number as a string and convert to a number
+	currentZOffSet = currentZOffSet.toString().match(/^(\-*)(\d+)/gm);
+
+	// convert string to integer
+	currentZOffSet = parseInt(currentZOffSet.toString());
+
+	return currentZOffSet;
 }
 
 t6D1.horizontalEvents = function () {
