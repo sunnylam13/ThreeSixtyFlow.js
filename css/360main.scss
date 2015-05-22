@@ -206,7 +206,7 @@ section#carousel .controlframe.horizontal {
 	left:0;
 
 	// we want the control frame horizontal to be over top of the #spinner in case images cross the buttons later... yet it must be below the vertical control frame
-	// z-index: 7;
+	z-index: 10;
 
 	@include flexboxColumn1;
 
@@ -287,8 +287,25 @@ section#carousel .controlframe.vertical {
 	z-index: 10;
 
 	@include flexboxRow1;
+	@include flexboxColumn1;
 
-	.controls div {}
+	.controls div {
+		height: 50vh;
+
+		&:nth-child(1) {
+			//flexbox parent
+			@include flexboxColumn1;
+			justify-content: flex-start;
+			align-content: flex-start;
+		}
+
+		&:nth-child(2) {
+			//flexbox parent
+			@include flexboxColumn1;
+			justify-content: flex-end;
+			align-content: flex-end;
+		}
+	}
 
 	.controls span.fa {
 		color: black;
@@ -297,7 +314,7 @@ section#carousel .controlframe.vertical {
 		height: 2em;
 		padding: 2%;
 		border-radius: 50%;
-		margin-bottom: 25%;
+		// margin-bottom: 25%;
 
 		@include flexboxColumn1;
 		justify-content: center;
@@ -308,10 +325,12 @@ section#carousel .controlframe.vertical {
 
 		&.fa-chevron-up {
 			padding: 0 0 12% 4%;
+			margin-top: 25%;
 		}
 
 		&.fa-chevron-down {
 			padding: 0 0 2% 4%;
+			margin-bottom: 25%;
 		}
 	}
 
