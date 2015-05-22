@@ -528,68 +528,6 @@ t6D1.setBaseZOffsetValue = function () {
 	
 }
 
-t6D1.rotateZImages = function () {
-	// rotate the images if the #spinner ring is greater/lower than 0 deg on the X axis
-	// rotate the images if the #spinner ring is lower than 0 deg on the Y axis
-	// according to analysis, rotateX deg and rotateZ deg are the same
-
-	// grab the transform value from #spinner or objItem
-	// extract the actual number value for rotateX
-	
-	// create a rotateZ value
-	// convert the rotateZ value into a string like rotateZ(97deg)
-	
-
-	// create a new transform string "value" that includes rotateZ
-	// set the transform on #spinner
-	
-	// grab the transform value from #spinner img or objItem
-	// add the rotateZ value to it
-	// set the transform on #spinner img with the new rotateZ value
-}
-
-// does not work
-t6D1.extractDegrees = function (objItem,axisTarget) {
-
-	// where objItem is the target
-	// where axisTarget is "z","x","y" or capitalized
-
-	// EXAMPLE:  transform: rotateY(90deg) rotateX(97deg) translateY(-6.5em) translateX(-9em)
-	// value:  rotateY(90deg) rotateX(97deg) translateY(-6.5em) translateX(-9em)
-	// target:  rotateX(97deg)
-	
-	// store a reference to the target
-	// the target has the css transform property
-	// extract it
-	var transValue1 = objItem.css('transform');	
-
-	// isolate the number
-	
-	if (axisTarget == "z" || axisTarget == "Z") {
-		var rotateAxis = "rotateZ";
-		var targetValue = transValue1.match(/(rotateZ)(\(\-*\d+\w+\))/gm).match(/\-*\d+\w+/gm);
-
-		return targetValue;
-	}
-
-	if (axisTarget == "x" || axisTarget == "X") {
-		var rotateAxis = "rotateX";
-		var targetValue = transValue1.match(/(rotateX)(\(\-*\d+\w+\))/gm).match(/\-*\d+\w+/gm);
-
-		return targetValue;
-	}
-
-	if (axisTarget == "y" || axisTarget == "Y") {
-		var rotateAxis = "rotateY";
-		var targetValue = transValue1.match(/(rotateY)(\(\-*\d+\w+\))/gm).match(/\-*\d+\w+/gm);
-
-		return targetValue;
-	}
-
-	// return the number plus deg for use
-
-}
-
 t6D1.horizontalEvents = function () {
 
 	// these need to be changed to use event delegation because if the buttons are dynamically generated, regular event handling won't work
