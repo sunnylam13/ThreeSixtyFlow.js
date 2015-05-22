@@ -9,7 +9,7 @@
 
 // normally these variables would be in another file however this is for the plugin so they've been placed here
 
-// the z-offset should be increased by -1000px for every 36 gallery items... use Javascript
+// the z-offset should be increased by -1000px for every 36 gallery items that exceeds 36... use Javascript
 $transOriginZOffset: -2000px;
 $viewPortHeight: 100vh;
 
