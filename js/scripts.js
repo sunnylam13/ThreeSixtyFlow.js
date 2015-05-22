@@ -16,6 +16,41 @@ var t6DTest1 = {};
 
 t6D2.carouselRef = $('#carousel');
 
+// ----------------------------------------
+// YOUR DEVELOPER SETTINGS  ------------------
+// ----------------------------------------
+
+// you pass an object with your chosen settings to the plugin
+// place this inside t6D2.carouselRef.threeSixtyDim()
+t6D2.devSettings = {
+	// spinner
+	upDownIncrement: 7,
+	baseZOffsetValue: -2000,
+	changeInitialRingPosition: true,
+	// these are the default values for starting position of #spinner
+	rotateX: -90,
+	rotateY: 90,
+	translateY: -6.5,
+	translateX: -9,
+	// auto scroll
+	autoScrollHorizontalTime: 10000,
+	autoScrollVerticalTime: 100,
+	autoScrollHorizontalEnable: false,
+	autoScrollVerticalEnable: false,
+	autoScrollToRight: true,
+	autoScrollToLeft: false,
+	autoScrollToTop: true,
+	autoScrollToBottom: false,
+	// slider buttons
+	sliderButtonsRightLeftEnable: true,
+	sliderButtonsUpDownEnable: true
+	// other
+};
+// ----------------------------------------
+// END YOUR DEVELOPER SETTINGS  ------------------
+// ----------------------------------------
+
+
 ////////////////////////////////////////////
 // 		END VARIABLES
 ////////////////////////////////////////////
@@ -152,7 +187,7 @@ t6DTest1.getTransOriginZOffset = function () {
 ////////////////////////////////////////////
 
 t6D2.threeSixCarouselEvents = function () {
-	t6D2.carouselRef.threeSixtyDim();
+	t6D2.carouselRef.threeSixtyDim(t6D2.devSettings);
 }
 
 ////////////////////////////////////////////
@@ -169,6 +204,7 @@ t6D2.threeSixCarouselEvents = function () {
 // all our code will be put inside here
 // you should not be defining things in here
 t6D2.init = function () {
+	// t6D2.threeSixCarouselEvents();
 	t6D2.threeSixCarouselEvents();
 }
 ////////////////////////////////////////////

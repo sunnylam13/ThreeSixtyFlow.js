@@ -32,12 +32,17 @@ t6D1.netDegrees = 360;
 
 // default options
 t6D1.defaults1 = {
+	
+	// spinner
 	upDownIncrement: 7,
+	baseZOffsetValue: -2000,
+	changeInitialRingPosition: false,
 	// these are the default values for starting position of #spinner
 	rotateX: 0,
 	rotateY: 0,
 	translateY: -6.5,
 	translateX: -9,
+	// auto scroll
 	autoScrollHorizontalTime: 10000,
 	autoScrollVerticalTime: 100,
 	autoScrollHorizontalEnable: false,
@@ -46,9 +51,11 @@ t6D1.defaults1 = {
 	autoScrollToLeft: false,
 	autoScrollToTop: true,
 	autoScrollToBottom: false,
-	baseZOffsetValue: -2000,
+	// slider buttons
 	sliderButtonsRightLeftEnable: true,
 	sliderButtonsUpDownEnable: true
+	// other
+	
 };
 
 // default options
@@ -424,6 +431,25 @@ t6D1.changeTransOriginZOffset = function () {
 	t6D1.items1.css('transform-origin', transOriginSettingValue);
 }
 
+t6D1.setInitialRingPosition = function () {
+	
+	// pure vertical
+	// EXAMPLE:  transform: rotateY(-90deg) rotateX(90deg) translateY(-6.5em) translateX(-9em)
+
+	// NOTE:  trying to use rotateZ() doesn't rotate the ring like a carousel, it rotates exactly like using rotateY()
+
+	// NOTE:  Using Javascript to set the initial position... when other methods also alter transform, as long as they use += or -= to change opts.rotateX, opts.rotateY
+	// JS would overwrite the CSS transforms because it applies inline styling which is seen last
+
+
+
+	// if change initial ring position is true
+	if (opts.changeInitialRingPosition) {
+		t6D1.spinner.css(t6D1.craftSpinnerString(opts.rotateY, opts.rotateX, opts.translateY, opts.translateX));
+	}
+
+}
+
 t6D1.horizontalEvents = function () {
 
 	// these need to be changed to use event delegation because if the buttons are dynamically generated, regular event handling won't work
@@ -472,6 +498,8 @@ t6D1.autoScrollHorizontal();
 t6D1.autoScrollVertical();
 
 t6D1.changeTransOriginZOffset();
+
+t6D1.setInitialRingPosition();
 
 ////////////////////////////////////////////
 // 		END INIT
