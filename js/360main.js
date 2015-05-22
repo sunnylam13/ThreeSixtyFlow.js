@@ -374,12 +374,13 @@ t6D1.getTransOriginZOffset = function () {
 	// extract the actual vallue of the z-offset for changing using regex
 	// currentZOffSet = currentZOffSet.match(/(\-?)(\d+)(\w+)(\W*?)$/gm);
 	currentZOffSet = currentZOffSet.match(/(\-*)(\d+)(\D{1,3})$/gm);
-	// should result in "-2000px"
+	// should result in ["-2000px"] (an array)
 	
 	// now extract the number as a string and convert to a number
+	// should result in "-2000px" (a string)
 	currentZOffSet = currentZOffSet.toString().match(/^(\-*)(\d+)/gm);
 
-	// convert string to integer
+	// convert string to integer (so you can actually use it in calculations)
 	currentZOffSet = parseInt(currentZOffSet.toString());
 
 	return currentZOffSet;
