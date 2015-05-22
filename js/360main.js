@@ -93,9 +93,14 @@ t6D1.itemAngles = function () {
 	// this function sets the initial item angle positions upon load before we do anything else... especially if our gallery is huge
 
 	var totalItems = t6D1.items1.length;
+	
+	// use this if you want decimal places and to have the first image centred as intended
+	var degreeItem = t6D1.netDegrees/totalItems;
+
 	// floor the value so you avoid decimals
-	// var degreeItem = t6D1.netDegrees/totalItems;
-	var degreeItem = Math.floor(t6D1.netDegrees/totalItems);
+	// WARNING:  doing so prevents the first image from being centred the way you wanted (for the current image size)
+	// var degreeItem = Math.floor(t6D1.netDegrees/totalItems);
+	
 	t6D1.degreeConstant = degreeItem;
 	var degreeCount = degreeItem;
 
