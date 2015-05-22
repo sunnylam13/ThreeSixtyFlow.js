@@ -433,6 +433,8 @@ t6D1.changeTransOriginZOffset = function () {
 
 t6D1.setInitialRingPosition = function () {
 	
+	// Friday, May 22, 2015 12:29 PM:  currently if changeInitialRingPosition = false, you the developer must remove the passed rotateX and rotateY settings too 
+
 	// pure vertical
 	// EXAMPLE:  transform: rotateY(-90deg) rotateX(90deg) translateY(-6.5em) translateX(-9em)
 
