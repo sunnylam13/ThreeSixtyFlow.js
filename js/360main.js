@@ -424,7 +424,10 @@ t6D1.changeTransOriginZOffset = function () {
 	t6D1.items1.css('transform-origin', transOriginSettingValue);
 }
 
-t6D1.horizontalEvents = function () {
+t6D1.horizontalEvents = function (objTarget) {
+
+	// these need to be changed to use event delegation because if the buttons are dynamically generated, regular event handling won't work
+
 	$(t6D1.leftPrev).on('click', function(e) {
 		e.preventDefault();
 		// console.log('clicked left');
@@ -439,6 +442,9 @@ t6D1.horizontalEvents = function () {
 }
 
 t6D1.verticalEvents = function () {
+
+	// these need to be changed to use event delegation because if the buttons are dynamically generated, regular event handling won't work
+
 	$(t6D1.upRotate).on('click', function(e) {
 		e.preventDefault();
 		// console.log('clicked up');
