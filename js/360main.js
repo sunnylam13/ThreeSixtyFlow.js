@@ -276,11 +276,11 @@ t6D1.galleryspinLeftRight = function (horString) {
 	// if none of the conditions match then default values are used
 	if (horString == "left") {
 		opts.rotateY -= t6D1.degreeConstant;
-		console.log(opts.rotateY);
+		// console.log(opts.rotateY);
 	} else if (horString == "right") {
 		opts.rotateY += t6D1.degreeConstant;
 		
-		console.log(opts.rotateY);
+		// console.log(opts.rotateY);
 	}
 
 	// EXAMPLE:  transform: rotateY(0deg) rotateX(0deg) translateY(-6.5em) translateX(-9em);
