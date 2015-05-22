@@ -55,7 +55,7 @@ t6D1.defaults1 = {
 	sliderButtonsRightLeftEnable: true,
 	sliderButtonsUpDownEnable: true,
 	// images
-	rotateZImages: false
+	rotateZImages: true
 	// other
 	
 };
@@ -135,6 +135,8 @@ t6D1.itemAngles = function () {
 	
 	t6D1.degreeConstant = degreeItem;
 	var degreeCount = degreeItem;
+	var degreeCountZ = degreeItem;
+	var degreeCountX = degreeItem;
 
 	$.each(t6D1.items1, function(index, target) {
 		// what we have here is an array of objects
@@ -149,7 +151,7 @@ t6D1.itemAngles = function () {
 			// since we're already setting rotateY for images
 			// if this is enabled, we can also set the rotateZ
 			
-			var degreeCountZ = degreeItem;
+			
 
 			// the first gallery item should always have a rotateY(0deg) rotateZ(0deg)
 			if (index == 0) {
@@ -164,8 +166,13 @@ t6D1.itemAngles = function () {
 			}
 
 			// you needed to use degreeCount not degreeItem otherwise all images would be set with the same angle
+			// should be able to concat the strings
 			finalTarget.css({
-				//
+				'-webkit-transform': t6D1.craftRotateString("Y",degreeCount) + " " + t6D1.craftRotateString("Z",degreeCount),
+				'-moz-transform': t6D1.craftRotateString("Y",degreeCount) + " " + t6D1.craftRotateString("Z",degreeCount),
+				'-o-transform': t6D1.craftRotateString("Y",degreeCount) + " " + t6D1.craftRotateString("Z",degreeCount),
+				'-ms-transform': t6D1.craftRotateString("Y",degreeCount) + " " + t6D1.craftRotateString("Z",degreeCount),
+				'transform': t6D1.craftRotateString("Y",degreeCount) + " " + t6D1.craftRotateString("Z",degreeCount)
 			});
 
 			degreeCount += degreeItem;
