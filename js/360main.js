@@ -26,6 +26,10 @@ t6D1.angleYVer = 0;
 t6D1.angleXHor = 0;
 t6D1.netDegrees = 360;
 
+// ----------------------------------------
+// Default options  ------------------
+// ----------------------------------------
+
 // default options
 t6D1.defaults1 = {
 	upDownIncrement: 7,
@@ -33,12 +37,20 @@ t6D1.defaults1 = {
 	rotateX: 0,
 	rotateY: 0,
 	translateY: -6.5,
-	translateX: -9
+	translateX: -9,
+	autoScrollXTime: 1000,
+	autoScrollYTime: 1000
 };
 
-// default options are found at bottom of file
+// default options
 // you will use opts.propertyName instead of t6D1.defaults1
 var opts = $.extend(t6D1.defaults1, options);
+
+// ----------------------------------------
+// END Default options  ------------------
+// ----------------------------------------
+
+
 
 // ----------------------------------------
 // Spinner  ------------------
