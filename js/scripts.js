@@ -177,6 +177,48 @@ t6DTest1.getTransOriginZOffset = function () {
 	return currentZOffSet;
 }
 
+// does not work
+t6DTest1.extractDegrees = function (objItem,axisTarget) {
+
+	// where objItem is the target
+	// where axisTarget is "z","x","y" or capitalized
+
+	// EXAMPLE:  transform: rotateY(90deg) rotateX(97deg) translateY(-6.5em) translateX(-9em)
+	// value:  rotateY(90deg) rotateX(97deg) translateY(-6.5em) translateX(-9em)
+	// target:  rotateX(97deg)
+	
+	// store a reference to the target
+	// the target has the css transform property
+	// extract it
+	var transValue1 = objItem.css('transform');	
+
+	// isolate the number
+	
+	if (axisTarget == "z" || axisTarget == "Z") {
+		var rotateAxis = "rotateZ";
+		var targetValue = transValue1.match(/(rotateZ)(\(\-*\d+\w+\))/gm).match(/\-*\d+\w+/gm);
+
+		return targetValue;
+	}
+
+	if (axisTarget == "x" || axisTarget == "X") {
+		var rotateAxis = "rotateX";
+		var targetValue = transValue1.match(/(rotateX)(\(\-*\d+\w+\))/gm).match(/\-*\d+\w+/gm);
+
+		return targetValue;
+	}
+
+	if (axisTarget == "y" || axisTarget == "Y") {
+		var rotateAxis = "rotateY";
+		var targetValue = transValue1.match(/(rotateY)(\(\-*\d+\w+\))/gm).match(/\-*\d+\w+/gm);
+
+		return targetValue;
+	}
+
+	// return the number plus deg for use
+
+} 
+
 ////////////////////////////////////////////
 // 		END TEST THESE FUNCTIONS
 ////////////////////////////////////////////

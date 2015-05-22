@@ -32,7 +32,7 @@ t6D1.netDegrees = 360;
 
 // default options
 t6D1.defaults1 = {
-	
+
 	// spinner
 	upDownIncrement: 7,
 	baseZOffsetValue: -2000,
@@ -53,7 +53,9 @@ t6D1.defaults1 = {
 	autoScrollToBottom: false,
 	// slider buttons
 	sliderButtonsRightLeftEnable: true,
-	sliderButtonsUpDownEnable: true
+	sliderButtonsUpDownEnable: true,
+	// images
+	rotateZImages: false
 	// other
 	
 };
@@ -112,6 +114,7 @@ t6D1.downRotate = this.find('span.fa.fa-chevron-down');
 t6D1.craftRotateString = function (axisString,angleValue) {
 	// this is the initial image angle when plugin loads
 	// EXAMPLE:  transform: rotateY(0deg);
+	// where axisString is "X", "Y", "Z"
 	var string = "rotate" + axisString + "(";
 		string += angleValue;
 		string += "deg)";
@@ -140,15 +143,63 @@ t6D1.itemAngles = function () {
 		// I had to store the target in the $() so that it became a jQuery object, otherwise jQuery methods wouldn't work
 		var finalTarget = $(target);
 
-		// the first gallery item should always have a rotateY(0deg)
-		if (index == 0) {
-			finalTarget.css('transform', 'rotateY(0deg)');
+		
+		// if the rotateZImages settings is true
+		if (opts.rotateZImages) {
+			// since we're already setting rotateY for images
+			// if this is enabled, we can also set the rotateZ
+			
+			var degreeCountZ = degreeItem;
+
+			// the first gallery item should always have a rotateY(0deg) rotateZ(0deg)
+			if (index == 0) {
+				// finalTarget.css('transform', 'rotateY(0deg) rotateZ(0deg)');
+				finalTarget.css({
+					'-webkit-transform': 'rotateY(0deg) rotateZ(0deg)',
+					'-moz-transform': 'rotateY(0deg) rotateZ(0deg)',
+					'-o-transform': 'rotateY(0deg) rotateZ(0deg)',
+					'-ms-transform': 'rotateY(0deg) rotateZ(0deg)',
+					'transform': 'rotateY(0deg) rotateZ(0deg)'
+				});
+			}
+
+			// you needed to use degreeCount not degreeItem otherwise all images would be set with the same angle
+			finalTarget.css({
+				//
+			});
+
+			degreeCount += degreeItem;
 		}
 
-		// you needed to use degreeCount not degreeItem otherwise all images would be set with the same angle
-		finalTarget.css('transform', t6D1.craftRotateString("Y",degreeCount));
+		// this is the default
+		// if the rotateZImages settings is false
+		if (!opts.rotateZImages) {
+			// the first gallery item should always have a rotateY(0deg)
+			if (index == 0) {
+				// finalTarget.css('transform', 'rotateY(0deg)');
+				finalTarget.css({
+					'-webkit-transform': 'rotateY(0deg)',
+					'-moz-transform': 'rotateY(0deg)',
+					'-o-transform': 'rotateY(0deg)',
+					'-ms-transform': 'rotateY(0deg)',
+					'transform': 'rotateY(0deg)'
+				});
+			}
 
-		degreeCount += degreeItem;
+			// you needed to use degreeCount not degreeItem otherwise all images would be set with the same angle
+			// finalTarget.css('transform', t6D1.craftRotateString("Y",degreeCount));
+
+			finalTarget.css({
+				'-webkit-transform': t6D1.craftRotateString("Y",degreeCount),
+				'-moz-transform': t6D1.craftRotateString("Y",degreeCount),
+				'-o-transform': t6D1.craftRotateString("Y",degreeCount),
+				'-ms-transform': t6D1.craftRotateString("Y",degreeCount),
+				'transform': t6D1.craftRotateString("Y",degreeCount)
+			});
+
+			degreeCount += degreeItem;
+		}
+
 	});
 }
 
@@ -413,7 +464,7 @@ t6D1.changeTransOriginZOffset = function () {
 	}
 
 	// if the division is greater than zero yet still less than 1, set it to 1
-	if (addedUnits >= 0 && addedUnits < 1) {
+	if (addedUnits > 0 && addedUnits < 1) {
 		var addedUnits = 1;
 	}
 
@@ -449,6 +500,86 @@ t6D1.setInitialRingPosition = function () {
 	if (opts.changeInitialRingPosition) {
 		t6D1.spinner.css(t6D1.craftSpinnerString(opts.rotateY, opts.rotateX, opts.translateY, opts.translateX));
 	}
+
+}
+
+t6D1.setBaseZOffsetValue = function () {
+	
+	// NOTE:  the opts.baseZOffsetValue should not be lower than -2000
+
+	if (opts.baseZOffsetValue != -2000) {
+
+		var transOriginSettingValue = "50% 50% " + opts.baseZOffsetValue + "px";
+
+		// change the transform z-offset for #spinner
+		t6D1.spinner.css('transform-origin', transOriginSettingValue);
+
+		// change the transform z-offset for img items
+		t6D1.items1.css('transform-origin', transOriginSettingValue);
+	}
+
+	
+}
+
+t6D1.rotateZImages = function () {
+	// rotate the images if the #spinner ring is greater/lower than 0 deg on the X axis
+	// rotate the images if the #spinner ring is lower than 0 deg on the Y axis
+	// according to analysis, rotateX deg and rotateZ deg are the same
+
+	// grab the transform value from #spinner or objItem
+	// extract the actual number value for rotateX
+	
+	// create a rotateZ value
+	// convert the rotateZ value into a string like rotateZ(97deg)
+	
+
+	// create a new transform string "value" that includes rotateZ
+	// set the transform on #spinner
+	
+	// grab the transform value from #spinner img or objItem
+	// add the rotateZ value to it
+	// set the transform on #spinner img with the new rotateZ value
+}
+
+// does not work
+t6D1.extractDegrees = function (objItem,axisTarget) {
+
+	// where objItem is the target
+	// where axisTarget is "z","x","y" or capitalized
+
+	// EXAMPLE:  transform: rotateY(90deg) rotateX(97deg) translateY(-6.5em) translateX(-9em)
+	// value:  rotateY(90deg) rotateX(97deg) translateY(-6.5em) translateX(-9em)
+	// target:  rotateX(97deg)
+	
+	// store a reference to the target
+	// the target has the css transform property
+	// extract it
+	var transValue1 = objItem.css('transform');	
+
+	// isolate the number
+	
+	if (axisTarget == "z" || axisTarget == "Z") {
+		var rotateAxis = "rotateZ";
+		var targetValue = transValue1.match(/(rotateZ)(\(\-*\d+\w+\))/gm).match(/\-*\d+\w+/gm);
+
+		return targetValue;
+	}
+
+	if (axisTarget == "x" || axisTarget == "X") {
+		var rotateAxis = "rotateX";
+		var targetValue = transValue1.match(/(rotateX)(\(\-*\d+\w+\))/gm).match(/\-*\d+\w+/gm);
+
+		return targetValue;
+	}
+
+	if (axisTarget == "y" || axisTarget == "Y") {
+		var rotateAxis = "rotateY";
+		var targetValue = transValue1.match(/(rotateY)(\(\-*\d+\w+\))/gm).match(/\-*\d+\w+/gm);
+
+		return targetValue;
+	}
+
+	// return the number plus deg for use
 
 }
 
@@ -502,6 +633,7 @@ t6D1.autoScrollVertical();
 t6D1.changeTransOriginZOffset();
 
 t6D1.setInitialRingPosition();
+t6D1.setBaseZOffsetValue();
 
 ////////////////////////////////////////////
 // 		END INIT
