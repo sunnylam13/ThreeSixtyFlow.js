@@ -39,11 +39,13 @@ t6D1.defaults1 = {
 	translateY: -6.5,
 	translateX: -9,
 	autoScrollHorizontalTime: 10000,
-	autoScrollVerticalTime: 10000,
-	autoScrollHorizontalEnable: true,
+	autoScrollVerticalTime: 100,
+	autoScrollHorizontalEnable: false,
 	autoScrollVerticalEnable: false,
 	autoScrollToRight: true,
-	autoScrollToLeft: false
+	autoScrollToLeft: false,
+	autoScrollToTop: true,
+	autoScrollToBottom: false
 };
 
 // default options
@@ -120,16 +122,6 @@ t6D1.itemAngles = function () {
 	
 	t6D1.degreeConstant = degreeItem;
 	var degreeCount = degreeItem;
-
-	// for (var i = 0; i < t6D1.items1.length; i++) {
-	// 	if (i == 0) {
-	// 		t6D1.items1[i].css('transform', 'rotateY(0deg)');
-	// 	} else {
-	// 		t6D1.items1[i].css('transform', t6D1.craftRotateString("Y",degreeItem));
-
-	// 		degreeCount += degreeItem;
-	// 	}
-	// }
 
 	$.each(t6D1.items1, function(index, target) {
 		// what we have here is an array of objects
@@ -291,15 +283,6 @@ t6D1.galleryspinLeftRight = function (horString) {
 		console.log(opts.rotateY);
 	}
 
-	// if (horString == "left") {
-	// 	t6D1.angleYVer -= t6D1.degreeConstant;
-	// 	console.log(t6D1.angleYVer);
-	// } else {
-	// 	t6D1.angleYVer += t6D1.degreeConstant;
-		
-	// 	console.log(t6D1.angleYVer);
-	// }
-
 	// EXAMPLE:  transform: rotateY(0deg) rotateX(0deg) translateY(-6.5em) translateX(-9em);
 
 	var finalCSSObj = t6D1.craftSpinnerString(opts.rotateY, opts.rotateX, opts.translateY, opts.translateX);
@@ -320,19 +303,11 @@ t6D1.galleryspinUpDown = function (verString) {
 	// if none of the conditions match then default values are used
 	if (verString == "down") {
 		opts.rotateX -= opts.upDownIncrement;
-		console.log(opts.rotateX);
+		// console.log(opts.rotateX);
 	} else if (verString == "up") {
 		opts.rotateX += opts.upDownIncrement;
-		console.log(opts.rotateX);
+		// console.log(opts.rotateX);
 	}
-
-	// if (verString == "down") {
-	// 	t6D1.angleXHor -= opts.upDownIncrement;
-	// 	console.log(t6D1.angleXHor);
-	// } else {
-	// 	t6D1.angleXHor += opts.upDownIncrement;
-	// 	console.log(t6D1.angleXHor);
-	// }
 
 	// EXAMPLE:  transform: rotateY(0deg) rotateX(0deg) translateY(-6.5em) translateX(-9em);
 
@@ -362,24 +337,36 @@ t6D1.autoScrollHorizontal = function () {
 
 }
 
+t6D1.autoScrollVertical = function () {
+	// this must be called in init
+	
+	if (opts.autoScrollVerticalEnable) {
+		
+		if (opts.autoScrollToTop) {
+			setInterval(function () {
+				t6D1.galleryspinUpDown("up");
+			}, opts.autoScrollVerticalTime)
+		}
+
+		if (opts.autoScrollToBottom) {
+			setInterval(function () {
+				t6D1.galleryspinUpDown("down");
+			}, opts.autoScrollVerticalTime)
+		}
+
+	}
+}
+
 t6D1.horizontalEvents = function () {
 	$(t6D1.leftPrev).on('click', function(e) {
 		e.preventDefault();
-		console.log('clicked left');
-		// var dirString = t6D1.leftPrev.attr('data-dir1').val();
-		// console.log(dirString);
-		// t6D1.galleryspin(dirString);
-		// t6D1.galleryspin("left");
+		// console.log('clicked left');
 		t6D1.galleryspinLeftRight("left");
 	});
 
 	$(t6D1.rightNext).on('click', function(e) {
 		e.preventDefault();
-		console.log('clicked right');
-		// var dirString = t6D1.rightNext.attr('data-dir1').val();
-		// console.log(dirString);
-		// t6D1.galleryspin(dirString);
-		// t6D1.galleryspin("right");
+		// console.log('clicked right');
 		t6D1.galleryspinLeftRight("right");
 	});
 }
@@ -387,21 +374,13 @@ t6D1.horizontalEvents = function () {
 t6D1.verticalEvents = function () {
 	$(t6D1.upRotate).on('click', function(e) {
 		e.preventDefault();
-		console.log('clicked up');
-		// var dirString = t6D1.leftPrev.attr('data-dir1').val();
-		// console.log(dirString);
-		// t6D1.galleryspin(dirString);
-		// t6D1.galleryspin("left");
+		// console.log('clicked up');
 		t6D1.galleryspinUpDown("up");
 	});
 
 	$(t6D1.downRotate).on('click', function(e) {
 		e.preventDefault();
-		console.log('clicked down');
-		// var dirString = t6D1.rightNext.attr('data-dir1').val();
-		// console.log(dirString);
-		// t6D1.galleryspin(dirString);
-		// t6D1.galleryspin("right");
+		// console.log('clicked down');
 		t6D1.galleryspinUpDown("down");
 	});
 }
@@ -417,6 +396,7 @@ t6D1.horizontalEvents();
 t6D1.verticalEvents();
 
 t6D1.autoScrollHorizontal();
+t6D1.autoScrollVertical();
 
 ////////////////////////////////////////////
 // 		END INIT
