@@ -38,8 +38,12 @@ t6D1.defaults1 = {
 	rotateY: 0,
 	translateY: -6.5,
 	translateX: -9,
-	autoScrollXTime: 1000,
-	autoScrollYTime: 1000
+	autoScrollHorizontalTime: 10000,
+	autoScrollVerticalTime: 10000,
+	autoScrollHorizontalEnable: true,
+	autoScrollVerticalEnable: false,
+	autoScrollToRight: true,
+	autoScrollToLeft: false
 };
 
 // default options
@@ -337,6 +341,25 @@ t6D1.galleryspinUpDown = function (verString) {
 	t6D1.spinner.css(finalCSSObj);
 }
 
+t6D1.autoScrollHorizontal = function () {
+	// this must be called in init
+
+	if (opts.autoScrollHorizontalEnable) {
+
+		if (opts.autoScrollToRight) {
+			// console.log('Right scroll set.');
+			setInterval( function() { t6D1.galleryspinLeftRight("right"); }, opts.autoScrollHorizontalTime );
+		}
+
+		if (opts.autoScrollToLeft) {
+			// console.log('Left scroll set.');
+			setInterval( function() { t6D1.galleryspinLeftRight("left"); }, opts.autoScrollHorizontalTime );
+		}
+		
+	}
+
+}
+
 t6D1.horizontalEvents = function () {
 	$(t6D1.leftPrev).on('click', function(e) {
 		e.preventDefault();
@@ -387,8 +410,11 @@ t6D1.verticalEvents = function () {
 // simply call the relevant methods/functions
 
 t6D1.itemAngles();
+
 t6D1.horizontalEvents();
 t6D1.verticalEvents();
+
+t6D1.autoScrollHorizontal();
 
 ////////////////////////////////////////////
 // 		END INIT
