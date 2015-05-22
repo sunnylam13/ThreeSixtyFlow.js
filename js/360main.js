@@ -424,7 +424,7 @@ t6D1.changeTransOriginZOffset = function () {
 	t6D1.items1.css('transform-origin', transOriginSettingValue);
 }
 
-t6D1.horizontalEvents = function (objTarget) {
+t6D1.horizontalEvents = function () {
 
 	// these need to be changed to use event delegation because if the buttons are dynamically generated, regular event handling won't work
 
