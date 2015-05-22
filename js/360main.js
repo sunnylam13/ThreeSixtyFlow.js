@@ -347,11 +347,13 @@ t6D1.autoScrollHorizontal = function () {
 	if (opts.autoScrollHorizontalEnable) {
 
 		if (opts.autoScrollToRight) {
+			// https://stackoverflow.com/questions/457826/pass-parameters-in-setinterval-function
 			// console.log('Right scroll set.');
 			setInterval( function() { t6D1.galleryspinLeftRight("right"); }, opts.autoScrollHorizontalTime );
 		}
 
 		if (opts.autoScrollToLeft) {
+			// https://stackoverflow.com/questions/457826/pass-parameters-in-setinterval-function
 			// console.log('Left scroll set.');
 			setInterval( function() { t6D1.galleryspinLeftRight("left"); }, opts.autoScrollHorizontalTime );
 		}
