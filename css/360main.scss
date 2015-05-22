@@ -11,6 +11,7 @@
 
 // the z-offset should be increased by -1000px for every 8 additional gallery items... use Javascript
 $transOriginZOffset: -2000px;
+$viewPortHeight: 100vh;
 
 ////////////////////////////////////////////
 // 		END VARIABLES
@@ -41,7 +42,7 @@ section#carousel {
 	// padding-top: 20%;
 	/*margin-bottom: 3rem;*/
 	// height:100vh;
-	height:100vh;
+	height:$viewPortHeight;
 	// height:300px;
 	// height: 50vh;
 	overflow: hidden;
@@ -195,9 +196,9 @@ ul#spinner img:nth-child(11) {
 ////////////////////////////////////////////
 
 // ----------------------------------------
-// HORIZONTAL CONTROLS (LEFT, RIGHT)  ------------------
+// Control Frame  ------------------
 // ----------------------------------------
-section#carousel .controlframe.horizontal {
+section#carousel .controlframe {
 	width: 100%;
 	position: absolute;
 	top: 0;
@@ -208,104 +209,8 @@ section#carousel .controlframe.horizontal {
 	// we want the control frame horizontal to be over top of the #spinner in case images cross the buttons later... yet it must be below the vertical control frame
 	z-index: 10;
 
+	//flexbox parent
 	@include flexboxColumn1;
-
-	.controls {
-		// position: absolute;
-		width: 100%;
-
-		//position
-		top: 50%;
-
-		//flexbox parent
-		@include flexboxRow1;
-		flex-flow: row nowrap;
-		justify-content: center;
-
-		// the divs holding buttons
-		div {
-			//flex child
-			flex: 1 50%;
-		}
-
-		div:nth-child(1) {
-			margin-left: 3%;
-		}
-
-		div:nth-child(2) {
-			@include flexboxRow1;
-			justify-content: flex-end;
-			align-content: flex-end;
-			margin-right: 3%;
-		}
-	}
-
-	// the buttons
-	.controls span.fa {
-		border-radius: 50%;
-		background: white;
-		color: black;
-		padding: 2%;
-		@include transitionEffectAllEaseIn(0.5s);
-		width:2em;
-		height:2em;
-		@include flexboxRow1;
-		justify-content: center;
-		align-content: center;
-
-		&.fa-chevron-left {
-			// background: blue;
-			padding-right: 2.5%;
-		}
-
-		&.fa-chevron-right {
-			// background: green;
-			padding-left: 2.5%;
-		}
-	}
-
-	.controls span.fa:hover {
-		color: white;
-		background: red;
-		cursor: pointer;
-	}
-}
-// ----------------------------------------
-// END HORIZONTAL CONTROLS (LEFT, RIGHT)  ------------------
-// ----------------------------------------
-
-// ----------------------------------------
-// VERTICAL CONTROLS (UP, DOWN)  ------------------
-// ----------------------------------------
-section#carousel .controlframe.vertical {
-	position: absolute;
-	width: 100%;
-	bottom: 0;
-
-	// when the carousel crosses over the buttons, the control buttons are below
-	// we need to set them above the image
-	z-index: 10;
-
-	@include flexboxRow1;
-	@include flexboxColumn1;
-
-	.controls div {
-		height: 50vh;
-
-		&:nth-child(1) {
-			//flexbox parent
-			@include flexboxColumn1;
-			justify-content: flex-start;
-			align-content: flex-start;
-		}
-
-		&:nth-child(2) {
-			//flexbox parent
-			@include flexboxColumn1;
-			justify-content: flex-end;
-			align-content: flex-end;
-		}
-	}
 
 	.controls span.fa {
 		color: black;
@@ -332,6 +237,19 @@ section#carousel .controlframe.vertical {
 			padding: 0 0 2% 4%;
 			margin-bottom: 25%;
 		}
+
+		&.fa-chevron-left {
+			// background: blue;
+			padding-right: 2.5%;
+			margin-left: 2%;
+		}
+
+		&.fa-chevron-right {
+			// background: green;
+			padding-left: 2.5%;
+			margin-right: 2%;
+		}
+
 	}
 
 	.controls span.fa:hover {
@@ -341,9 +259,71 @@ section#carousel .controlframe.vertical {
 	}
 }
 // ----------------------------------------
+// END Control Frame  ------------------
+// ----------------------------------------
+
+
+
+// ----------------------------------------
+// VERTICAL CONTROLS (UP, DOWN)  ------------------
+// ----------------------------------------
+section#carousel .controls.vertical1, section#carousel .controls.vertical2 {
+
+	// set a height on the verticals so that the buttons are pushed to the upper and lower edges... away from the centre
+	height: $viewPortHeight/2;
+
+	//flexbox parent
+	@include flexboxRow1;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-content: center;
+}
+
+section#carousel .controls.vertical1 {
+	align-items: flex-start;
+}
+
+section#carousel .controls.vertical2 {
+	align-items: flex-end;
+}
+// ----------------------------------------
 // END VERTICAL CONTROLS (UP, DOWN)  ------------------
 // ----------------------------------------
 
+// ----------------------------------------
+// HORIZONTAL CONTROLS (LEFT, RIGHT)  ------------------
+// ----------------------------------------
+section#carousel .controls.horizontal {
+
+	width: 100%;
+
+	//flexbox parent
+	@include flexboxRow1;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-content: center;
+
+	div {
+		flex: 1 50%;
+	}
+	
+	div:nth-child(1) {
+		//flexbox parent
+		@include flexboxRow1;
+		justify-content: flex-start;
+		align-content: flex-start;
+	}
+
+	div:nth-child(2) {
+		//flexbox parent
+		@include flexboxRow1;
+		justify-content: flex-end;
+		align-content: flex-end;
+	}
+}
+// ----------------------------------------
+// END HORIZONTAL CONTROLS (LEFT, RIGHT)  ------------------
+// ----------------------------------------
 
 
 ////////////////////////////////////////////
