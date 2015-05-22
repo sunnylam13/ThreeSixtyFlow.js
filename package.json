@@ -1,0 +1,35 @@
+{
+  "name": "360.carousel.plugin.052015",
+  "version": "1.0.0",
+  "description": "3D Carousel Plugin - HackerYou Week 6 Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://sunnylam@bitbucket.org/sunnylam/360-carousel-plugin-052015.git"
+  },
+  "keywords": [
+    "image",
+    "carousel",
+    "3D",
+    "plugin"
+  ],
+  "author": "Sunny Lam",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/sunnylam/360-carousel-plugin-052015#readme",
+  "devDependencies": {
+    "browser-sync": "^2.7.3",
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^2.3.0",
+    "gulp-concat": "^2.5.2",
+    "gulp-jade": "^1.0.1",
+    "gulp-sass": "^2.0.1"
+  },
+  "dependencies": {
+    "gulp": "^3.8.11",
+    "gulp-concat": "^2.5.2",
+    "gulp-sass": "^2.0.1"
+  }
+}
