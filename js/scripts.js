@@ -28,7 +28,7 @@ t6D2.devSettings = {
 	baseZOffsetValue: -2000,
 	changeInitialRingPosition: true,
 	// these are the default values for starting position of #spinner
-	rotateX: -90,
+	rotateX: -45,
 	rotateY: 90,
 	translateY: -6.5,
 	translateX: -9,

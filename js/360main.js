@@ -147,7 +147,7 @@ t6D1.itemAngles = function () {
 
 		
 		// if the rotateZImages settings is true
-		if (opts.rotateZImages) {
+		if (opts.rotateZImages && opts.rotateX != 0 && opts.rotateY) {
 			// since we're already setting rotateY for images
 			// if this is enabled, we can also set the rotateZ
 			
