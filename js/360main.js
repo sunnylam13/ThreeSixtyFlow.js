@@ -46,8 +46,9 @@ t6D1.defaults1 = {
 	autoScrollToLeft: false,
 	autoScrollToTop: true,
 	autoScrollToBottom: false,
-	baseZOffset: "50% 50% -2000px",
-	baseZOffsetValue: "-2000px"
+	baseZOffsetValue: -2000,
+	sliderButtonsRightLeftEnable: true,
+	sliderButtonsUpDownEnable: true
 };
 
 // default options
@@ -360,7 +361,7 @@ t6D1.autoScrollVertical = function () {
 }
 
 t6D1.getTransOriginZOffset = function () {
-	// call this function in init
+	// this is a helper function for t6D1.changeTransOriginZOffset
 
 	// grabs the Z-offset value of the #spinner
 
@@ -382,6 +383,44 @@ t6D1.getTransOriginZOffset = function () {
 	currentZOffSet = parseInt(currentZOffSet.toString());
 
 	return currentZOffSet;
+}
+
+t6D1.changeTransOriginZOffset = function () {
+	// call this function in init
+	
+	// grab the current transform origin z offset value for the spinner
+	var currentZOffsetValue = t6D1.getTransOriginZOffset();
+	// determine the number of images currently in the carousel
+	var itemTotal = t6D1.items1.length;
+
+	// for every 36 items beyond 36, add -1000 or -2000 to the z offset
+	// since the z-offset increment value is about -2000 per 36, and the baseZOffsetValue is -2000 anyway, we can use that option to set both the base and the increment value
+	
+	// var addedUnits = Math.floor((itemTotal-36)/36);
+	var addedUnits = (itemTotal-36)/36;
+
+	// if the division is less than or equal to zero that means we're still in the safe zone, set it to zero, no change to z offset
+	if (addedUnits <= 0) {
+		var addedUnits = 0;
+	}
+
+	// if the division is greater than zero yet still less than 1, set it to 1
+	if (addedUnits >= 0 && addedUnits < 1) {
+		var addedUnits = 1;
+	}
+
+	var addedZOffset = addedUnits * opts.baseZOffsetValue;
+
+	var newZOffsetValue = currentZOffsetValue + addedZOffset;
+
+	// convert the new Z-offset value into a string
+	// EXAMPLE:  transform-origin: 50% 50% -2000px;
+	// means... 50% 50% -2000px
+	var transOriginSettingValue = "50% 50% " + newZOffsetValue + "px";
+
+	// change transform origin on the spinner and its items
+	t6D1.spinner.css('transform-origin', transOriginSettingValue);
+	t6D1.items1.css('transform-origin', transOriginSettingValue);
 }
 
 t6D1.horizontalEvents = function () {
@@ -424,6 +463,8 @@ t6D1.verticalEvents();
 
 t6D1.autoScrollHorizontal();
 t6D1.autoScrollVertical();
+
+t6D1.changeTransOriginZOffset();
 
 ////////////////////////////////////////////
 // 		END INIT
