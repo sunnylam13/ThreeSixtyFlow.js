@@ -26,10 +26,10 @@ t6D2.devSettings = {
 	// spinner
 	upDownIncrement: 7,
 	baseZOffsetValue: -2000,
-	changeInitialRingPosition: false,
+	changeInitialRingPosition: true,
 	// these are the default values for starting position of #spinner
-	rotateX: 0,
-	rotateY: 0,
+	rotateX: -90,
+	rotateY: 90,
 	translateY: -6.5,
 	translateX: -9,
 	// auto scroll
