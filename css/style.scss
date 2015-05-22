@@ -2,14 +2,14 @@
 // 		IMPORTS
 ////////////////////////////////////////////
 
-@import 'normalize';
-@import 'grid';
-@import 'responsive';
-@import 'variables.global.041415.1';
-@import 'columns';
-@import 'typography';
-@import 'mixins.universal';
-@import 'mixins.project';
+@import 'partials/normalize';
+@import 'partials/grid';
+@import 'partials/responsive';
+@import 'partials/variables.global.041415.1';
+@import 'partials/columns';
+@import 'partials/typography';
+@import 'partials/mixins.universal';
+@import 'partials/mixins.project';
 
 ////////////////////////////////////////////
 // 		END IMPORTS
@@ -92,8 +92,8 @@ p {
 // 		MAIN CODE
 ////////////////////////////////////////////
 
-@import '360main.scss';
-@import 'index.scss';
+@import 'partials/360main.scss';
+@import 'partials/index.scss';
 
 ////////////////////////////////////////////
 // 		END MAIN CODE

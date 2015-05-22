@@ -52,6 +52,7 @@ section#carousel {
 	//flexbox parent
 	//this is used to centre ul#spinner which has no dimensions, it is just a point on the page
 	@include flexboxColumn1;
+	// @include flexboxRow1;
 	justify-content: center;
 	align-content: center;
 	align-items: center;

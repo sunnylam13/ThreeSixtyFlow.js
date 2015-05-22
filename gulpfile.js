@@ -10,6 +10,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var minifyCss = require('gulp-minify-css');
 var browserSync = require('browser-sync').create();
 var jade = require('gulp-jade');
+var plumber = require('gulp-plumber');
 
 ////////////////////////////////////////////
 // 		JADE COMPILE
@@ -37,6 +38,7 @@ gulp.task('jade', function() {
 
 gulp.task('sass', function () {
 	return gulp.src('css/*.scss')
+				.pipe(plumber())
 				.pipe(sass({
 					'sourcemap=none':true,
 					'errLogToConsole':true
@@ -46,7 +48,7 @@ gulp.task('sass', function () {
 		            browsers: ['last 2 versions'],
 		            cascade: false
 		        }))
-		        .pipe(minifyCss({compatibility: 'ie8'}))
+		        // .pipe(minifyCss({compatibility: 'ie8'}))
 				.pipe(gulp.dest('css/'))
 				.pipe(browserSync.stream());
 
@@ -87,10 +89,11 @@ gulp.task('server', ['sass'], function() {
 // 		DEFAULT
 ////////////////////////////////////////////
 
-gulp.task('default',function () {	
+gulp.task('default', ['server'], function () {	
 	gulp.watch('css/*.scss', ['sass']);
 	gulp.watch('./*.jade',['jade']);
-	gulp.watch('./',['server']);
+	// gulp.watch('./',['server']);
+	// gulp.watch("*.html").on('change', reload);
 });
 
 ////////////////////////////////////////////
