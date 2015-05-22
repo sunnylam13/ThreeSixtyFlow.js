@@ -37,6 +37,7 @@ t6D1.defaults1 = {
 };
 
 // default options are found at bottom of file
+// you will use opts.propertyName instead of t6D1.defaults1
 var opts = $.extend(t6D1.defaults1, options);
 
 // ----------------------------------------
