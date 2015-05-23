@@ -548,13 +548,13 @@ t6D1.horizontalEvents = function () {
 
 	// these need to be changed to use event delegation because if the buttons are dynamically generated, regular event handling won't work
 
-	$(t6D1.leftPrev).on('click', function(e) {
+	thisCarousel.on('click','span.fa.fa-chevron-left', function(e) {
 		e.preventDefault();
 		// console.log('clicked left');
 		t6D1.galleryspinLeftRight("left");
 	});
 
-	$(t6D1.rightNext).on('click', function(e) {
+	thisCarousel.on('click','span.fa.fa-chevron-right', function(e) {
 		e.preventDefault();
 		// console.log('clicked right');
 		t6D1.galleryspinLeftRight("right");
@@ -565,13 +565,13 @@ t6D1.verticalEvents = function () {
 
 	// these need to be changed to use event delegation because if the buttons are dynamically generated, regular event handling won't work
 
-	$(t6D1.upRotate).on('click', function(e) {
+	thisCarousel.on('click','span.fa.fa-chevron-up', function(e) {
 		e.preventDefault();
 		// console.log('clicked up');
 		t6D1.galleryspinUpDown("up");
 	});
 
-	$(t6D1.downRotate).on('click', function(e) {
+	thisCarousel.on('click','span.fa.fa-chevron-down', function(e) {
 		e.preventDefault();
 		// console.log('clicked down');
 		t6D1.galleryspinUpDown("down");
