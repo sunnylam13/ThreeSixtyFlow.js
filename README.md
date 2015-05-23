@@ -288,10 +288,14 @@ If set to `false`, they aren't built 'on the fly' by the plugin and are unavaila
 
 #### rotateZImages
 
-*Default*: `true`
+*Default*: `false`
 
-By default this is set to `true`.  
+By default this is set to `false` because it wrecks the standard carousel horizontal rotation button system.
 
-If the options `rotateX` and/or `rotateY` are not exactly 0, the images automatically rotate along the Z-axis so that the images remain "right side up"...
+Change it to `true` only if you set `changeInitialRingPosition` to `true`.
 
-They don't rotate and face the same way as the carousel #spinner.
+When `true` and the options `rotateX` and/or `rotateY` are not exactly 0, the images automatically rotate along the Z-axis so that the images remain "right side up"...
+
+... which means they don't rotate and face the same way as the carousel #spinner... 
+
+... like a ferris wheel cab...

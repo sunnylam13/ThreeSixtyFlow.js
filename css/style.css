@@ -522,3 +522,6 @@ section#carousel .controls.horizontal {
     -webkit-align-content: flex-end;
     -ms-flex-line-pack: end;
     align-content: flex-end; }
+
+.largeModal1 {
+  color: white; }

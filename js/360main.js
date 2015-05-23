@@ -66,7 +66,7 @@ t6D1.defaults1 = {
 	sliderButtonsRightLeftEnable: true,
 	sliderButtonsUpDownEnable: true,
 	// images
-	rotateZImages: true
+	rotateZImages: false
 	// other
 	
 };
@@ -328,7 +328,6 @@ t6D1.setInitialRingPosition = function () {
 t6D1.galleryspinLeftRight = function (horString) {
 
 	// where horString is the "left" or "right" string passed from the previous/next buttons
-	// where verString is the "up" or "down" string passed from the up/down buttons
 
 	// just realized that the angle adjustments must match the angle increments you calculated in object.itemAngles() method
 
@@ -354,12 +353,13 @@ t6D1.galleryspinLeftRight = function (horString) {
 
 t6D1.galleryspinUpDown = function (verString) {
 
-	// where horString is the "left" or "right" string passed from the previous/next buttons
 	// where verString is the "up" or "down" string passed from the up/down buttons
 
 	// just realized that the angle adjustments must match the angle increments you calculated in object.itemAngles() method
 
 	// a user is only likely to click one button at a time
+
+	// NOTE:  once you rotate past the first image, the buttons up/down direction reverses
 
 	// this is used for up and down buttons
 	// if none of the conditions match then default values are used
