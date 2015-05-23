@@ -117,7 +117,9 @@ t6D1.downRotate = this.find('span.fa.fa-chevron-down');
 // 		END VARIABLES & REFERENCES
 ////////////////////////////////////////////
 
-
+////////////////////////////////////////////
+// 		HELPERS
+////////////////////////////////////////////
 t6D1.craftRotateString = function (axisString,angleValue) {
 	// this is the initial image angle when plugin loads
 	// EXAMPLE:  transform: rotateY(0deg);
@@ -290,6 +292,35 @@ t6D1.craftSpinnerString = function (rotY, rotX, transY, transX) {
 	return transformObj;
 }
 
+t6D1.setInitialRingPosition = function () {
+	
+	// Friday, May 22, 2015 12:29 PM:  currently if changeInitialRingPosition = false, you the developer must remove the passed rotateX and rotateY settings too 
+
+	// pure vertical
+	// EXAMPLE:  transform: rotateY(-90deg) rotateX(90deg) translateY(-6.5em) translateX(-9em)
+
+	// NOTE:  trying to use rotateZ() doesn't rotate the ring like a carousel, it rotates exactly like using rotateY()
+
+	// NOTE:  Using Javascript to set the initial position... when other methods also alter transform, as long as they use += or -= to change opts.rotateX, opts.rotateY
+	// JS would overwrite the CSS transforms because it applies inline styling which is seen last
+
+
+
+	// if change initial ring position is true
+	if (opts.changeInitialRingPosition) {
+		t6D1.spinner.css(t6D1.craftSpinnerString(opts.rotateY, opts.rotateX, opts.translateY, opts.translateX));
+	}
+
+}
+////////////////////////////////////////////
+// 		END HELPERS
+////////////////////////////////////////////
+
+
+
+////////////////////////////////////////////
+// 		GALLERY SPINNER
+////////////////////////////////////////////
 t6D1.galleryspinLeftRight = function (horString) {
 
 	// where horString is the "left" or "right" string passed from the previous/next buttons
@@ -342,7 +373,13 @@ t6D1.galleryspinUpDown = function (verString) {
 
 	t6D1.spinner.css(finalCSSObj);
 }
+////////////////////////////////////////////
+// 		END GALLERY SPINNER
+////////////////////////////////////////////
 
+////////////////////////////////////////////
+// 		AUTO SCROLL
+////////////////////////////////////////////
 t6D1.autoScrollHorizontal = function () {
 	// this must be called in init
 
@@ -383,7 +420,13 @@ t6D1.autoScrollVertical = function () {
 
 	}
 }
+////////////////////////////////////////////
+// 		END AUTO SCROLL
+////////////////////////////////////////////
 
+////////////////////////////////////////////
+// 		TRANSFORM ORIGIN
+////////////////////////////////////////////
 t6D1.getTransOriginZOffset = function () {
 	// this is a helper function for t6D1.changeTransOriginZOffset
 
@@ -448,27 +491,6 @@ t6D1.changeTransOriginZOffset = function () {
 	t6D1.items1.css('transform-origin', transOriginSettingValue);
 }
 
-t6D1.setInitialRingPosition = function () {
-	
-	// Friday, May 22, 2015 12:29 PM:  currently if changeInitialRingPosition = false, you the developer must remove the passed rotateX and rotateY settings too 
-
-	// pure vertical
-	// EXAMPLE:  transform: rotateY(-90deg) rotateX(90deg) translateY(-6.5em) translateX(-9em)
-
-	// NOTE:  trying to use rotateZ() doesn't rotate the ring like a carousel, it rotates exactly like using rotateY()
-
-	// NOTE:  Using Javascript to set the initial position... when other methods also alter transform, as long as they use += or -= to change opts.rotateX, opts.rotateY
-	// JS would overwrite the CSS transforms because it applies inline styling which is seen last
-
-
-
-	// if change initial ring position is true
-	if (opts.changeInitialRingPosition) {
-		t6D1.spinner.css(t6D1.craftSpinnerString(opts.rotateY, opts.rotateX, opts.translateY, opts.translateX));
-	}
-
-}
-
 t6D1.setBaseZOffsetValue = function () {
 	
 	// NOTE:  the opts.baseZOffsetValue should not be lower than -2000
@@ -483,10 +505,14 @@ t6D1.setBaseZOffsetValue = function () {
 		// change the transform z-offset for img items
 		t6D1.items1.css('transform-origin', transOriginSettingValue);
 	}
-
-	
 }
+////////////////////////////////////////////
+// 		END TRANSFORM ORIGIN
+////////////////////////////////////////////
 
+////////////////////////////////////////////
+// 		NAVIGATION CONTROLS
+////////////////////////////////////////////
 t6D1.buildControls = function () {
 	
 	// ----------------------------------------
@@ -577,6 +603,10 @@ t6D1.verticalEvents = function () {
 		t6D1.galleryspinUpDown("down");
 	});
 }
+////////////////////////////////////////////
+// 		END NAVIGATION CONTROLS
+////////////////////////////////////////////
+
 
 ////////////////////////////////////////////
 // 		INIT
