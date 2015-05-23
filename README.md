@@ -49,7 +49,7 @@ See the code example below:
 	        <li><img src="http://demosthenes.info/assets/images/milford-sound.jpg" alt=""/></li>
 	  </ul>
 
-You can have as many 3D carousels you want as long as you follow the above format of pl
+You can have as many 3D carousels you want as long as you follow the above structure each time.
 
 #### Jade Note
 
