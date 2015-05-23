@@ -384,6 +384,8 @@ t6D1.galleryspinUpDown = function (verString) {
 
 t6D1.extractRotateXAngle = function (objItem) {
 
+	// https://stackoverflow.com/questions/8890888/css3-converting-matrix3d-values
+
 	var spinnerVal = objItem.css('transform');
 	console.log('spinnerVal is %s',spinnerVal);
 	// extract the rotateX value (i.e. -90deg)
