@@ -5,10 +5,18 @@
 //- These mixins are specific to this project only.
 //- move mixins here only if they are required in other sections of the site
 
+mixin addNineImageSet1
+	+imgInsertTemplate("http://demosthenes.info/assets/images/wanaka-tree.jpg","")
+	+imgInsertTemplate("http://demosthenes.info/assets/images/still-lake.jpg","")
+	+imgInsertTemplate("http://demosthenes.info/assets/images/pink-milford-sound.jpg","")
+	+imgInsertTemplate("http://demosthenes.info/assets/images/paradise.jpg","")
+	+imgInsertTemplate("http://demosthenes.info/assets/images/morekai.jpg","")
+	+imgInsertTemplate("http://demosthenes.info/assets/images/milky-blue-lagoon.jpg","")
+	+imgInsertTemplate("http://demosthenes.info/assets/images/lake-tekapo.jpg","")
+	+imgInsertTemplate("http://demosthenes.info/assets/images/wanaka-tree.jpg","")
+	+imgInsertTemplate("http://demosthenes.info/assets/images/milford-sound.jpg","")
+
 mixin threeSixtyDim1
-	////////////////////////////////////////////
-	// 		360 CAROUSEL PLUGIN
-	////////////////////////////////////////////
 
 	//- ===================================
 	//- 		NOTES
@@ -23,7 +31,11 @@ mixin threeSixtyDim1
 	//- Wednesday, May 20, 2015 3:21 PM:  using ul instead of figure seems to align the images better
 
 	//- END NOTES
-	
+
+	////////////////////////////////////////////
+	// 		360 CAROUSEL PLUGIN
+	////////////////////////////////////////////
+
 	section#carousel
 		ul#spinner
 			+imgInsertTemplate("http://demosthenes.info/assets/images/wanaka-tree.jpg","")
@@ -36,63 +48,33 @@ mixin threeSixtyDim1
 			+imgInsertTemplate("http://demosthenes.info/assets/images/wanaka-tree.jpg","")
 			+imgInsertTemplate("http://demosthenes.info/assets/images/milford-sound.jpg","")
 
+			//- if you add more images the degrees split between the images has to change... you'll want to write JS to manage this automation instead 
+
 			//- 18 point
 			//- still good with z-offset -2000px
-			+imgInsertTemplate("http://demosthenes.info/assets/images/wanaka-tree.jpg","")
-			+imgInsertTemplate("http://demosthenes.info/assets/images/still-lake.jpg","")
-			+imgInsertTemplate("http://demosthenes.info/assets/images/pink-milford-sound.jpg","")
-			+imgInsertTemplate("http://demosthenes.info/assets/images/paradise.jpg","")
-			+imgInsertTemplate("http://demosthenes.info/assets/images/morekai.jpg","")
-			+imgInsertTemplate("http://demosthenes.info/assets/images/milky-blue-lagoon.jpg","")
-			+imgInsertTemplate("http://demosthenes.info/assets/images/lake-tekapo.jpg","")
-			+imgInsertTemplate("http://demosthenes.info/assets/images/wanaka-tree.jpg","")
-			+imgInsertTemplate("http://demosthenes.info/assets/images/milford-sound.jpg","")
+			//- +addNineImageSet1
 
 			//- //- 27 point
-			//- //- still good with z-offset -2000px
-			//- +imgInsertTemplate("http://demosthenes.info/assets/images/wanaka-tree.jpg","")
-			//- +imgInsertTemplate("http://demosthenes.info/assets/images/still-lake.jpg","")
-			//- +imgInsertTemplate("http://demosthenes.info/assets/images/pink-milford-sound.jpg","")
-			//- +imgInsertTemplate("http://demosthenes.info/assets/images/paradise.jpg","")
-			//- +imgInsertTemplate("http://demosthenes.info/assets/images/morekai.jpg","")
-			//- +imgInsertTemplate("http://demosthenes.info/assets/images/milky-blue-lagoon.jpg","")
-			//- +imgInsertTemplate("http://demosthenes.info/assets/images/lake-tekapo.jpg","")
-			//- +imgInsertTemplate("http://demosthenes.info/assets/images/wanaka-tree.jpg","")
-			//- +imgInsertTemplate("http://demosthenes.info/assets/images/milford-sound.jpg","")
+			//- +addNineImageSet1
 
 			//- //- 36 point
-			//- //- still good with z-offset -2000px
-			//- +imgInsertTemplate("http://demosthenes.info/assets/images/wanaka-tree.jpg","")
-			//- +imgInsertTemplate("http://demosthenes.info/assets/images/still-lake.jpg","")
-			//- +imgInsertTemplate("http://demosthenes.info/assets/images/pink-milford-sound.jpg","")
-			//- +imgInsertTemplate("http://demosthenes.info/assets/images/paradise.jpg","")
-			//- +imgInsertTemplate("http://demosthenes.info/assets/images/morekai.jpg","")
-			//- +imgInsertTemplate("http://demosthenes.info/assets/images/milky-blue-lagoon.jpg","")
-			//- +imgInsertTemplate("http://demosthenes.info/assets/images/lake-tekapo.jpg","")
-			//- +imgInsertTemplate("http://demosthenes.info/assets/images/wanaka-tree.jpg","")
-			//- +imgInsertTemplate("http://demosthenes.info/assets/images/milford-sound.jpg","")
+			//- +addNineImageSet1
 
 			//- //- 45 point
 			//- //- images cross at this point
 			//- //- add another -1000px to z offset
-			//- +imgInsertTemplate("http://demosthenes.info/assets/images/wanaka-tree.jpg","")
-			//- +imgInsertTemplate("http://demosthenes.info/assets/images/still-lake.jpg","")
-			//- +imgInsertTemplate("http://demosthenes.info/assets/images/pink-milford-sound.jpg","")
-			//- +imgInsertTemplate("http://demosthenes.info/assets/images/paradise.jpg","")
-			//- +imgInsertTemplate("http://demosthenes.info/assets/images/morekai.jpg","")
-			//- +imgInsertTemplate("http://demosthenes.info/assets/images/milky-blue-lagoon.jpg","")
-			//- +imgInsertTemplate("http://demosthenes.info/assets/images/lake-tekapo.jpg","")
-			//- +imgInsertTemplate("http://demosthenes.info/assets/images/wanaka-tree.jpg","")
-			//- +imgInsertTemplate("http://demosthenes.info/assets/images/milford-sound.jpg","")
+			//- +addNineImageSet1
 
-			//- if you add more images the degrees split between the images has to change... you'll want to write JS to manage this automation instead 
 			
-		//- opted to avoid having to measure the mouse position... instead split the entire single .controlframe into 3 vertical sections with horizontal in the middle
+			
+		
 		
 		////////////////////////////////////////////
 		// 		CONTROLS
 		////////////////////////////////////////////
 		// these controls are dynamically generated by the plugin if the option is enabled
+		//- opted to avoid having to measure the mouse position... instead split the entire single .controlframe into 3 vertical sections with horizontal in the middle
+
 		//- .controlframe
 		//- 	.controls.vertical1
 		//- 		// this is the control panel for the up, down buttons (y-axis)
