@@ -250,26 +250,48 @@ The direction is controlled by `autoScrollToTop` and `autoScrollToBottom`.
 
 *Default*: `true`
 
+When `autoScrollHorizontalEnable` is `true` the carousel always rotates towards the right by default.
+
 #### autoScrollToLeft
 
 *Default*: `false`
+
+Set `autoScrollHorizontalEnable` to `true`, `autoScrollToRight` to `false` and set this to `true` to make the carousel automatically spin towards the left.
 
 #### autoScrollToTop
 
 *Default*: `true`
 
+When `autoScrollVerticalEnable` is `true` the carousel always rotates towards the top by default.
+
 #### autoScrollToBottom
 
 *Default*: `false`
+
+Set `autoScrollVerticalEnable` to `true`, `autoScrollToTop` to `false` and set this to `true` to make the carousel automatically spin towards the bottom.
 
 #### sliderButtonsRightLeftEnable
 
 *Default*: `true`
 
+By default the previous and next slider rotation buttons are available and visible.
+
+If set to `false`, they aren't built 'on the fly' by the plugin and are unavailable for the user.
+
 #### sliderButtonsUpDownEnable
 
 *Default*: `true`
 
+By default the up and down slider rotation buttons are available and visible.
+
+If set to `false`, they aren't built 'on the fly' by the plugin and are unavailable for the user.
+
 #### rotateZImages
 
 *Default*: `true`
+
+By default this is set to `true`.  
+
+If the options `rotateX` and/or `rotateY` are not exactly 0, the images automatically rotate along the Z-axis so that the images remain "right side up"...
+
+They don't rotate and face the same way as the carousel #spinner.
