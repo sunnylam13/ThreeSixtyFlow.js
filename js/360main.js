@@ -68,7 +68,14 @@ var opts = $.extend(t6D1.defaults1, options);
 // END Default options  ------------------
 // ----------------------------------------
 
-
+// ----------------------------------------
+// THIS  ------------------
+// ----------------------------------------
+// using this in a variable for later methods works best
+var thisCarousel = this;
+// ----------------------------------------
+// END THIS  ------------------
+// ----------------------------------------
 
 // ----------------------------------------
 // Spinner  ------------------
@@ -480,6 +487,63 @@ t6D1.setBaseZOffsetValue = function () {
 	
 }
 
+t6D1.buildControls = function () {
+	
+	// ----------------------------------------
+	// Control Frame  ------------------
+	// ----------------------------------------
+	var $controlFrame = $('<div>').addClass('controlframe');
+	// ----------------------------------------
+	// END Control Frame  ------------------
+	// ----------------------------------------
+	
+	// ----------------------------------------
+	// Vertical  ------------------
+	// ----------------------------------------
+	var $vertical1 = $('<div>').addClass('controls vertical1');
+	var $vertical2 = $('<div>').addClass('controls vertical2');
+	var $updiv = $('<div>').append($('<span>').addClass('fa fa-chevron-up'));
+	var $downdiv = $('<div>').append($('<span>').addClass('fa fa-chevron-down'));
+	// ----------------------------------------
+	// END Vertical  ------------------
+	// ----------------------------------------
+	
+	// ----------------------------------------
+	// Horizontal  ------------------
+	// ----------------------------------------
+	var $horizontal = $('<div>').addClass('controls horizontal');
+	var $leftdiv = $('<div>').append($('<span>').addClass(
+		'fa fa-chevron-left'));
+	var $rightdiv = $('<div>').append($('<span>').addClass('fa fa-chevron-right'));
+	// ----------------------------------------
+	// END Horizontal  ------------------
+	// ----------------------------------------
+	
+
+	// ----------------------------------------
+	// Build Final ------------------
+	// ----------------------------------------
+
+	if (opts.sliderButtonsUpDownEnable) {
+		$vertical1.append($updiv);
+		$vertical2.append($downdiv);
+	}
+
+	if (opts.sliderButtonsRightLeftEnable) {
+		$horizontal.append($leftdiv,$rightdiv);
+	}
+
+	$controlFrame.append($vertical1).append($horizontal).append($vertical2);
+
+	// append controlframe to 'this' carousel
+	// pass this to a variable first and use here
+	thisCarousel.append($controlFrame);
+	// ----------------------------------------
+	// END Build Final  ------------------
+	// ----------------------------------------	
+
+}
+
 t6D1.horizontalEvents = function () {
 
 	// these need to be changed to use event delegation because if the buttons are dynamically generated, regular event handling won't work
@@ -531,6 +595,8 @@ t6D1.changeTransOriginZOffset();
 
 t6D1.setInitialRingPosition();
 t6D1.setBaseZOffsetValue();
+
+t6D1.buildControls();
 
 ////////////////////////////////////////////
 // 		END INIT
