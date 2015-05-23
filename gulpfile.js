@@ -52,7 +52,7 @@ gulp.task('sass', function () {
 		            browsers: ['last 2 versions'],
 		            cascade: false
 		        }))
-		        .pipe(minifyCss({compatibility: 'ie8'}))
+		        // .pipe(minifyCss({compatibility: 'ie8'}))
 				.pipe(gulp.dest('css/'))
 				.pipe(browserSync.stream());
 
