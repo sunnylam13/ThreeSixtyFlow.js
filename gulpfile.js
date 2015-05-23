@@ -71,8 +71,6 @@ gulp.task('sass', function () {
 // 		BROWSER SYNC
 ////////////////////////////////////////////
 
-// Thursday, May 21, 2015 5:46 PM:  not operational
-
 gulp.task('server', ['sass','jade'], function() {
 
     browserSync.init({
