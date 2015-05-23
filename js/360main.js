@@ -378,6 +378,53 @@ t6D1.galleryspinUpDown = function (verString) {
 ////////////////////////////////////////////
 
 ////////////////////////////////////////////
+// 		IMAGE ALTERATIONS
+////////////////////////////////////////////
+// if we directly alter the images in some way, place methods here
+
+t6D1.extractRotateXAngle = function (objItem) {
+
+	var spinnerVal = objItem.css('transform');
+	console.log('spinnerVal is %s',spinnerVal);
+	// extract the rotateX value (i.e. -90deg)
+	var spinnerExtract = spinnerVal.match(/(rotateX)(\(\-*\d+\w+\))/gm).toString().match(/(\-*\d+\w+)/gm).toString().match(/(\-*\d+)/gm).toString();
+	console.log(spinnerExtract);
+
+	return spinnerExtract;
+}
+
+t6D1.imageRotateZ = function () {
+	// function to rotate the images to match rotateX angle of the #spinner
+	// i.e. rotateZ of image matches rotateX of spinner
+	
+	// EXAMPLE:  transform: rotateY(90deg) rotateX(-90deg) translateY(-6.5em) translateX(-9em)
+
+	// grab the transform value of the #spinner
+	var spinnerVal = t6D1.spinner.css('transform');
+	console.log('spinnerVal is %s',spinnerVal);
+	// extract the rotateX value (i.e. -90deg)
+	var spinnerExtract = spinnerVal.match(/(rotateX)(\(\-*\d+\w+\))/gm).toString().match(/(\-*\d+\w+)/gm).toString();
+	console.log(spinnerExtract);
+
+	// grab the transform value of the #spinner img
+	// add the extracted value to the string
+	// set the transform of #spinner img (by looping)
+	
+	if (rotateZImages) {
+		expression
+	}
+
+	$.each(t6D1.items1, function(index, objItem) {
+		//
+	});
+
+}
+
+////////////////////////////////////////////
+// 		END IMAGE ALTERATIONS
+////////////////////////////////////////////
+
+////////////////////////////////////////////
 // 		AUTO SCROLL
 ////////////////////////////////////////////
 t6D1.autoScrollHorizontal = function () {

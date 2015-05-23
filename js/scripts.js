@@ -179,6 +179,23 @@ t6DTest1.getTransOriginZOffset = function () {
 	return currentZOffSet;
 }
 
+// not working
+// currently matrix3d
+t6DTest1.extractRotateXAngle = function (objItem) {
+
+	var spinnerVal = objItem;
+
+	spinnerVal.style.webkitTransform = matrix.toString();
+
+	var matrix = new WebKitCSSMatrix(spinnerVal.style.webkitTransform);
+	var rotationX = Math.acos(matrix.a) * (180/pi);
+	var rotationY = Math.asin(matrix.b) * (180/pi);
+
+	console.log('spinnerVal is %s',rotationX);
+
+	return rotationX;
+}
+
 ////////////////////////////////////////////
 // 		END TEST THESE FUNCTIONS
 ////////////////////////////////////////////
