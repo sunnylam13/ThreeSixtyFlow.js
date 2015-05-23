@@ -9,6 +9,7 @@ var concat = require('gulp-concat');
 var autoprefixer = require('gulp-autoprefixer');
 var minifyCss = require('gulp-minify-css');
 var browserSync = require('browser-sync').create();
+var reload = browserSync.reload;
 var jade = require('gulp-jade');
 var plumber = require('gulp-plumber');
 
@@ -20,6 +21,7 @@ gulp.task('jade', function() {
   var jade_locals = {};
  
   return gulp.src('./*.jade')
+  	.pipe(plumber())
     .pipe(jade({
       locals: jade_locals,
       pretty: true
@@ -48,11 +50,12 @@ gulp.task('sass', function () {
 		            browsers: ['last 2 versions'],
 		            cascade: false
 		        }))
-		        // .pipe(minifyCss({compatibility: 'ie8'}))
+		        .pipe(minifyCss({compatibility: 'ie8'}))
 				.pipe(gulp.dest('css/'))
 				.pipe(browserSync.stream());
 
 });
+
 
 ////////////////////////////////////////////
 // 		END SASS COMPILE
@@ -68,15 +71,23 @@ gulp.task('sass', function () {
 
 // Thursday, May 21, 2015 5:46 PM:  not operational
 
-gulp.task('server', ['sass'], function() {
+gulp.task('server', ['sass','jade'], function() {
 
     browserSync.init({
         server: "./",
     });
 
     gulp.watch("css/*.scss", ['sass']);
+    // to get SASS partials to trigger changes
+    // the SCSS partials need to be in their own folder because css/*.scss causes all of them to trigger in the same directory, in the order they currently are which messes up everything
+    gulp.watch("css/partials/*.scss", ['sass']);
+    gulp.watch('./*.jade',['jade']);
+    // to get jade partials to trigger changes
+    gulp.watch('includes/*.jade',['jade']);
+    // whenever the .css file changes reload
+    gulp.watch("css/*.css").on('change', reload);
+    // whenever the .html file changes reload
     gulp.watch("*.html").on('change', reload);
-
 });
 
 ////////////////////////////////////////////
@@ -90,10 +101,7 @@ gulp.task('server', ['sass'], function() {
 ////////////////////////////////////////////
 
 gulp.task('default', ['server'], function () {	
-	gulp.watch('css/*.scss', ['sass']);
-	gulp.watch('./*.jade',['jade']);
-	// gulp.watch('./',['server']);
-	// gulp.watch("*.html").on('change', reload);
+	// place everything in here in 'server'
 });
 
 ////////////////////////////////////////////
