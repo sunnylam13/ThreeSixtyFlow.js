@@ -20,7 +20,7 @@ This plugin isn't for every developer's case.
 * This plugin does not make the 3D image carousel responsive.
 * The images do not rotate images when the carousel is vertical in any way at this time due to a limitation on the way `transform-origin` was used.
 * If you set the carousel to be perfectly vertical on the screen like a pole, the images will rotate so that they're in the right orientation however it's not perfect... yet.
-* The size of image items or other display items is limited to 425px at this time.
+* The size of image items or other display items is limited to 425px at this time.  (You can change this in the CSS however you'll have to play with the `translateY` and `translateX` plugin options -- see below.)
 
 If neither of these facts is an issue for you, feel free to grab this plugin and use it.
 
@@ -60,3 +60,216 @@ You will find most of the test/demo code in `mixins.project.041415.1.jade`.
 
 ### CSS
 
+The original CSS code was written with SCSS however it was compiled to an un-minified version (`style.css`).
+
+The un-minified CSS however lacks any comments.
+
+If you want to change the stylesheet you should reference `style.css` and overwrite the properties in your own customized stylesheet that is loaded last in your HTML or Jade file.
+
+You should probably use the SCSS file if you can.  
+
+The file to use is `360main.scss` in the `css/partials/` folder.
+
+NOTE:  The stylesheet does import Font Awesome 4.3.0 for the slider buttons.
+
+### Javascript
+
+The Javascript is un-minified so if you need to "peek under the hood" you shouldn't have any trouble.
+
+What follows are use cases.
+
+#### Basic Use Case
+
+To use the plugin simply give it a reference.
+
+For example:
+
+	var $parentElement = $('#carousel');
+
+	$parentElement.threeSixtyDim();
+
+This will create your ThreeSixtyFlow carousel with the default options.
+
+#### Passing Options Case
+
+What if you don't want the default settings?
+
+You can pass options to the plugin using an object.
+
+**Example**: Setting the carousel to automatically scroll and rotate to the right.
+
+	var $parentElement = $('#carousel');
+
+	var tDOptions = {
+		autoScrollHorizontalEnable: true,
+		autoScrollToRight: true
+	};
+
+	$parentElement.threeSixtyDim(tDOptions);
+
+or...
+
+	var $parentElement = $('#carousel');
+
+	$parentElement.threeSixtyDim({
+		autoScrollHorizontalEnable: true,
+		autoScrollToRight: true
+	});
+
+The full list of options is detailed below.
+
+### Options
+
+Here are the current options you can use.
+
+#### upDownIncrement
+
+*Default*:  `7`
+*Units*: `deg`
+
+The value is the number of degrees either up or down that the carousel shifts when you click one of the vertical slider buttons.
+
+#### baseZOffsetValue
+
+*Default*:  `-2000`
+*Units*: `px`
+
+The value is the number of pixels that the #spinner and your images (or elements) are from the origin.  
+
+Typically this is `transform-origin: 50% 50% -2000px`.  
+
+The -2000 is the recommended value in almost all cases and works well for sets of 45 images or more.  
+
+The plugin automatically changes the z-offset value as the number of items in the carousel increases.
+
+#### changeInitialRingPosition
+
+*Default*: `false`
+
+Setting this to `true` allows you to rotate the carousel on page load to a certain angled position.
+
+Normal slider rotations using buttons won't work normally however.
+
+For anything to happen, you must also change `rotateX` and/or `rotateY` options.
+
+#### itemTarget
+
+*Default*: `'#spinner img'`
+
+By default, the plugin finds `#spinner img` to build your 3D carousel.
+
+If you want to display something else however like a PDF in an `<iframe>` for example then you might change this to `#spinner iframe`.
+
+This assumes that the `<img>` or other element is wrapped by a `<li>` element.
+
+#### rotateX
+
+*Default*: `0`
+*Units*: `deg`
+
+This is the number of degrees that the carousel is rotated from the X axis or horizontal plane.
+
+To change the initial rotation of the carousel upon page load, `changeInitialRingPosition` must be `true`.
+
+#### rotateY
+
+*Default*: `0`
+*Units*: `deg`
+
+This is the number of degrees that the carousel is rotated from the Y axis or vertical plane.
+
+To change the initial rotation of the carousel upon page load, `changeInitialRingPosition` must be `true`.
+
+#### translateY
+
+*Default*: `-6.5`
+*Units*: `em`
+
+This is the number of `em` that the carousel and its children are shifted from the origin along the Y axis. 
+
+It is used with the `translateX` property to centre the first loaded image in the screen.
+
+If you change the size of the images in the CSS you may have to change this option.
+
+To change the initial rotation of the carousel upon page load, `changeInitialRingPosition` must be `true`.
+
+#### translateX
+
+*Default*: `-9`
+*Units*: `em`
+
+This is the number of `em` that the carousel and its children are shifted from the origin along the X axis. 
+
+It is used with the `translateY` property to centre the first loaded image in the screen.
+
+If you change the size of the images in the CSS you may have to change this option.
+
+To change the initial rotation of the carousel upon page load, `changeInitialRingPosition` must be `true`.
+
+#### autoScrollHorizontalTime
+
+*Default*: `10000`
+*Units*: ms (1000 ms = 1s)
+
+This is the amount of delay time before the carousel rotates to the next image (so that that image is front and centre).
+
+`autoScrollHorizontalEnable` must be `true` for this to matter.
+
+#### autoScrollVerticalTime
+
+*Default*: `100`
+*Units*: ms (1000 ms = 1s)
+
+This is the amount of delay time before the carousel rotates along the X axis.
+
+`autoScrollVerticalEnable` must be `true` for this to matter.
+
+#### autoScrollHorizontalEnable
+
+*Default*: `false`
+
+This is the auto scroll or rotate feature that spins the #spinner so that the next image is front and centre.
+
+The amount of time before scrolling happens is set by `autoScrollHorizontalTime`.  
+
+The direction is controlled by `autoScrollToRight` and `autoScrollToLeft`.
+
+#### autoScrollVerticalEnable
+
+*Default*: `false`
+
+This rotation feature is mostly for fun than for any practical use.
+
+The carousel acts like a paddlewheel of a steam boat.
+
+The amount of time before scrolling happens is set by `autoScrollVerticalTime`.  
+
+The direction is controlled by `autoScrollToTop` and `autoScrollToBottom`.
+
+#### autoScrollToRight
+
+*Default*: `true`
+
+#### autoScrollToLeft
+
+*Default*: `false`
+
+#### autoScrollToTop
+
+*Default*: `true`
+
+#### autoScrollToBottom
+
+*Default*: `false`
+
+#### sliderButtonsRightLeftEnable
+
+*Default*: `true`
+
+#### sliderButtonsUpDownEnable
+
+*Default*: `true`
+
+#### rotateZImages
+
+*Default*: `true`
