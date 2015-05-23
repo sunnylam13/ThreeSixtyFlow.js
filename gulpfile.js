@@ -86,6 +86,8 @@ gulp.task('server', ['sass','jade'], function() {
     gulp.watch('./*.jade',['jade']);
     // to get jade partials to trigger changes
     gulp.watch('includes/*.jade',['jade']);
+    // whenever the .js files change reload
+    gulp.watch("js/*.js").on('change', reload);
     // whenever the .css file changes reload
     gulp.watch("css/*.css").on('change', reload);
     // whenever the .html file changes reload
