@@ -27,6 +27,8 @@ t6D2.devSettings = {
 	upDownIncrement: 7,
 	baseZOffsetValue: -2000,
 	changeInitialRingPosition: true,
+	// item targets
+	itemTarget: '#spinner img',
 	// these are the default values for starting position of #spinner
 	rotateX: -90,
 	rotateY: 90,
