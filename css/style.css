@@ -524,4 +524,33 @@ section#carousel .controls.horizontal {
     align-content: flex-end; }
 
 .largeModal1 {
-  color: white; }
+  color: white;
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  right: 10%;
+  left: 10%; }
+
+.largeModal1 .imgFrame img {
+  max-width: 100%;
+  border-radius: 10px; }
+
+.largeModal1 .caption {
+  text-align: center;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }

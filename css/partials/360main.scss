@@ -337,6 +337,31 @@ section#carousel .controls.horizontal {
 
 .largeModal1 {
 	color: white;
+
+	position: absolute;
+	$absoluteAnchorVal: 10%;
+	top: $absoluteAnchorVal;
+	bottom: $absoluteAnchorVal;
+	right: $absoluteAnchorVal;
+	left: $absoluteAnchorVal;
+
+	// DEFAULT STATUS
+	// display:none;
+
+}
+
+.largeModal1 .imgFrame img {
+	max-width: 100%;
+	border-radius: 10px;
+}
+
+.largeModal1 .caption {
+	text-align: center;
+	@include sectionPadding041515(1%,1%);
+
+	//flexbox parent
+	@include flexboxColumn1;
+
 }
 
 ////////////////////////////////////////////

@@ -102,6 +102,7 @@ mixin largeModal1
 			.imgFrame
 				//- NOTE:  using largest possible image for test... if using actual images for carousel you'll need to make sure that there are larger versions of the carousel images if thumbnails are smaller
 				//- If we're not using images we can empty this frame out and fill it with something else
+				//- we re-use the same control buttons to shift the images and it should change the image as that happens (event: on change)
 				img(src="http://lorempixel.com/1400/700")
 			//- END IMAGE
 			
@@ -112,9 +113,9 @@ mixin largeModal1
 			.caption
 				//- placeholder text
 				//- suggest using a data-attribute with the img elements for extraction... instead of extracting a title tag or one could check for a title tag
-				h2 Your h2 Title goes here
-				p Your caption goes here
-				blockquote Your blockquote goes here
+				//- h2 Your h2 Title goes here if enabled/data provided
+				p Your caption goes here if enabled/data provided
+				//- blockquote Your blockquote goes here if enabled/data provided
 
 			//- END CAPTION
 
