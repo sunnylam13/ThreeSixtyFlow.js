@@ -283,54 +283,6 @@ t6D1.craftSpinnerString = function (rotY, rotX, transY, transX) {
 	return transformObj;
 }
 
-t6D1.galleryspin = function (horString,verString,transformObj) {
-
-	// where horString is the "left" or "right" string passed from the previous/next buttons
-	// where verString is the "up" or "down" string passed from the up/down buttons
-
-	// just realized that the angle adjustments must match the angle increments you calculated in object.itemAngles() method
-
-	// this is used for the previous and next buttons
-	if (horString == "left") {
-		t6D1.angleYVer -= t6D1.degreeConstant;
-		console.log(t6D1.angleYVer);
-	} else if (horString == "right") {
-		t6D1.angleYVer += t6D1.degreeConstant;
-		
-		console.log(t6D1.angleYVer);
-	}
-
-	// if (horString == "left") {
-	// 	t6D1.angleYVer -= t6D1.degreeConstant;
-	// 	console.log(t6D1.angleYVer);
-	// } else {
-	// 	t6D1.angleYVer += t6D1.degreeConstant;
-		
-	// 	console.log(t6D1.angleYVer);
-	// }
-
-	// this is used for up and down buttons
-	if (verString == "down") {
-		t6D1.angleXHor -= opts.upDownIncrement;
-		console.log(t6D1.angleXHor);
-	} else if (verString == "up") {
-		t6D1.angleXHor += opts.upDownIncrement;
-		console.log(t6D1.angleXHor);
-	}
-
-	// if (verString == "down") {
-	// 	t6D1.angleXHor -= opts.upDownIncrement;
-	// 	console.log(t6D1.angleXHor);
-	// } else {
-	// 	t6D1.angleXHor += opts.upDownIncrement;
-	// 	console.log(t6D1.angleXHor);
-	// }
-
-	// EXAMPLE:  transform: rotateY(0deg) rotateX(0deg) translateY(-6.5em) translateX(-9em);
-
-	t6D1.spinner.css(transformObj);
-}
-
 t6D1.galleryspinLeftRight = function (horString) {
 
 	// where horString is the "left" or "right" string passed from the previous/next buttons
