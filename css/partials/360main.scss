@@ -11,7 +11,8 @@
 
 // the z-offset should be increased by -1000px for every 36 gallery items that exceeds 36... use Javascript
 $transOriginZOffset: -2000px;
-$viewPortHeight: 100vh;
+// for testing use 100vh, for default use 50vh
+$viewPortHeight: 50vh;
 
 ////////////////////////////////////////////
 // 		END VARIABLES

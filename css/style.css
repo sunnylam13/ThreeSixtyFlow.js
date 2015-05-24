@@ -239,7 +239,7 @@ p {
   perspective: 200px;
   background: #100000;
   /*margin-bottom: 3rem;*/
-  height: 100vh;
+  height: 50vh;
   overflow: hidden;
   position: relative;
   display: -webkit-flex;
@@ -411,7 +411,7 @@ ul.spinner img:nth-child(11) {
     cursor: pointer; }
 
 .carousel .controls.vertical1, .carousel .controls.vertical2 {
-  height: 50vh;
+  height: 25vh;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;

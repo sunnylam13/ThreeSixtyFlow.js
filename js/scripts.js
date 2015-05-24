@@ -24,6 +24,11 @@ t6D2.carouselRef = $('.carousel');
 // place this inside t6D2.carouselRef.threeSixtyDim()
 t6D2.devSettings = {
 
+	// carousel parent
+	carouselDimensionSet: true,
+	carouselWidth: "100%",
+	carouselHeight: "50vh"
+
 	// auto scroll testing
 	// autoScrollHorizontalTime: 1000,
 	// autoScrollVerticalTime: 100,

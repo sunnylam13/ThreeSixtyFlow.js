@@ -126,6 +126,32 @@ The full list of options is detailed below.
 
 Here are the current options you can use.
 
+#### carouselDimensionSet
+
+*Default*: `false`
+
+Setting this to true allows you to set the carousel's width and height through `carouselWidth` and `carouselHeight` options.
+
+#### carouselWidth
+
+*Default*: ` "100%" `
+
+It's assumed that you're calling the plugin on a block element that serves as the parent for the `.spinner`.
+
+Changing this option allows you to change the width however there's no guarantee that the carousel will be centred at that point.
+
+It's best to leave this at default.
+
+`carouselDimensionSet` must be true for this option to work.
+
+#### carouselHeight
+
+*Default*: ` "50vh" `
+
+For use on sites the default is `50vh` however for testing you might want to use `100vh` instead.
+
+`carouselDimensionSet` must be true for this option to work.
+
 #### upDownIncrement
 
 *Default*:  `7`

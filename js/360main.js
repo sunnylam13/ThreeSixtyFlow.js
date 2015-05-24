@@ -41,7 +41,10 @@ t6D1.netDegrees = 360;
 
 // default options
 t6D1.defaults1 = {
-
+	// carousel parent
+	carouselDimensionSet: false,
+	carouselWidth: "100%",
+	carouselHeight: "50vh",
 	// spinner
 	upDownIncrement: 7,
 	baseZOffsetValue: -2000,
@@ -321,6 +324,26 @@ t6D1.setInitialRingPosition = function () {
 // 		END HELPERS
 ////////////////////////////////////////////
 
+
+////////////////////////////////////////////
+// 		CAROUSEL PARENT
+////////////////////////////////////////////
+
+t6D1.carouselDimensions = function () {
+	// this function uses JS to set the custom dimensions of the parent carousel
+
+	if (opts.carouselDimensionSet) {
+		thisCarousel.css({
+			width: opts.carouselWidth,
+			height: opts.carouselHeight
+		});
+	}
+
+}
+
+////////////////////////////////////////////
+// 		END CAROUSEL PARENT
+////////////////////////////////////////////
 
 
 ////////////////////////////////////////////
@@ -901,6 +924,7 @@ t6D1.largeModal1 = function () {
 ////////////////////////////////////////////
 // simply call the relevant methods/functions
 
+t6D1.carouselDimensions();
 t6D1.itemAngles();
 
 t6D1.horizontalEvents();
