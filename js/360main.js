@@ -767,8 +767,6 @@ t6D1.largeModal1 = function () {
 			var $largeModalRef = $("body").find(".largeModal1");
 		}
 
-
-
 		// make the large modal appear
 		$largeModalRef.css({
 			display: 'flex',
@@ -777,7 +775,15 @@ t6D1.largeModal1 = function () {
 	});
 
 	// when you click anywhere or hit a key, make the modal disappear
+	$(".largeModal1").on('click', function() {
+		$(this).fadeOut('400').css('z-index', '0');
+	});
 
+	$(document).keyup(function(e) {
+		if (e.keyCode == 27 ) {
+			$(".largeModal1").fadeOut(400).css('z-index', '0');
+		}
+	});
 }
 
 ////////////////////////////////////////////
