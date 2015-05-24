@@ -125,6 +125,7 @@ Here are the current options you can use.
 #### upDownIncrement
 
 *Default*:  `7`
+
 Units: `deg`
 
 The value is the number of degrees either up or down that the carousel shifts when you click one of the vertical slider buttons.
@@ -132,6 +133,7 @@ The value is the number of degrees either up or down that the carousel shifts wh
 #### baseZOffsetValue
 
 *Default*:  `-2000`
+
 Units: `px`
 
 The value is the number of pixels that the #spinner and your images (or elements) are from the origin.  
@@ -165,6 +167,7 @@ This assumes that the `<img>` or other element is wrapped by a `<li>` element.
 #### rotateX
 
 *Default*: `0`
+
 Units: `deg`
 
 This is the number of degrees that the carousel is rotated from the X axis or horizontal plane.
@@ -174,6 +177,7 @@ To change the initial rotation of the carousel upon page load, `changeInitialRin
 #### rotateY
 
 *Default*: `0`
+
 Units: `deg`
 
 This is the number of degrees that the carousel is rotated from the Y axis or vertical plane.
@@ -183,6 +187,7 @@ To change the initial rotation of the carousel upon page load, `changeInitialRin
 #### translateY
 
 *Default*: `-6.5`
+
 Units: `em`
 
 This is the number of `em` that the carousel and its children are shifted from the origin along the Y axis. 
@@ -196,6 +201,7 @@ To change the initial rotation of the carousel upon page load, `changeInitialRin
 #### translateX
 
 *Default*: `-9`
+
 Units: `em`
 
 This is the number of `em` that the carousel and its children are shifted from the origin along the X axis. 
@@ -209,6 +215,7 @@ To change the initial rotation of the carousel upon page load, `changeInitialRin
 #### autoScrollHorizontalTime
 
 *Default*: `10000`
+
 Units: ms (1000 ms = 1s)
 
 This is the amount of delay time before the carousel rotates to the next image (so that that image is front and centre).
@@ -218,6 +225,7 @@ This is the amount of delay time before the carousel rotates to the next image (
 #### autoScrollVerticalTime
 
 *Default*: `100`
+
 Units: ms (1000 ms = 1s)
 
 This is the amount of delay time before the carousel rotates along the X axis.
