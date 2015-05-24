@@ -525,7 +525,7 @@ t6D1.autoScrollPause = function (scrollAxis,intervalItem,gallerySpinDir,scrollTi
 			console.log('t6D1.autoScrollPauseStateH is %', t6D1.autoScrollPauseStateH);
 
 			// you need the condition check to occur in the same if else statement, using two ifs results in two checks
-			$(document).on('click', function(e) {
+			thisCarousel.on('click', function(e) {
 				e.preventDefault();
 				e.stopPropagation();
 				if (t6D1.autoScrollPauseStateH == "off" && opts.autoScrollPauseEnabled) {
@@ -556,7 +556,7 @@ t6D1.autoScrollPause = function (scrollAxis,intervalItem,gallerySpinDir,scrollTi
 			// set initial autoscrollpausestate to false
 			t6D1.autoScrollPauseStateV = "off";
 
-			$(document).on('click', function(e) {
+			thisCarousel.on('click', function(e) {
 				e.preventDefault();
 				e.stopPropagation();
 				if (t6D1.autoScrollPauseStateV == "off" && opts.autoScrollPauseEnabled) {
