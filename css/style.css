@@ -529,7 +529,8 @@ section#carousel .controls.horizontal {
   top: 10%;
   bottom: 10%;
   right: 10%;
-  left: 10%; }
+  left: 10%;
+  display: none; }
 
 .largeModal1 .imgFrame img {
   max-width: 100%;
