@@ -516,6 +516,8 @@ t6D1.autoScrollPause = function (scrollAxis,intervalItem,gallerySpinDir,scrollTi
 	// where scrollAxis = "horizontal", "vertical"
 	// where gallerySpinDir = "left", "right", "up", "down"
 
+	// Sunday, May 24, 2015 6:46 PM:  due to using a single variable to store the intervals for horizontal and vertical, if there are multiple auto-scrolls on the same page, stopping one stops them all
+
 	switch(scrollAxis) {
 		case "horizontal":
 			// set initial autoscrollpausestate to false
