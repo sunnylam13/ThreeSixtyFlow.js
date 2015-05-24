@@ -47,7 +47,7 @@ t6D1.defaults1 = {
 	baseZOffsetValue: -2000,
 	changeInitialRingPosition: false,
 	// item targets
-	itemTarget: '#spinner img',
+	itemTarget: '.spinner img',
 	// these are the default values for starting position of #spinner
 	rotateX: 0,
 	rotateY: 0,
@@ -86,7 +86,7 @@ var opts = $.extend(t6D1.defaults1, options);
 // Spinner  ------------------
 // ----------------------------------------
 // t6D1.items1 holds the items in the gallery... whether they're images or a div
-t6D1.spinner = this.find('#spinner');
+t6D1.spinner = this.find('.spinner');
 // t6D1.spinner = $('#spinner');
 t6D1.items1 = this.find(opts.itemTarget);
 // t6D1.items1 = $('#spinner img');

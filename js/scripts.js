@@ -14,7 +14,7 @@ var t6D2 = {};
 // this object is used to hold functions for testing
 var t6DTest1 = {};
 
-t6D2.carouselRef = $('#carousel');
+t6D2.carouselRef = $('.carousel');
 
 // ----------------------------------------
 // YOUR DEVELOPER SETTINGS  ------------------
@@ -25,15 +25,14 @@ t6D2.carouselRef = $('#carousel');
 t6D2.devSettings = {
 
 	// auto scroll testing
-	// // auto scroll
 	// autoScrollHorizontalTime: 1000,
 	// autoScrollVerticalTime: 100,
 	// autoScrollHorizontalEnable: false,
 	// autoScrollVerticalEnable: true,
 	// autoScrollToRight: true,
 	// autoScrollToLeft: false,
-	// autoScrollToTop: true,
-	// autoScrollToBottom: false,
+	// autoScrollToTop: false,
+	// autoScrollToBottom: true,
 	// autoScrollPauseEnabled: true
 };
 // ----------------------------------------

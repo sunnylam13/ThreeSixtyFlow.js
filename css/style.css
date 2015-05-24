@@ -234,7 +234,7 @@ p {
   margin-bottom: 20px;
   font-size: 16px; }
 
-section#carousel {
+.carousel {
   -webkit-perspective: 200px;
   perspective: 200px;
   background: #100000;
@@ -267,11 +267,11 @@ section#carousel {
   -ms-flex-align: center;
   align-items: center; }
 
-ul#spinner {
+ul.spinner {
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   /*change the origin for the animation... The transform-origin CSS property lets you modify the origin for transformations of an element.  A -ve z-offset means into the page usually unless the element has already been rotated, while +ve means towards the user's eye. */
-  /*the z-offset of the ul#spinner must match those of the img's within it*/
+  /*the z-offset of the ul.spinner must match those of the img's within it*/
   -webkit-transform-origin: 50% 50% -2000px;
   transform-origin: 50% 50% -2000px;
   -webkit-transition: all 1s ease-in;
@@ -282,61 +282,61 @@ ul#spinner {
   transform: rotateY(0deg) rotateX(0deg) translateY(-6.5em) translateX(-9em);
   z-index: 5; }
 
-ul#spinner li {
+ul.spinner li {
   max-width: 425px;
   outline: 1px solid transparent; }
 
-ul#spinner img {
+ul.spinner img {
   max-width: 425px;
   position: absolute;
   -webkit-transform-origin: 50% 50% -2000px;
   transform-origin: 50% 50% -2000px;
   outline: 1px solid transparent; }
 
-ul#spinner li:nth-child(1) img {
+ul.spinner li:nth-child(1) img {
   -webkit-transform: rotateY(0deg);
   transform: rotateY(0deg); }
 
-ul#spinner li:nth-child(2) img {
+ul.spinner li:nth-child(2) img {
   /*-ve degrees are counter clockwise*/
   -webkit-transform: rotateY(-45deg);
   transform: rotateY(-45deg); }
 
-ul#spinner li:nth-child(3) img {
+ul.spinner li:nth-child(3) img {
   -webkit-transform: rotateY(-90deg);
   transform: rotateY(-90deg); }
 
-ul#spinner li:nth-child(4) img {
+ul.spinner li:nth-child(4) img {
   -webkit-transform: rotateY(-135deg);
   transform: rotateY(-135deg); }
 
-ul#spinner li:nth-child(5) img {
+ul.spinner li:nth-child(5) img {
   -webkit-transform: rotateY(-180deg);
   transform: rotateY(-180deg); }
 
-ul#spinner li:nth-child(6) img {
+ul.spinner li:nth-child(6) img {
   -webkit-transform: rotateY(-225deg);
   transform: rotateY(-225deg); }
 
-ul#spinner li:nth-child(7) img {
+ul.spinner li:nth-child(7) img {
   -webkit-transform: rotateY(-270deg);
   transform: rotateY(-270deg); }
 
-ul#spinner li:nth-child(8) img {
+ul.spinner li:nth-child(8) img {
   -webkit-transform: rotateY(-315deg);
   transform: rotateY(-315deg); }
 
-/*ul#spinner img:nth-child(9) {
+/*ul.spinner img:nth-child(9) {
 	transform: rotateY(-360deg);
 }*/
-/*ul#spinner img:nth-child(10) {
+/*ul.spinner img:nth-child(10) {
 	transform: rotateY(-405deg);
 }
 
-ul#spinner img:nth-child(11) {
+ul.spinner img:nth-child(11) {
 	transform: rotateY(-450deg);
 }*/
-section#carousel .controlframe {
+.carousel .controlframe {
   width: 100%;
   position: absolute;
   top: 0;
@@ -358,7 +358,7 @@ section#carousel .controlframe {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center; }
-  section#carousel .controlframe .controls span.fa {
+  .carousel .controlframe .controls span.fa {
     color: black;
     background: white;
     width: 2em;
@@ -393,24 +393,24 @@ section#carousel .controlframe {
     -moz-transition: all 0.5s ease-in;
     -o-transition: all 0.5s ease-in;
     -ms-transition: all 0.5s ease-in; }
-    section#carousel .controlframe .controls span.fa.fa-chevron-up {
+    .carousel .controlframe .controls span.fa.fa-chevron-up {
       padding: 0 0 12% 4%;
       margin-top: 25%; }
-    section#carousel .controlframe .controls span.fa.fa-chevron-down {
+    .carousel .controlframe .controls span.fa.fa-chevron-down {
       padding: 0 0 2% 4%;
       margin-bottom: 25%; }
-    section#carousel .controlframe .controls span.fa.fa-chevron-left {
+    .carousel .controlframe .controls span.fa.fa-chevron-left {
       padding-right: 2.5%;
       margin-left: 2%; }
-    section#carousel .controlframe .controls span.fa.fa-chevron-right {
+    .carousel .controlframe .controls span.fa.fa-chevron-right {
       padding-left: 2.5%;
       margin-right: 2%; }
-  section#carousel .controlframe .controls span.fa:hover {
+  .carousel .controlframe .controls span.fa:hover {
     color: white;
     background: #2ecc71;
     cursor: pointer; }
 
-section#carousel .controls.vertical1, section#carousel .controls.vertical2 {
+.carousel .controls.vertical1, .carousel .controls.vertical2 {
   height: 50vh;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -437,17 +437,17 @@ section#carousel .controls.vertical1, section#carousel .controls.vertical2 {
   -ms-flex-line-pack: center;
   align-content: center; }
 
-section#carousel .controls.vertical1 {
+.carousel .controls.vertical1 {
   -webkit-align-items: flex-start;
   -ms-flex-align: start;
   align-items: flex-start; }
 
-section#carousel .controls.vertical2 {
+.carousel .controls.vertical2 {
   -webkit-align-items: flex-end;
   -ms-flex-align: end;
   align-items: flex-end; }
 
-section#carousel .controls.horizontal {
+.carousel .controls.horizontal {
   width: 100%;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -473,11 +473,11 @@ section#carousel .controls.horizontal {
   -webkit-align-content: center;
   -ms-flex-line-pack: center;
   align-content: center; }
-  section#carousel .controls.horizontal div {
+  .carousel .controls.horizontal div {
     -webkit-flex: 1 50%;
     -ms-flex: 1 50%;
     flex: 1 50%; }
-  section#carousel .controls.horizontal div:nth-child(1) {
+  .carousel .controls.horizontal div:nth-child(1) {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
@@ -499,7 +499,7 @@ section#carousel .controls.horizontal {
     -webkit-align-content: flex-start;
     -ms-flex-line-pack: start;
     align-content: flex-start; }
-  section#carousel .controls.horizontal div:nth-child(2) {
+  .carousel .controls.horizontal div:nth-child(2) {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;

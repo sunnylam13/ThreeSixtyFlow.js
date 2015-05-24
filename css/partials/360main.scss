@@ -35,7 +35,7 @@ $viewPortHeight: 100vh;
 // 		CAROUSEL
 ////////////////////////////////////////////
 
-section#carousel {
+.carousel {
 	// /* need to set a perspective on the parent of all elements and children here */
 	perspective: 200px;
 	background: #100000;
@@ -50,7 +50,7 @@ section#carousel {
 	position: relative;
 
 	//flexbox parent
-	//this is used to centre ul#spinner which has no dimensions, it is just a point on the page
+	//this is used to centre ul.spinner which has no dimensions, it is just a point on the page
 	@include flexboxColumn1;
 	// @include flexboxRow1;
 	justify-content: center;
@@ -73,11 +73,11 @@ section#carousel {
 // NOTE:  
 // Thursday, May 21, 2015 3:09 PM:  the wobbling occurs because the first image is where the origin point begins, once you rotate to another image that isn't the first, then when you rotate on the X axis the point of origin has changed
 
-ul#spinner {
+ul.spinner {
 	transform-style: preserve-3d;
 	// height: 300px;
 	/*change the origin for the animation... The transform-origin CSS property lets you modify the origin for transformations of an element.  A -ve z-offset means into the page usually unless the element has already been rotated, while +ve means towards the user's eye. */
-	/*the z-offset of the ul#spinner must match those of the img's within it*/
+	/*the z-offset of the ul.spinner must match those of the img's within it*/
 	transform-origin: 50% 50% $transOriginZOffset;
 	// transition: 1s;
 	@include transitionEffectAllEaseIn(1s);
@@ -85,7 +85,7 @@ ul#spinner {
 	// USER SELECTABLE
 	// change the plane of view so it seems like you're looking partially from the top at an angle... you must also add this to your Javascript otherwise it will be overwritten...
 	// may mean I need to set this on the images?
-	// we may have to manually translate ul#spinner x and y to the correct position
+	// we may have to manually translate ul.spinner x and y to the correct position
 	// the translation seems to correct the wobbling
 	transform: rotateY(0deg) rotateX(0deg) translateY(-6.5em) translateX(-9em);
 
@@ -97,7 +97,7 @@ ul#spinner {
 	// align-content:center;
 	// align-items:center;
 	
-	// make ul#spinner above the div.controlframe
+	// make ul.spinner above the div.controlframe
 	z-index: 5;
 }
 
@@ -105,7 +105,7 @@ ul#spinner {
 // IMAGES  ------------------
 // ----------------------------------------
 
-ul#spinner li {
+ul.spinner li {
 	// width: 40%;
 	max-width: 425px;
 	// position: absolute;
@@ -116,7 +116,7 @@ ul#spinner li {
 	outline: 1px solid transparent;
 }
 
-ul#spinner img {
+ul.spinner img {
 	// width: 40%;
 	max-width: 425px;
 	position: absolute;
@@ -130,55 +130,55 @@ ul#spinner img {
 // since we'll be using JS to set the rotateY of each image, this isn't necessary
 // NOTE:  if using ul li then the nth-child must be placed on the li and not the img
 
-ul#spinner li:nth-child(1) img {
+ul.spinner li:nth-child(1) img {
 	transform: rotateY(0deg);
 }
 
-ul#spinner li:nth-child(2) img {
+ul.spinner li:nth-child(2) img {
 	/*-ve degrees are counter clockwise*/
 	transform: rotateY(-45deg);
 }
 
-ul#spinner li:nth-child(3) img {
+ul.spinner li:nth-child(3) img {
 	transform: rotateY(-90deg);
 }
 
-ul#spinner li:nth-child(4) img {
+ul.spinner li:nth-child(4) img {
 	transform: rotateY(-135deg);
 }
 
-ul#spinner li:nth-child(5) img {
+ul.spinner li:nth-child(5) img {
 	transform: rotateY(-180deg);
 }
 
-ul#spinner li:nth-child(6) img {
+ul.spinner li:nth-child(6) img {
 	transform: rotateY(-225deg);
 }
 
-ul#spinner li:nth-child(7) img {
+ul.spinner li:nth-child(7) img {
 	transform: rotateY(-270deg);
 }
 
-ul#spinner li:nth-child(8) img {
+ul.spinner li:nth-child(8) img {
 	transform: rotateY(-315deg);
 }
 
-// ul#spinner li:nth-child(9) img {
+// ul.spinner li:nth-child(9) img {
 // 	transform: rotateY(-360deg);
 // }
 
 // /* you can only have a maximum of 360 degrees worth of images */
 
-/*ul#spinner img:nth-child(9) {
+/*ul.spinner img:nth-child(9) {
 	transform: rotateY(-360deg);
 }*/
 
 
-/*ul#spinner img:nth-child(10) {
+/*ul.spinner img:nth-child(10) {
 	transform: rotateY(-405deg);
 }
 
-ul#spinner img:nth-child(11) {
+ul.spinner img:nth-child(11) {
 	transform: rotateY(-450deg);
 }*/
 
@@ -199,7 +199,7 @@ ul#spinner img:nth-child(11) {
 // ----------------------------------------
 // Control Frame  ------------------
 // ----------------------------------------
-section#carousel .controlframe {
+.carousel .controlframe {
 	width: 100%;
 	position: absolute;
 	top: 0;
@@ -207,7 +207,7 @@ section#carousel .controlframe {
 	right:0;
 	left:0;
 
-	// we want the control frame horizontal to be over top of the #spinner in case images cross the buttons later... yet it must be below the vertical control frame
+	// we want the control frame horizontal to be over top of the .spinner in case images cross the buttons later... yet it must be below the vertical control frame
 	// Saturday, May 23, 2015 8:41 PML  having the control frame with higher z-index interferes with click events on the images
 	// z-index: 10;
 
@@ -269,7 +269,7 @@ section#carousel .controlframe {
 // ----------------------------------------
 // VERTICAL CONTROLS (UP, DOWN)  ------------------
 // ----------------------------------------
-section#carousel .controls.vertical1, section#carousel .controls.vertical2 {
+.carousel .controls.vertical1, .carousel .controls.vertical2 {
 
 	// set a height on the verticals so that the buttons are pushed to the upper and lower edges... away from the centre
 	height: $viewPortHeight/2;
@@ -281,11 +281,11 @@ section#carousel .controls.vertical1, section#carousel .controls.vertical2 {
 	align-content: center;
 }
 
-section#carousel .controls.vertical1 {
+.carousel .controls.vertical1 {
 	align-items: flex-start;
 }
 
-section#carousel .controls.vertical2 {
+.carousel .controls.vertical2 {
 	align-items: flex-end;
 }
 // ----------------------------------------
@@ -295,7 +295,7 @@ section#carousel .controls.vertical2 {
 // ----------------------------------------
 // HORIZONTAL CONTROLS (LEFT, RIGHT)  ------------------
 // ----------------------------------------
-section#carousel .controls.horizontal {
+.carousel .controls.horizontal {
 
 	width: 100%;
 
