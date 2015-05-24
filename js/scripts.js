@@ -94,6 +94,42 @@ t6D3.carouselRef3DemoSet = {
 };
 // END CHANGED INITIAL POSITION ------------------------------------------------
 
+// AUTOSCROLL HORIZONTAL ------------------------------------------------
+t6D3.carouselRef4 = $('.carousel.autoScrollH1');
+t6D3.carouselRef4DemoSet = {
+	autoScrollHorizontalEnable: true,
+	autoScrollHorizontalTime: 3000,
+	autoScrollPauseEnabled: true,
+	sliderButtonsUpDownEnable: false
+};
+// END AUTOSCROLL HORIZONTAL ------------------------------------------------
+
+// AUTOSCROLL VERTICAL ------------------------------------------------
+t6D3.carouselRef5 = $('.carousel.autoScrollV1');
+t6D3.carouselRef5DemoSet = {
+	autoScrollVerticalEnable: true,
+	autoScrollVerticalTime: 100,
+	autoScrollPauseEnabled: true,
+	sliderButtonsRightLeftEnable: false
+};
+// END AUTOSCROLL VERTICAL ------------------------------------------------
+
+// AUTOSCROLL HORIZONTAL VERTICAL  ------------------------------------------------
+
+// END AUTOSCROLL HORIZONTAL VERTICAL ------------------------------------------------
+t6D3.carouselRef6 = $('.carousel.autoScrollHV1');
+t6D3.carouselRef6DemoSet = {
+	// horizontal
+	autoScrollHorizontalEnable: true,
+	autoScrollHorizontalTime: 200,
+	autoScrollPauseEnabled: true,
+	sliderButtonsUpDownEnable: false,
+	// vertical
+	autoScrollVerticalEnable: true,
+	autoScrollVerticalTime: 100,
+	autoScrollPauseEnabled: true,
+	sliderButtonsRightLeftEnable: false
+};
 // ----------------------------------------
 // END DEMOS  ------------------
 // ----------------------------------------
@@ -267,6 +303,9 @@ t6D3.events = function () {
 	t6D3.carouselRef1.threeSixtyDim(t6D3.carouselRef1DemoSet);
 	t6D3.carouselRef2.threeSixtyDim(t6D3.carouselRef2DemoSet);
 	t6D3.carouselRef3.threeSixtyDim(t6D3.carouselRef3DemoSet);
+	t6D3.carouselRef4.threeSixtyDim(t6D3.carouselRef4DemoSet);
+	t6D3.carouselRef5.threeSixtyDim(t6D3.carouselRef5DemoSet);
+	t6D3.carouselRef6.threeSixtyDim(t6D3.carouselRef6DemoSet);
 }
 
 ////////////////////////////////////////////
