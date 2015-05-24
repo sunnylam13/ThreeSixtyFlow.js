@@ -30,9 +30,11 @@ If neither of these facts is an issue for you, feel free to grab this plugin and
 
 First setup your HTML file to: 
 
-* have one parent element with the id of `#carousel`
-* under the parent, have a child list `<ul>` with id of `#spinner` (the `#spinner` is needed for this plugin so it's a **must have**... also recommend using `<ul>`)
-* have each of your images inside of each of the `<li>` elements
+* have one parent element with the id of `.carousel` (the `.carousel` is a *must have* class)
+* under the parent, have a child list `<ul>` with id of `.spinner` (the `.spinner` is needed for this plugin so it's a **must have** class... also recommend using `<ul>`)
+* have each of your images (or element blocks) inside of each of the `<li>` elements
+
+NOTE:  If you're displaying something other than images, you'll need to change the option of `itemTarget` from the default `.spinner img` to `.spinner [class/ID of block]`.
 
 See the code example below:
 
