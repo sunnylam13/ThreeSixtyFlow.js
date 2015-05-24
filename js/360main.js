@@ -662,6 +662,51 @@ t6D1.verticalEvents = function () {
 
 
 ////////////////////////////////////////////
+// 		MODAL LARGE 1
+////////////////////////////////////////////
+
+t6D1.extractImgData = function (objItem) {
+	// this method extracts the image link that's been included as attribute data-imagemodallink
+	// EXAMPLE:  data-imagemodallink="http://demosthenes.info/assets/images/wanaka-tree.jpg"
+	// EXAMPLE:  data-captionmodalinfo="Wanaka Tree"
+
+	// create object to hold data and for later return
+	var extractedData = {};
+
+	// grab the value of the passed object
+	extractedData.dataModalLink = objItem.attr('data-imagemodallink');
+	extractedData.dataModalCaption = objItem.attr('data-captionmodalinfo');
+	
+	// return object
+	return extractedData;
+}
+
+t6D1.largeModal1 = function () {
+
+	// Saturday, May 23, 2015 8:39 PM:  current issue, z-index of the control frame puts the buttons above the images, we can't click them... have to change the z-index of the .controlframe
+
+	// when you click on one of the carousel items...
+	t6D1.items1.on('click', function(e) {
+		e.preventDefault();
+		// extract the link data from the image
+		var linkData = t6D1.extractImgData($(this));
+		// store reference to .largeModal1
+		var largeModalRef = thisCarousel.find('.largeModal1');
+		// change the src of the placeholder image to match that of the clicked image
+		// change the text of the caption
+		// make the large modal appear
+	});
+
+	// when you click anywhere or hit a key, make the modal disappear
+
+}
+
+////////////////////////////////////////////
+// 		END MODAL LARGE 1
+////////////////////////////////////////////
+
+
+////////////////////////////////////////////
 // 		INIT
 ////////////////////////////////////////////
 // simply call the relevant methods/functions

@@ -5,6 +5,20 @@
 //- These mixins are specific to this project only.
 //- move mixins here only if they are required in other sections of the site
 
+mixin imgInsertTemplateData1(imgLink,altText,datalink,datacaption)
+	//- FOR LISTS
+	//- this does li images as part of a ul or ol list
+	if block
+		block
+	else
+		li
+			if datalink && datacaption
+				img(src=imgLink, alt=altText, data-imagemodallink=datalink, data-captionmodalinfo=datacaption)
+			else if datalink
+				img(src=imgLink, alt=altText, data-imagemodallink=datalink)
+			else
+				img(src=imgLink, alt=altText)
+
 mixin addNineImageSet1
 	+imgInsertTemplate("http://demosthenes.info/assets/images/wanaka-tree.jpg","")
 	+imgInsertTemplate("http://demosthenes.info/assets/images/still-lake.jpg","")
@@ -15,6 +29,17 @@ mixin addNineImageSet1
 	+imgInsertTemplate("http://demosthenes.info/assets/images/lake-tekapo.jpg","")
 	+imgInsertTemplate("http://demosthenes.info/assets/images/wanaka-tree.jpg","")
 	+imgInsertTemplate("http://demosthenes.info/assets/images/milford-sound.jpg","")
+
+mixin addNineImageSet2
+	+imgInsertTemplateData1("http://demosthenes.info/assets/images/wanaka-tree.jpg","","http://demosthenes.info/assets/images/wanaka-tree.jpg","Wanaka Tree")
+	+imgInsertTemplateData1("http://demosthenes.info/assets/images/still-lake.jpg","","http://demosthenes.info/assets/images/still-lake.jpg","Wanaka Tree")
+	+imgInsertTemplateData1("http://demosthenes.info/assets/images/pink-milford-sound.jpg","","http://demosthenes.info/assets/images/pink-milford-sound.jpg","Milford Sound")
+	+imgInsertTemplateData1("http://demosthenes.info/assets/images/paradise.jpg","","http://demosthenes.info/assets/images/paradise.jpg","Paradise Lost")
+	+imgInsertTemplateData1("http://demosthenes.info/assets/images/morekai.jpg","","http://demosthenes.info/assets/images/morekai.jpg","Morekai")
+	+imgInsertTemplateData1("http://demosthenes.info/assets/images/milky-blue-lagoon.jpg","","http://demosthenes.info/assets/images/milky-blue-lagoon.jpg","Milky Lagoon")
+	+imgInsertTemplateData1("http://demosthenes.info/assets/images/lake-tekapo.jpg","","http://demosthenes.info/assets/images/lake-tekapo.jpg","Lake Tekapo")
+	+imgInsertTemplateData1("http://demosthenes.info/assets/images/wanaka-tree.jpg","","http://demosthenes.info/assets/images/wanaka-tree.jpg","Wanaka Tree")
+	+imgInsertTemplateData1("http://demosthenes.info/assets/images/milford-sound.jpg","","http://demosthenes.info/assets/images/milford-sound.jpg","Lake Sound")
 
 mixin controlButtonSet1
 	////////////////////////////////////////////
@@ -64,27 +89,33 @@ mixin threeSixtyDim1
 
 	section#carousel
 		ul#spinner
-			+addNineImageSet1
+			//- +addNineImageSet1
+			+addNineImageSet2
 
 			//- if you add more images the degrees split between the images has to change... you'll want to write JS to manage this automation instead 
 
 			//- 18 point
 			//- still good with z-offset -2000px
 			//- +addNineImageSet1
+			//- +addNineImageSet2
 
 			//- //- 27 point
 			//- +addNineImageSet1
+			//- +addNineImageSet2
 
 			//- //- 36 point
 			//- +addNineImageSet1
+			//- +addNineImageSet2
 
 			//- //- 45 point
 			//- //- images cross at this point
 			//- //- add another -1000px to z offset
 			//- +addNineImageSet1
+			//- +addNineImageSet2
 
 		//- +controlButtonSet1			
-			
+		//- +largeModal1
+		
 	////////////////////////////////////////////
 	// 		END 360 CAROUSEL PLUGIN
 	////////////////////////////////////////////

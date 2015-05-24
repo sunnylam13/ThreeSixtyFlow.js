@@ -343,7 +343,6 @@ section#carousel .controlframe {
   bottom: 0;
   right: 0;
   left: 0;
-  z-index: 10;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -530,7 +529,7 @@ section#carousel .controls.horizontal {
   bottom: 10%;
   right: 10%;
   left: 10%;
-  display: none; }
+  z-index: 10; }
 
 .largeModal1 .imgFrame img {
   max-width: 100%;

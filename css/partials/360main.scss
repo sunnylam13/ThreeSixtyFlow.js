@@ -208,7 +208,8 @@ section#carousel .controlframe {
 	left:0;
 
 	// we want the control frame horizontal to be over top of the #spinner in case images cross the buttons later... yet it must be below the vertical control frame
-	z-index: 10;
+	// Saturday, May 23, 2015 8:41 PML  having the control frame with higher z-index interferes with click events on the images
+	// z-index: 10;
 
 	//flexbox parent
 	@include flexboxColumn1;
@@ -335,6 +336,12 @@ section#carousel .controls.horizontal {
 // 		LARGE MODAL 1
 ////////////////////////////////////////////
 
+// NOTE:  the large modal 1 must be dynamically generated as the user may not have built a static modal already...
+// we'll build it within #carousel and append it...
+// it'll have to be absolutely positioned relative to the body
+// so #carousel should not have position: relative at all
+// alternative:  we could append the large modal relative to the body by building it outside of #carousel
+
 .largeModal1 {
 	color: white;
 
@@ -345,8 +352,11 @@ section#carousel .controls.horizontal {
 	right: $absoluteAnchorVal;
 	left: $absoluteAnchorVal;
 
+	z-index: 10;
+
 	// DEFAULT STATUS
-	display:none;
+	// display:none;
+	// z-index: 0;
 
 }
 
