@@ -681,12 +681,54 @@ t6D1.extractImgData = function (objItem) {
 	return extractedData;
 }
 
-t6D1.buildLargeModal1 = function (dataObj) {
+// t6D1.buildLargeModal1 = function (dataObj) {
+// 	// NOTE:  it'd probably be more data efficient to build the modal once and then change the data instead of building it every time an item is clicked
+
+// 	var $section = $('<section>').addClass('largeModal1');
+
+// 	// IMAGE DISPLAY  ------------------------------------------------
+// 	var $displayField = $("<div>").addClass('displayField');
+// 	var $imgFrame = $("<div>").addClass('imgFrame');
+// 	var $img = $("<img>").attr('src', dataObj.dataModalLink);
+// 	$imgFrame.append($img);
+// 	$displayField.append($imgFrame);
+// 	// END IMAGE DISPLAY ------------------------------------------------
+	
+
+// 	// CAPTION  ------------------------------------------------
+// 	var $captionZone = $("<div>").addClass('caption');
+// 	var $captionText = $("<p>").text(dataObj.dataModalCaption);
+// 	$captionZone.append($captionText);
+// 	// END CAPTION ------------------------------------------------
+
+// 	return $section.append($displayField,$captionZone);
+
+// }
+
+t6D1.buildLargeModal1OnLoad = function () {
 	// NOTE:  it'd probably be more data efficient to build the modal once and then change the data instead of building it every time an item is clicked
 
-	var $section = $('<section>').addClass('largeModal1');
-	var $displayField;
+	// NOTE:  it appears this option works best when using Browser Sync, which inserts an item for reload at the end, just before the closing body tag, this might interfere with appending to the body
 
+	var $section = $('<section>').addClass('largeModal1');
+
+	// IMAGE DISPLAY  ------------------------------------------------
+	var $displayField = $("<div>").addClass('displayField');
+	var $imgFrame = $("<div>").addClass('imgFrame');
+	var $img = $("<img>");
+	$imgFrame.append($img);
+	$displayField.append($imgFrame);
+	// END IMAGE DISPLAY ------------------------------------------------
+	
+
+	// CAPTION  ------------------------------------------------
+	var $captionZone = $("<div>").addClass('caption');
+	var $captionText = $("<p>");
+	$captionZone.append($captionText);
+	// END CAPTION ------------------------------------------------
+
+	$section.append($displayField,$captionZone);
+	$("body").append($section);
 }
 
 t6D1.largeModal1 = function () {
@@ -699,12 +741,39 @@ t6D1.largeModal1 = function () {
 		// extract the link data from the image
 		var linkData = t6D1.extractImgData($(this));
 
-		// store reference to .largeModal1
-		var $largeModalRef = thisCarousel.find('.largeModal1');
-		// build the large modal on the spot using extracted data object (means pass it as arg)
-		var $largeModalBuilt = t6D1.buildLargeModal1(linkData);
-		// append large modal to the body
+		// // store a reference to the large modal... we'll use this to check if it exists already
+		// var $largeModalRef = $("body").find(".largeModal1");
+
+		// if the large modal does exist simply alter the attributes
+		if ($(".largeModal1")) {
+			console.log('Changing modal...');
+			// alter the existing modal
+			
+			var $largeModalRef = $("body").find(".largeModal1");
+
+			$largeModalRef.find('.imgFrame img').attr('src', linkData.dataModalLink);
+			$largeModalRef.find('.caption p').text(linkData.dataModalCaption);
+		}
+
+		// if the large modal doesn't exist build it
+		if (!$(".largeModal1")) {
+			console.log('Building modal...');
+			// build the large modal on the spot using extracted data object (means pass it as arg)
+			var $largeModalBuilt = t6D1.buildLargeModal1(linkData);
+			// append large modal to the body
+			$("body").append($largeModalBuilt);
+
+			// store a reference to the modal now that it exists
+			var $largeModalRef = $("body").find(".largeModal1");
+		}
+
+
+
 		// make the large modal appear
+		$largeModalRef.css({
+			display: 'flex',
+			zIndex: '10'
+		});
 	});
 
 	// when you click anywhere or hit a key, make the modal disappear
@@ -735,6 +804,9 @@ t6D1.setInitialRingPosition();
 t6D1.setBaseZOffsetValue();
 
 t6D1.buildControls();
+
+t6D1.buildLargeModal1OnLoad();
+t6D1.largeModal1();
 
 ////////////////////////////////////////////
 // 		END INIT

@@ -530,8 +530,6 @@ section#carousel .controls.horizontal {
   right: 10%;
   left: 10%;
   z-index: 10;
-  display: none;
-  z-index: 0;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -549,24 +547,9 @@ section#carousel .controls.horizontal {
   align-items: center;
   -webkit-align-content: space-around;
   -ms-flex-line-pack: distribute;
-  align-content: space-around; }
-
-.largeModal1 .displayField {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: column;
-  -ms-flex-flow: column;
-  flex-flow: column;
-  -webkit-justify-content: space-around;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
-  -webkit-align-content: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center; }
+  align-content: space-around;
+  display: none;
+  z-index: 0; }
 
 .largeModal1 .imgFrame {
   width: 100%; }
