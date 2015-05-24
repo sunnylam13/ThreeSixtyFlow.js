@@ -55,7 +55,7 @@ You can have as many 3D carousels you want as long as you follow the above struc
 
 The original Jade node templating files I used are provided as well.  
 
-You will find most of the test/demo code in `mixins.project.041415.1.jade`.
+You will find most of the test/demo code in `mixins.project.041415.1.jade`, `index.jade`.
 
 
 ### CSS
@@ -66,11 +66,13 @@ The un-minified CSS however lacks any comments.
 
 If you want to change the stylesheet you should reference `style.css` and overwrite the properties in your own customized stylesheet that is loaded last in your HTML or Jade file.
 
-You should probably use the SCSS file if you can.  
-
-The file to use is `360main.scss` in the `css/partials/` folder.
-
 NOTE:  The stylesheet does import Font Awesome 4.3.0 for the slider buttons.
+
+#### SCSS/SASS
+
+If you use SCSS/SASS, the file to reference is `360main.scss` in the `css/partials/` folder.
+
+As with CSS, you should write your own customized CSS code that comes last and overrides the plugin code.
 
 ### Javascript
 
