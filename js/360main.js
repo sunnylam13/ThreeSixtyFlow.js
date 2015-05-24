@@ -756,6 +756,7 @@ t6D1.largeModal1 = function () {
 		}
 
 		// if the large modal doesn't exist build it
+		// Sunday, May 24, 2015 10:57 AM:  so far hasn't been working
 		if (!$(".largeModal1")) {
 			console.log('Building modal...');
 			// build the large modal on the spot using extracted data object (means pass it as arg)
@@ -767,6 +768,11 @@ t6D1.largeModal1 = function () {
 			var $largeModalRef = $("body").find(".largeModal1");
 		}
 
+		// hide the carousel controls so users aren't confused
+		// could also use .hide()
+		// thisCarousel.find('.controlframe').css('display', 'none');
+		thisCarousel.find('.controlframe').hide('fast');
+
 		// make the large modal appear
 		$largeModalRef.css({
 			display: 'flex',
@@ -776,12 +782,17 @@ t6D1.largeModal1 = function () {
 
 	// when you click anywhere or hit a key, make the modal disappear
 	$(".largeModal1").on('click', function() {
+		// make the modal disappear
 		$(this).fadeOut('400').css('z-index', '0');
+		// reveal the carousel controls
+		thisCarousel.find('.controlframe').css('display', 'flex');
 	});
 
 	$(document).keyup(function(e) {
 		if (e.keyCode == 27 ) {
 			$(".largeModal1").fadeOut(400).css('z-index', '0');
+			// reveal the carousel controls
+			thisCarousel.find('.controlframe').css('display', 'flex');
 		}
 	});
 }
