@@ -12,6 +12,10 @@ html(lang="en")
 		//- if needed apply a .wrapper either here or within the individual sections
 
 		block header
+			section.header
+				nav.primary1
+					a(href="./index.html", alt="Home Page").logoBuild ThreeSixtyFlow
+					a(href="./index.html#options") Options
 
 		block content
 
@@ -19,10 +23,3 @@ html(lang="en")
 
 		//- currently best practice to include scripts just before end of body
 		include ./includes/scripts.jade
-
-		//- NOTE:  the large modal 1 must be dynamically generated as the user may not have built a static modal already...
-		//- we'll build it within #carousel and append it...
-		//- it'll have to be absolutely positioned relative to the body
-		//- so #carousel should not have position: relative at all
-		//- alternative:  we could append the large modal relative to the body by building it outside of #carousel
-		//- +largeModal1
