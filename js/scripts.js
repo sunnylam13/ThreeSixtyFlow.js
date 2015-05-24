@@ -23,16 +23,18 @@ t6D2.carouselRef = $('#carousel');
 // you pass an object with your chosen settings to the plugin
 // place this inside t6D2.carouselRef.threeSixtyDim()
 t6D2.devSettings = {
-	// auto scroll
-	autoScrollHorizontalTime: 1000,
-	autoScrollVerticalTime: 100,
-	autoScrollHorizontalEnable: false,
-	autoScrollVerticalEnable: true,
-	autoScrollToRight: true,
-	autoScrollToLeft: false,
-	autoScrollToTop: true,
-	autoScrollToBottom: false,
-	autoScrollPauseEnabled: true
+
+	// auto scroll testing
+	// // auto scroll
+	// autoScrollHorizontalTime: 1000,
+	// autoScrollVerticalTime: 100,
+	// autoScrollHorizontalEnable: false,
+	// autoScrollVerticalEnable: true,
+	// autoScrollToRight: true,
+	// autoScrollToLeft: false,
+	// autoScrollToTop: true,
+	// autoScrollToBottom: false,
+	// autoScrollPauseEnabled: true
 };
 // ----------------------------------------
 // END YOUR DEVELOPER SETTINGS  ------------------

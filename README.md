@@ -280,6 +280,12 @@ When `autoScrollVerticalEnable` is `true` the carousel always rotates towards th
 
 Set `autoScrollVerticalEnable` to `true`, `autoScrollToTop` to `false` and set this to `true` to make the carousel automatically spin towards the bottom.
 
+#### autoScrollPauseEnabled
+
+*Default*: `false`
+
+Set this to `true` if you want to be able to click anywhere on the document window to stop the auto scrolling no matter which direction it is set at.
+
 #### sliderButtonsRightLeftEnable
 
 *Default*: `true`
