@@ -355,23 +355,43 @@ section#carousel .controls.horizontal {
 	z-index: 10;
 
 	// DEFAULT STATUS
-	// display:none;
-	// z-index: 0;
+	display:none;
+	z-index: 0;
 
+	// flexbox parent
+	@include flexboxColumn1;
+	align-content: space-around;
+
+}
+
+.largeModal1 .displayField {
+	// flexbox parent
+	@include flexboxColumn1;
+}
+
+.largeModal1 .imgFrame {
+	width: 100%;
 }
 
 .largeModal1 .imgFrame img {
 	max-width: 100%;
 	border-radius: 10px;
+	border: 5px solid white;
 }
 
 .largeModal1 .caption {
+	width: 100%;
 	text-align: center;
 	@include sectionPadding041515(1%,1%);
 
 	//flexbox parent
 	@include flexboxColumn1;
+	justify-content: center;
 
+	p {
+		display: inline-block;
+		@include marginPaddingReset1;
+	}
 }
 
 ////////////////////////////////////////////

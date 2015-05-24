@@ -529,13 +529,55 @@ section#carousel .controls.horizontal {
   bottom: 10%;
   right: 10%;
   left: 10%;
-  z-index: 10; }
+  z-index: 10;
+  display: none;
+  z-index: 0;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-content: space-around;
+  -ms-flex-line-pack: distribute;
+  align-content: space-around; }
+
+.largeModal1 .displayField {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.largeModal1 .imgFrame {
+  width: 100%; }
 
 .largeModal1 .imgFrame img {
   max-width: 100%;
-  border-radius: 10px; }
+  border-radius: 10px;
+  border: 5px solid white; }
 
 .largeModal1 .caption {
+  width: 100%;
   text-align: center;
   padding-top: 1%;
   padding-bottom: 1%;
@@ -553,4 +595,11 @@ section#carousel .controls.horizontal {
   align-content: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
-  align-items: center; }
+  align-items: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  .largeModal1 .caption p {
+    display: inline-block;
+    margin: 0;
+    padding: 0; }

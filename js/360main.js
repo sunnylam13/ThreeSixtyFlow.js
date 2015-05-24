@@ -681,6 +681,14 @@ t6D1.extractImgData = function (objItem) {
 	return extractedData;
 }
 
+t6D1.buildLargeModal1 = function (dataObj) {
+	// NOTE:  it'd probably be more data efficient to build the modal once and then change the data instead of building it every time an item is clicked
+
+	var $section = $('<section>').addClass('largeModal1');
+	var $displayField;
+
+}
+
 t6D1.largeModal1 = function () {
 
 	// Saturday, May 23, 2015 8:39 PM:  current issue, z-index of the control frame puts the buttons above the images, we can't click them... have to change the z-index of the .controlframe
@@ -690,10 +698,12 @@ t6D1.largeModal1 = function () {
 		e.preventDefault();
 		// extract the link data from the image
 		var linkData = t6D1.extractImgData($(this));
+
 		// store reference to .largeModal1
-		var largeModalRef = thisCarousel.find('.largeModal1');
-		// change the src of the placeholder image to match that of the clicked image
-		// change the text of the caption
+		var $largeModalRef = thisCarousel.find('.largeModal1');
+		// build the large modal on the spot using extracted data object (means pass it as arg)
+		var $largeModalBuilt = t6D1.buildLargeModal1(linkData);
+		// append large modal to the body
 		// make the large modal appear
 	});
 
