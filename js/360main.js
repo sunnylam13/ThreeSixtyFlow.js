@@ -62,6 +62,7 @@ t6D1.defaults1 = {
 	autoScrollToLeft: false,
 	autoScrollToTop: true,
 	autoScrollToBottom: false,
+	autoScrollPauseEnabled: false,
 	// slider buttons
 	sliderButtonsRightLeftEnable: true,
 	sliderButtonsUpDownEnable: true,
@@ -441,13 +442,22 @@ t6D1.autoScrollHorizontal = function () {
 		if (opts.autoScrollToRight) {
 			// https://stackoverflow.com/questions/457826/pass-parameters-in-setinterval-function
 			// console.log('Right scroll set.');
-			setInterval( function() { t6D1.galleryspinLeftRight("right"); }, opts.autoScrollHorizontalTime );
+			
+			t6D1.autoScrollIntervalH = setInterval( function() { t6D1.galleryspinLeftRight("right"); 
+			}, opts.autoScrollHorizontalTime );
+
+			t6D1.autoScrollPause("horizontal",t6D1.autoScrollIntervalH,"right",opts.autoScrollHorizontalTime);
+
 		}
 
 		if (opts.autoScrollToLeft) {
 			// https://stackoverflow.com/questions/457826/pass-parameters-in-setinterval-function
 			// console.log('Left scroll set.');
-			setInterval( function() { t6D1.galleryspinLeftRight("left"); }, opts.autoScrollHorizontalTime );
+			t6D1.autoScrollIntervalH = setInterval( function() { t6D1.galleryspinLeftRight("left"); 
+			}, opts.autoScrollHorizontalTime );
+
+			t6D1.autoScrollPause("horizontal",t6D1.autoScrollIntervalH,"left",opts.autoScrollHorizontalTime);
+			
 		}
 		
 	}
@@ -460,19 +470,99 @@ t6D1.autoScrollVertical = function () {
 	if (opts.autoScrollVerticalEnable) {
 		
 		if (opts.autoScrollToTop) {
-			setInterval(function () {
+			t6D1.autoScrollIntervalV = setInterval(function () {
 				t6D1.galleryspinUpDown("up");
-			}, opts.autoScrollVerticalTime)
+			}, opts.autoScrollVerticalTime);
+
+			t6D1.autoScrollPause("vertical",t6D1.autoScrollIntervalV,"up",opts.autoScrollVerticalTime);
 		}
 
 		if (opts.autoScrollToBottom) {
-			setInterval(function () {
+			t6D1.autoScrollIntervalV = setInterval(function () {
 				t6D1.galleryspinUpDown("down");
-			}, opts.autoScrollVerticalTime)
+			}, opts.autoScrollVerticalTime);
+
+			t6D1.autoScrollPause("vertical",t6D1.autoScrollIntervalV,"down",opts.autoScrollVerticalTime);
 		}
 
 	}
 }
+
+t6D1.autoScrollPause = function (scrollAxis,intervalItem,gallerySpinDir,scrollTime) {
+
+	// where scrollAxis = "horizontal", "vertical"
+	// where gallerySpinDir = "left", "right", "up", "down"
+
+	switch(scrollAxis) {
+		case "horizontal":
+			// set initial autoscrollpausestate to false
+			t6D1.autoScrollPauseStateH = "off";
+			console.log('t6D1.autoScrollPauseStateH is %', t6D1.autoScrollPauseStateH);
+
+			// you need the condition check to occur in the same if else statement, using two ifs results in two checks
+			$(document).on('click', function(e) {
+				e.preventDefault();
+				e.stopPropagation();
+				if (t6D1.autoScrollPauseStateH == "off" && opts.autoScrollPauseEnabled) {
+					window.clearInterval(intervalItem);
+					t6D1.autoScrollPauseStateH = "on";
+					console.log('interval cleared.');
+					console.log('t6D1.autoScrollPauseStateH is %', t6D1.autoScrollPauseStateH);
+				} else if (t6D1.autoScrollPauseStateH == "on" && opts.autoScrollPauseEnabled) {
+					
+					intervalItem = setInterval( function() { t6D1.galleryspinLeftRight(gallerySpinDir) }, scrollTime );
+
+					// switch(gallerySpinDir) {
+					// 	case "right":
+					// 		intervalItem = setInterval( function() { t6D1.galleryspinLeftRight(gallerySpinDir) }, scrollTime );
+					// 		break;
+					// 	case "left":
+					// 		intervalItem = setInterval( function() { t6D1.galleryspinLeftRight(gallerySpinDir) }, scrollTime );
+					// 		break;
+					// }
+					
+					t6D1.autoScrollPauseStateH = "off";
+					console.log('t6D1.autoScrollPauseStateH is %', t6D1.autoScrollPauseStateH);
+					console.log('interval started');
+				}
+			});
+			break;
+		case "vertical":
+			// set initial autoscrollpausestate to false
+			t6D1.autoScrollPauseStateV = "off";
+
+			$(document).on('click', function(e) {
+				e.preventDefault();
+				e.stopPropagation();
+				if (t6D1.autoScrollPauseStateV == "off" && opts.autoScrollPauseEnabled) {
+					window.clearInterval(intervalItem);
+					t6D1.autoScrollPauseStateV = "on";
+					console.log('interval cleared.');
+					console.log('t6D1.autoScrollPauseStateH is %', t6D1.autoScrollPauseStateV);
+				} else if (t6D1.autoScrollPauseStateV == "on" && opts.autoScrollPauseEnabled) {
+					
+					intervalItem = setInterval( function() { t6D1.galleryspinUpDown(gallerySpinDir) }, scrollTime );
+
+					// switch(gallerySpinDir) {
+					// 	case ("right" || "left"):
+					// 		intervalItem = setInterval( function() { t6D1.galleryspinLeftRight(gallerySpinDir) }, scrollTime );
+					// 		break;
+					// 	case ("up" || "down"):
+					// 		intervalItem = setInterval( function() { t6D1.galleryspinUpDown(gallerySpinDir) }, scrollTime );
+					// 		break;
+					// }
+					
+					t6D1.autoScrollPauseStateV = "off";
+					console.log('t6D1.autoScrollPauseStateH is %', t6D1.autoScrollPauseStateV);
+					console.log('interval started');
+				}
+			});
+
+			break;
+	}
+
+}
+
 ////////////////////////////////////////////
 // 		END AUTO SCROLL
 ////////////////////////////////////////////
@@ -740,6 +830,7 @@ t6D1.largeModal1 = function () {
 	// when you click on one of the carousel items...
 	t6D1.items1.on('click', function(e) {
 		e.preventDefault();
+		e.stopPropagation();
 		// extract the link data from the image
 		var linkData = t6D1.extractImgData($(this));
 
@@ -783,7 +874,8 @@ t6D1.largeModal1 = function () {
 	});
 
 	// when you click anywhere or hit a key, make the modal disappear
-	$(".largeModal1").on('click', function() {
+	$(".largeModal1").on('click', function(e) {
+		e.stopPropagation();
 		// make the modal disappear
 		$(this).fadeOut('400').css('z-index', '0');
 		// reveal the carousel controls

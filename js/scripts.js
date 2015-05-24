@@ -23,36 +23,16 @@ t6D2.carouselRef = $('#carousel');
 // you pass an object with your chosen settings to the plugin
 // place this inside t6D2.carouselRef.threeSixtyDim()
 t6D2.devSettings = {
-	// spinner
-	upDownIncrement: 7,
-	baseZOffsetValue: -2000,
-	// changeInitialRingPosition: true,
-	changeInitialRingPosition: false,
-	// item targets
-	itemTarget: '#spinner img',
-	// these are the default values for starting position of #spinner
-	rotateX: 0,
-	rotateY: 0,
-	// rotateX: -90,
-	// rotateY: 90,
-	translateY: -6.5,
-	translateX: -9,
 	// auto scroll
-	autoScrollHorizontalTime: 10000,
+	autoScrollHorizontalTime: 1000,
 	autoScrollVerticalTime: 100,
 	autoScrollHorizontalEnable: false,
-	autoScrollVerticalEnable: false,
+	autoScrollVerticalEnable: true,
 	autoScrollToRight: true,
 	autoScrollToLeft: false,
 	autoScrollToTop: true,
 	autoScrollToBottom: false,
-	// slider buttons
-	sliderButtonsRightLeftEnable: true,
-	sliderButtonsUpDownEnable: true,
-	// images
-	// rotateZImages: true
-	rotateZImages: false
-	// other
+	autoScrollPauseEnabled: true
 };
 // ----------------------------------------
 // END YOUR DEVELOPER SETTINGS  ------------------
