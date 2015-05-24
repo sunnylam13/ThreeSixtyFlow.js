@@ -216,7 +216,7 @@ To change the initial rotation of the carousel upon page load, `changeInitialRin
 
 *Default*: `10000`
 
-Units: ms (1000 ms = 1s)
+Units: `ms` (1000 ms = 1s)
 
 This is the amount of delay time before the carousel rotates to the next image (so that that image is front and centre).
 
@@ -226,7 +226,7 @@ This is the amount of delay time before the carousel rotates to the next image (
 
 *Default*: `100`
 
-Units: ms (1000 ms = 1s)
+Units: `ms` (1000 ms = 1s)
 
 This is the amount of delay time before the carousel rotates along the X axis.
 
