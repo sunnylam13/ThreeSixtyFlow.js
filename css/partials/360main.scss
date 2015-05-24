@@ -374,10 +374,15 @@ ul.spinner img:nth-child(11) {
 
 .largeModal1 .imgFrame {
 	width: 100%;
+
+	// flexbox parent
+	@include flexboxColumn1;
+	justify-content: center;
 }
 
 .largeModal1 .imgFrame img {
 	max-width: 100%;
+	height: $viewPortHeight*0.5;
 	border-radius: 10px;
 	border: 5px solid white;
 }

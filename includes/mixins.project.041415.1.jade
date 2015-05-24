@@ -130,9 +130,12 @@ mixin threeSixtyDim2
 	// 		360 CAROUSEL PLUGIN
 	////////////////////////////////////////////
 
-	section.carousel
-		ul.spinner
-			+addNineImageSet2
+	if block
+		block
+	else
+		section.carousel
+			ul.spinner
+				+addNineImageSet2
 	
 	////////////////////////////////////////////
 	// 		END 360 CAROUSEL PLUGIN

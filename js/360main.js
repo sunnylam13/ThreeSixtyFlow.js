@@ -843,7 +843,8 @@ t6D1.buildLargeModal1OnLoad = function () {
 	// END CAPTION ------------------------------------------------
 
 	$section.append($displayField,$captionZone);
-	$("body").append($section);
+	// $("body").append($section);
+	thisCarousel.append($section);
 }
 
 t6D1.largeModal1 = function () {
@@ -865,7 +866,7 @@ t6D1.largeModal1 = function () {
 			console.log('Changing modal...');
 			// alter the existing modal
 			
-			var $largeModalRef = $("body").find(".largeModal1");
+			var $largeModalRef = thisCarousel.find(".largeModal1");
 
 			$largeModalRef.find('.imgFrame img').attr('src', linkData.dataModalLink);
 			$largeModalRef.find('.caption p').text(linkData.dataModalCaption);
@@ -878,10 +879,10 @@ t6D1.largeModal1 = function () {
 			// build the large modal on the spot using extracted data object (means pass it as arg)
 			var $largeModalBuilt = t6D1.buildLargeModal1(linkData);
 			// append large modal to the body
-			$("body").append($largeModalBuilt);
+			thisCarousel.append($largeModalBuilt);
 
 			// store a reference to the modal now that it exists
-			var $largeModalRef = $("body").find(".largeModal1");
+			var $largeModalRef = thisCarousel.find(".largeModal1");
 		}
 
 		// hide the carousel controls so users aren't confused

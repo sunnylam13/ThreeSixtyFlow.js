@@ -9,25 +9,22 @@
 // 		VARIABLES
 ////////////////////////////////////////////
 
+// ----------------------------------------
+// PRIMARY EXPERIMENTING CANVAS  ------------------
+// ----------------------------------------
+
 var t6D2 = {};
 
-// this object is used to hold functions for testing
-var t6DTest1 = {};
-
-t6D2.carouselRef = $('.carousel');
-
-// ----------------------------------------
-// YOUR DEVELOPER SETTINGS  ------------------
-// ----------------------------------------
+t6D2.carouselRef = $('.carousel.primaryExp1');
 
 // you pass an object with your chosen settings to the plugin
 // place this inside t6D2.carouselRef.threeSixtyDim()
 t6D2.devSettings = {
 
 	// carousel parent
-	carouselDimensionSet: true,
-	carouselWidth: "100%",
-	carouselHeight: "50vh"
+	// carouselDimensionSet: true,
+	// carouselWidth: "100%",
+	// carouselHeight: "50vh"
 
 	// auto scroll testing
 	// autoScrollHorizontalTime: 1000,
@@ -40,10 +37,66 @@ t6D2.devSettings = {
 	// autoScrollToBottom: true,
 	// autoScrollPauseEnabled: true
 };
+
 // ----------------------------------------
-// END YOUR DEVELOPER SETTINGS  ------------------
+// END PRIMARY EXPERIMENTING CANVAS  ------------------
 // ----------------------------------------
 
+
+// ----------------------------------------
+// TESTING  ------------------
+// ----------------------------------------
+// this object is used to hold functions for testing
+var t6DTest1 = {};
+// ----------------------------------------
+// END TESTING  ------------------
+// ----------------------------------------
+
+
+
+// ----------------------------------------
+// DEMOS  ------------------
+// ----------------------------------------
+// object used to hold things for demo blocks
+var t6D3 = {};
+
+// CAROUSEL DIMENSION DEMO  ------------------------------------------------
+t6D3.carouselRef1 = $('.carousel.carouselDim1');
+t6D3.carouselRef1DemoSet = {
+	// carousel parent
+	carouselDimensionSet: true,
+	carouselWidth: "50%",
+	carouselHeight: "50vh"
+};
+// END CAROUSEL DIMENSION DEMO ------------------------------------------------
+
+// VERTICAL RING  ------------------------------------------------
+t6D3.carouselRef2 = $('.carousel.verticalRing1');
+t6D3.carouselRef2DemoSet = {
+	changeInitialRingPosition: true,
+	rotateX: -90,
+	rotateY: 90,
+	carouselDimensionSet: true,
+	carouselHeight: "100vh",
+	rotateZImages: true
+};
+// END VERTICAL RING ------------------------------------------------
+
+// CHANGED INITIAL POSITION  ------------------------------------------------
+t6D3.carouselRef3 = $('.carousel.verticalSlash1');
+t6D3.carouselRef3DemoSet = {
+	changeInitialRingPosition: true,
+	rotateX: -45,
+	rotateY: 90,
+	carouselDimensionSet: true,
+	carouselHeight: "100vh",
+	rotateZImages: true
+};
+// END CHANGED INITIAL POSITION ------------------------------------------------
+
+// ----------------------------------------
+// END DEMOS  ------------------
+// ----------------------------------------
 
 ////////////////////////////////////////////
 // 		END VARIABLES
@@ -206,6 +259,19 @@ t6D2.threeSixCarouselEvents = function () {
 ////////////////////////////////////////////
 
 
+////////////////////////////////////////////
+// 		DEMO
+////////////////////////////////////////////
+
+t6D3.events = function () {
+	t6D3.carouselRef1.threeSixtyDim(t6D3.carouselRef1DemoSet);
+	t6D3.carouselRef2.threeSixtyDim(t6D3.carouselRef2DemoSet);
+	t6D3.carouselRef3.threeSixtyDim(t6D3.carouselRef3DemoSet);
+}
+
+////////////////////////////////////////////
+// 		END DEMO
+////////////////////////////////////////////
 
 
 ////////////////////////////////////////////
@@ -218,6 +284,12 @@ t6D2.init = function () {
 	// t6D2.threeSixCarouselEvents();
 	t6D2.threeSixCarouselEvents();
 }
+
+t6D3.init = function () {
+	// t6D3.threeSixCarouselEvents();
+	t6D3.events();
+}
+
 ////////////////////////////////////////////
 // 		END INIT
 ////////////////////////////////////////////
@@ -227,6 +299,7 @@ t6D2.init = function () {
 ////////////////////////////////////////////
 jQuery(document).ready(function($) {
 	t6D2.init();
+	t6D3.init();
 });  //end doc.onready function
 ////////////////////////////////////////////
 // 		END EXECUTION CODE
