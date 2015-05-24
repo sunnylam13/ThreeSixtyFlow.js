@@ -681,29 +681,31 @@ t6D1.extractImgData = function (objItem) {
 	return extractedData;
 }
 
-// t6D1.buildLargeModal1 = function (dataObj) {
-// 	// NOTE:  it'd probably be more data efficient to build the modal once and then change the data instead of building it every time an item is clicked
+t6D1.buildLargeModal1 = function (dataObj) {
+	// this method is used for constructing the modal on the fly
 
-// 	var $section = $('<section>').addClass('largeModal1');
+	// NOTE:  it'd probably be more data efficient to build the modal once and then change the data instead of building it every time an item is clicked
 
-// 	// IMAGE DISPLAY  ------------------------------------------------
-// 	var $displayField = $("<div>").addClass('displayField');
-// 	var $imgFrame = $("<div>").addClass('imgFrame');
-// 	var $img = $("<img>").attr('src', dataObj.dataModalLink);
-// 	$imgFrame.append($img);
-// 	$displayField.append($imgFrame);
-// 	// END IMAGE DISPLAY ------------------------------------------------
+	var $section = $('<section>').addClass('largeModal1');
+
+	// IMAGE DISPLAY  ------------------------------------------------
+	var $displayField = $("<div>").addClass('displayField');
+	var $imgFrame = $("<div>").addClass('imgFrame');
+	var $img = $("<img>").attr('src', dataObj.dataModalLink);
+	$imgFrame.append($img);
+	$displayField.append($imgFrame);
+	// END IMAGE DISPLAY ------------------------------------------------
 	
 
-// 	// CAPTION  ------------------------------------------------
-// 	var $captionZone = $("<div>").addClass('caption');
-// 	var $captionText = $("<p>").text(dataObj.dataModalCaption);
-// 	$captionZone.append($captionText);
-// 	// END CAPTION ------------------------------------------------
+	// CAPTION  ------------------------------------------------
+	var $captionZone = $("<div>").addClass('caption');
+	var $captionText = $("<p>").text(dataObj.dataModalCaption);
+	$captionZone.append($captionText);
+	// END CAPTION ------------------------------------------------
 
-// 	return $section.append($displayField,$captionZone);
+	return $section.append($displayField,$captionZone);
 
-// }
+}
 
 t6D1.buildLargeModal1OnLoad = function () {
 	// NOTE:  it'd probably be more data efficient to build the modal once and then change the data instead of building it every time an item is clicked
