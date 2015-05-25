@@ -186,16 +186,6 @@ body {
   margin-left: 0 !important;
   clear: left; }
 
-a {
-  text-decoration: none;
-  color: white; }
-  a:link {
-    color: white; }
-  a:visited {
-    color: white; }
-  a:hover {
-    color: white; }
-
 .italicIt {
   font-style: italic; }
 
@@ -211,8 +201,11 @@ a {
 .crimsonWords {
   color: red; }
 
-pre {
-  font-family: Arial, sans-serif; }
+.codeIt1 {
+  background: #7d89a3;
+  border-radius: 5px;
+  padding: 5px;
+  font-style: italic; }
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, main, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   border: 0;
@@ -616,3 +609,222 @@ ul.spinner img:nth-child(11) {
     display: inline-block;
     margin: 0;
     padding: 0; }
+
+a {
+  text-decoration: none;
+  color: white;
+  -webkit-transition: all 0.5s ease-in;
+  -moz-transition: all 0.5s ease-in;
+  -o-transition: all 0.5s ease-in;
+  -ms-transition: all 0.5s ease-in; }
+  a:link {
+    color: white; }
+  a:visited {
+    color: white; }
+  a:hover {
+    color: #ff9100; }
+
+section pre {
+  background: #404040;
+  border-radius: 10px;
+  padding: 2%;
+  font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+  margin-top: 5%;
+  margin-bottom: 5%; }
+
+main h2 {
+  font-size: 40px;
+  margin-top: 5%;
+  margin-bottom: 5%; }
+
+section h3 {
+  font-size: 28.8px;
+  margin-top: 5%;
+  margin-bottom: 5%; }
+
+header {
+  width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start; }
+
+header nav {
+  width: 100%;
+  background: black;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-align-content: space-around;
+  -ms-flex-line-pack: distribute;
+  align-content: space-around;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end; }
+  header nav a {
+    display: block;
+    font-weight: 800;
+    margin: 0;
+    padding: 0;
+    -webkit-transition: all 0.5s ease-in;
+    -moz-transition: all 0.5s ease-in;
+    -o-transition: all 0.5s ease-in;
+    -ms-transition: all 0.5s ease-in;
+    -webkit-flex: 1 100px;
+    -ms-flex: 1 100px;
+    flex: 1 100px;
+    padding: 2% 5% 2% 5%;
+    border: 5px solid transparent;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: column;
+    -ms-flex-flow: column;
+    flex-flow: column;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    header nav a:hover {
+      background: white;
+      color: black;
+      border: 5px solid transparent; }
+  header nav a:nth-child(1) {
+    border: 5px solid white;
+    font-size: 43.2px; }
+    header nav a:nth-child(1):hover {
+      border: 5px solid #253049; }
+
+header aside {
+  padding: 2% 0 2% 0; }
+  header aside p {
+    font-size: 28.8px; }
+  header aside span {
+    font-style: italic; }
+
+footer {
+  width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start; }
+
+footer nav {
+  width: 100%;
+  background: black;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-align-content: space-around;
+  -ms-flex-line-pack: distribute;
+  align-content: space-around;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end; }
+  footer nav a {
+    display: block;
+    font-weight: 800;
+    margin: 0;
+    padding: 0;
+    -webkit-transition: all 0.5s ease-in;
+    -moz-transition: all 0.5s ease-in;
+    -o-transition: all 0.5s ease-in;
+    -ms-transition: all 0.5s ease-in;
+    -webkit-flex: 1 100px;
+    -ms-flex: 1 100px;
+    flex: 1 100px;
+    padding: 2% 5% 2% 5%;
+    border: 5px solid transparent;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: column;
+    -ms-flex-flow: column;
+    flex-flow: column;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    footer nav a:hover {
+      background: white;
+      color: black;
+      border: 5px solid transparent; }
+  footer nav a:nth-child(1) {
+    border: 5px solid white; }
+    footer nav a:nth-child(1):hover {
+      border: 5px solid #253049; }
+
+footer aside {
+  padding: 2% 0 2% 0; }
+  footer aside p {
+    font-size: 17.6px; }
+  footer aside span {
+    font-style: italic; }

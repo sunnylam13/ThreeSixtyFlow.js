@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="robots" content="noindex,nofollow"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css"/>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css"/>
     <link href="./css/style.css" rel="stylesheet" type="text/css"/>
   </head>
   <body>
@@ -26,7 +26,7 @@
                 <h1>ThreeSixtyFlow</h1></a><a href="./index.html#options">Featured Options</a><a href="https://github.com/sunnylam13/ThreeSixtyFlow.js">Documentation</a>
             </nav>
             <aside>
-              <p>3D Carousel Slider Without Doing the Math</p>
+              <p>3D Carousel Slider <span>Without </span>Doing the Math or the Animations</p>
             </aside>
           </header>
     </div>
@@ -64,12 +64,15 @@
               <!--//////////////////////////////////////////-->
               
               
-        </section><span id="options"></span>
+        </section>
+        <h2 id="options">Featured Options</h2>
         <!--//////////////////////////////////////////-->
         <!-- 		Carousel Resizing-->
         <!--//////////////////////////////////////////-->
         <section class="carouselDemo1">
-          <h2>Carousel Resizing</h2>
+          <h3>Carousel Resizing</h3>
+          <p>You don't have to re-size the carousel using CSS.  You can make your adjustments by changing the <span class="codeIt1">carouselWidth</span> and <span class="codeIt1">carouselHeight</span> options.</p>
+          <p>In the example below we slash the width to 50% of the view area.</p>
           <pre>t6D3.carouselRef1 = $('.carousel.carouselDim1');
  
 t6D3.carouselRef1DemoSet = {
@@ -118,7 +121,11 @@ t6D3.carouselRef1.threeSixtyDim(t6D3.carouselRef1DemoSet);</pre>
         <!-- 		Vertical Ring Options-->
         <!--//////////////////////////////////////////-->
         <section class="verticalDemoOpt1">
-          <h2>Vertical Ring</h2>
+          <h3>Vertical Ring</h3>
+          <p>You can change the initial position of the carousel ring... all the way to a straight vertical line.</p>
+          <p>At this time the ring doesn't slide up and down like you would expect however this has potential to create a ferris wheel like effect.</p>
+          <p>Check back later!</p>
+          <p>To make the changes below simply set <span class="codeIt1"> changeInitialRingPosition</span> to <span class="codeIt1">true</span> , give <span class="codeIt1">rotateX</span> and <span class="codeIt1">rotateY</span> a <span class="codeIt1">deg</span> value and ... set <span class="codeIt1">rotateZImages</span> to <span class="codeIt1">true</span> .</p>
           <pre>t6D3.carouselRef2 = $('.carousel.verticalRing1');
  
 t6D3.carouselRef2DemoSet = {
@@ -168,8 +175,9 @@ t6D3.carouselRef2.threeSixtyDim(t6D3.carouselRef2DemoSet);</pre>
         <!--//////////////////////////////////////////-->
         <!-- 		Spinner Options-->
         <!--//////////////////////////////////////////-->
-        <h2>Changed Initial Position Demo</h2>
-        <pre>t6D3.carouselRef3 = $('.carousel.verticalSlash1');
+        <section class="changeInitial1">
+          <h3>Change Initial Position</h3>
+          <pre>t6D3.carouselRef3 = $('.carousel.verticalSlash1');
  
 t6D3.carouselRef3DemoSet = {
 	changeInitialRingPosition: true,
@@ -181,44 +189,46 @@ t6D3.carouselRef3DemoSet = {
 };
  
 t6D3.carouselRef3.threeSixtyDim(t6D3.carouselRef3DemoSet);</pre>
-            <!--//////////////////////////////////////////-->
-            <!-- 		360 CAROUSEL PLUGIN-->
-            <!--//////////////////////////////////////////-->
-            <section class="carousel verticalSlash1">
-              <ul class="spinner">
-                        <li><img src="http://demosthenes.info/assets/images/wanaka-tree.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Wanaka Tree"/>
-                        </li>
-                        <li><img src="http://demosthenes.info/assets/images/still-lake.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Wanaka Tree"/>
-                        </li>
-                        <li><img src="http://demosthenes.info/assets/images/pink-milford-sound.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Milford Sound"/>
-                        </li>
-                        <li><img src="http://demosthenes.info/assets/images/paradise.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Paradise Lost"/>
-                        </li>
-                        <li><img src="http://demosthenes.info/assets/images/morekai.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Morekai"/>
-                        </li>
-                        <li><img src="http://demosthenes.info/assets/images/milky-blue-lagoon.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700"/>
-                        </li>
-                        <li><img src="http://demosthenes.info/assets/images/lake-tekapo.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Lake Tekapo"/>
-                        </li>
-                        <li><img src="http://demosthenes.info/assets/images/wanaka-tree.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Wanaka Tree"/>
-                        </li>
-                        <li><img src="http://demosthenes.info/assets/images/milford-sound.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Lake Sound"/>
-                        </li>
-              </ul>
-            </section>
-            <!--//////////////////////////////////////////-->
-            <!-- 		END 360 CAROUSEL PLUGIN-->
-            <!--//////////////////////////////////////////-->
-            
-            
+              <!--//////////////////////////////////////////-->
+              <!-- 		360 CAROUSEL PLUGIN-->
+              <!--//////////////////////////////////////////-->
+              <section class="carousel verticalSlash1">
+                <ul class="spinner">
+                          <li><img src="http://demosthenes.info/assets/images/wanaka-tree.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Wanaka Tree"/>
+                          </li>
+                          <li><img src="http://demosthenes.info/assets/images/still-lake.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Wanaka Tree"/>
+                          </li>
+                          <li><img src="http://demosthenes.info/assets/images/pink-milford-sound.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Milford Sound"/>
+                          </li>
+                          <li><img src="http://demosthenes.info/assets/images/paradise.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Paradise Lost"/>
+                          </li>
+                          <li><img src="http://demosthenes.info/assets/images/morekai.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Morekai"/>
+                          </li>
+                          <li><img src="http://demosthenes.info/assets/images/milky-blue-lagoon.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700"/>
+                          </li>
+                          <li><img src="http://demosthenes.info/assets/images/lake-tekapo.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Lake Tekapo"/>
+                          </li>
+                          <li><img src="http://demosthenes.info/assets/images/wanaka-tree.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Wanaka Tree"/>
+                          </li>
+                          <li><img src="http://demosthenes.info/assets/images/milford-sound.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Lake Sound"/>
+                          </li>
+                </ul>
+              </section>
+              <!--//////////////////////////////////////////-->
+              <!-- 		END 360 CAROUSEL PLUGIN-->
+              <!--//////////////////////////////////////////-->
+              
+              
+        </section>
         <!--//////////////////////////////////////////-->
         <!-- 		END Spinner Options-->
         <!--//////////////////////////////////////////-->
         <!--//////////////////////////////////////////-->
         <!-- 		AUTO SCROLL HORIZONTAL-->
         <!--//////////////////////////////////////////-->
-        <h2>Auto Scroll Horizontal</h2>
-        <pre>t6D3.carouselRef4 = $('.carousel.autoScrollH1');
+        <section class="scrollHorizontal1">
+          <h3>Auto Scroll Horizontal</h3>
+          <pre>t6D3.carouselRef4 = $('.carousel.autoScrollH1');
  
 t6D3.carouselRef4DemoSet = {
 	autoScrollHorizontalEnable: true,
@@ -228,36 +238,37 @@ t6D3.carouselRef4DemoSet = {
 };
  
 t6D3.carouselRef4.threeSixtyDim(t6D3.carouselRef4DemoSet);</pre>
-            <!--//////////////////////////////////////////-->
-            <!-- 		360 CAROUSEL PLUGIN-->
-            <!--//////////////////////////////////////////-->
-            <section class="carousel autoScrollH1">
-              <ul class="spinner">
-                        <li><img src="http://demosthenes.info/assets/images/wanaka-tree.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Wanaka Tree"/>
-                        </li>
-                        <li><img src="http://demosthenes.info/assets/images/still-lake.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Wanaka Tree"/>
-                        </li>
-                        <li><img src="http://demosthenes.info/assets/images/pink-milford-sound.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Milford Sound"/>
-                        </li>
-                        <li><img src="http://demosthenes.info/assets/images/paradise.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Paradise Lost"/>
-                        </li>
-                        <li><img src="http://demosthenes.info/assets/images/morekai.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Morekai"/>
-                        </li>
-                        <li><img src="http://demosthenes.info/assets/images/milky-blue-lagoon.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700"/>
-                        </li>
-                        <li><img src="http://demosthenes.info/assets/images/lake-tekapo.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Lake Tekapo"/>
-                        </li>
-                        <li><img src="http://demosthenes.info/assets/images/wanaka-tree.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Wanaka Tree"/>
-                        </li>
-                        <li><img src="http://demosthenes.info/assets/images/milford-sound.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Lake Sound"/>
-                        </li>
-              </ul>
-            </section>
-            <!--//////////////////////////////////////////-->
-            <!-- 		END 360 CAROUSEL PLUGIN-->
-            <!--//////////////////////////////////////////-->
-            
-            
+              <!--//////////////////////////////////////////-->
+              <!-- 		360 CAROUSEL PLUGIN-->
+              <!--//////////////////////////////////////////-->
+              <section class="carousel autoScrollH1">
+                <ul class="spinner">
+                          <li><img src="http://demosthenes.info/assets/images/wanaka-tree.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Wanaka Tree"/>
+                          </li>
+                          <li><img src="http://demosthenes.info/assets/images/still-lake.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Wanaka Tree"/>
+                          </li>
+                          <li><img src="http://demosthenes.info/assets/images/pink-milford-sound.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Milford Sound"/>
+                          </li>
+                          <li><img src="http://demosthenes.info/assets/images/paradise.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Paradise Lost"/>
+                          </li>
+                          <li><img src="http://demosthenes.info/assets/images/morekai.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Morekai"/>
+                          </li>
+                          <li><img src="http://demosthenes.info/assets/images/milky-blue-lagoon.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700"/>
+                          </li>
+                          <li><img src="http://demosthenes.info/assets/images/lake-tekapo.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Lake Tekapo"/>
+                          </li>
+                          <li><img src="http://demosthenes.info/assets/images/wanaka-tree.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Wanaka Tree"/>
+                          </li>
+                          <li><img src="http://demosthenes.info/assets/images/milford-sound.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Lake Sound"/>
+                          </li>
+                </ul>
+              </section>
+              <!--//////////////////////////////////////////-->
+              <!-- 		END 360 CAROUSEL PLUGIN-->
+              <!--//////////////////////////////////////////-->
+              
+              
+        </section>
         <!--//////////////////////////////////////////-->
         <!-- 		END AUTO SCROLL HORIZONTAL-->
         <!--//////////////////////////////////////////-->
@@ -265,8 +276,9 @@ t6D3.carouselRef4.threeSixtyDim(t6D3.carouselRef4DemoSet);</pre>
         <!--//////////////////////////////////////////-->
         <!-- 		AUTO SCROLL VERTICAL-->
         <!--//////////////////////////////////////////-->
-        <h2>Auto Scroll Vertical</h2>
-        <pre>t6D3.carouselRef5 = $('.carousel.autoScrollV1');
+        <section class="scrollVertical1">
+          <h3>Auto Scroll Vertical</h3>
+          <pre>t6D3.carouselRef5 = $('.carousel.autoScrollV1');
  
 t6D3.carouselRef5DemoSet = {
 	autoScrollVerticalEnable: true,
@@ -276,36 +288,37 @@ t6D3.carouselRef5DemoSet = {
 };
  
 t6D3.carouselRef5.threeSixtyDim(t6D3.carouselRef5DemoSet);</pre>
-            <!--//////////////////////////////////////////-->
-            <!-- 		360 CAROUSEL PLUGIN-->
-            <!--//////////////////////////////////////////-->
-            <section class="carousel autoScrollV1">
-              <ul class="spinner">
-                        <li><img src="http://demosthenes.info/assets/images/wanaka-tree.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Wanaka Tree"/>
-                        </li>
-                        <li><img src="http://demosthenes.info/assets/images/still-lake.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Wanaka Tree"/>
-                        </li>
-                        <li><img src="http://demosthenes.info/assets/images/pink-milford-sound.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Milford Sound"/>
-                        </li>
-                        <li><img src="http://demosthenes.info/assets/images/paradise.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Paradise Lost"/>
-                        </li>
-                        <li><img src="http://demosthenes.info/assets/images/morekai.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Morekai"/>
-                        </li>
-                        <li><img src="http://demosthenes.info/assets/images/milky-blue-lagoon.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700"/>
-                        </li>
-                        <li><img src="http://demosthenes.info/assets/images/lake-tekapo.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Lake Tekapo"/>
-                        </li>
-                        <li><img src="http://demosthenes.info/assets/images/wanaka-tree.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Wanaka Tree"/>
-                        </li>
-                        <li><img src="http://demosthenes.info/assets/images/milford-sound.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Lake Sound"/>
-                        </li>
-              </ul>
-            </section>
-            <!--//////////////////////////////////////////-->
-            <!-- 		END 360 CAROUSEL PLUGIN-->
-            <!--//////////////////////////////////////////-->
-            
-            
+              <!--//////////////////////////////////////////-->
+              <!-- 		360 CAROUSEL PLUGIN-->
+              <!--//////////////////////////////////////////-->
+              <section class="carousel autoScrollV1">
+                <ul class="spinner">
+                          <li><img src="http://demosthenes.info/assets/images/wanaka-tree.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Wanaka Tree"/>
+                          </li>
+                          <li><img src="http://demosthenes.info/assets/images/still-lake.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Wanaka Tree"/>
+                          </li>
+                          <li><img src="http://demosthenes.info/assets/images/pink-milford-sound.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Milford Sound"/>
+                          </li>
+                          <li><img src="http://demosthenes.info/assets/images/paradise.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Paradise Lost"/>
+                          </li>
+                          <li><img src="http://demosthenes.info/assets/images/morekai.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Morekai"/>
+                          </li>
+                          <li><img src="http://demosthenes.info/assets/images/milky-blue-lagoon.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700"/>
+                          </li>
+                          <li><img src="http://demosthenes.info/assets/images/lake-tekapo.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Lake Tekapo"/>
+                          </li>
+                          <li><img src="http://demosthenes.info/assets/images/wanaka-tree.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Wanaka Tree"/>
+                          </li>
+                          <li><img src="http://demosthenes.info/assets/images/milford-sound.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Lake Sound"/>
+                          </li>
+                </ul>
+              </section>
+              <!--//////////////////////////////////////////-->
+              <!-- 		END 360 CAROUSEL PLUGIN-->
+              <!--//////////////////////////////////////////-->
+              
+              
+        </section>
         <!--//////////////////////////////////////////-->
         <!-- 		END AUTO SCROLL VERTICAL-->
         <!--//////////////////////////////////////////-->
@@ -313,8 +326,9 @@ t6D3.carouselRef5.threeSixtyDim(t6D3.carouselRef5DemoSet);</pre>
         <!--//////////////////////////////////////////-->
         <!-- 		AUTO SCROLL HORIZONTAL AND VERTICAL-->
         <!--//////////////////////////////////////////-->
-        <h2>Auto Scroll Horizontal and Vertical</h2>
-        <pre>t6D3.carouselRef6 = $('.carousel.autoScrollHV1');
+        <section class="scrollHV1">
+          <h3>Auto Scroll Horizontal and Vertical</h3>
+          <pre>t6D3.carouselRef6 = $('.carousel.autoScrollHV1');
  
 t6D3.carouselRef6DemoSet = {
 	// horizontal
@@ -330,36 +344,37 @@ t6D3.carouselRef6DemoSet = {
 };
  
 t6D3.carouselRef6.threeSixtyDim(t6D3.carouselRef6DemoSet);</pre>
-            <!--//////////////////////////////////////////-->
-            <!-- 		360 CAROUSEL PLUGIN-->
-            <!--//////////////////////////////////////////-->
-            <section class="carousel autoScrollHV1">
-              <ul class="spinner">
-                        <li><img src="http://demosthenes.info/assets/images/wanaka-tree.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Wanaka Tree"/>
-                        </li>
-                        <li><img src="http://demosthenes.info/assets/images/still-lake.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Wanaka Tree"/>
-                        </li>
-                        <li><img src="http://demosthenes.info/assets/images/pink-milford-sound.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Milford Sound"/>
-                        </li>
-                        <li><img src="http://demosthenes.info/assets/images/paradise.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Paradise Lost"/>
-                        </li>
-                        <li><img src="http://demosthenes.info/assets/images/morekai.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Morekai"/>
-                        </li>
-                        <li><img src="http://demosthenes.info/assets/images/milky-blue-lagoon.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700"/>
-                        </li>
-                        <li><img src="http://demosthenes.info/assets/images/lake-tekapo.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Lake Tekapo"/>
-                        </li>
-                        <li><img src="http://demosthenes.info/assets/images/wanaka-tree.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Wanaka Tree"/>
-                        </li>
-                        <li><img src="http://demosthenes.info/assets/images/milford-sound.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Lake Sound"/>
-                        </li>
-              </ul>
-            </section>
-            <!--//////////////////////////////////////////-->
-            <!-- 		END 360 CAROUSEL PLUGIN-->
-            <!--//////////////////////////////////////////-->
-            
-            
+              <!--//////////////////////////////////////////-->
+              <!-- 		360 CAROUSEL PLUGIN-->
+              <!--//////////////////////////////////////////-->
+              <section class="carousel autoScrollHV1">
+                <ul class="spinner">
+                          <li><img src="http://demosthenes.info/assets/images/wanaka-tree.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Wanaka Tree"/>
+                          </li>
+                          <li><img src="http://demosthenes.info/assets/images/still-lake.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Wanaka Tree"/>
+                          </li>
+                          <li><img src="http://demosthenes.info/assets/images/pink-milford-sound.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Milford Sound"/>
+                          </li>
+                          <li><img src="http://demosthenes.info/assets/images/paradise.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Paradise Lost"/>
+                          </li>
+                          <li><img src="http://demosthenes.info/assets/images/morekai.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Morekai"/>
+                          </li>
+                          <li><img src="http://demosthenes.info/assets/images/milky-blue-lagoon.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700"/>
+                          </li>
+                          <li><img src="http://demosthenes.info/assets/images/lake-tekapo.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Lake Tekapo"/>
+                          </li>
+                          <li><img src="http://demosthenes.info/assets/images/wanaka-tree.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Wanaka Tree"/>
+                          </li>
+                          <li><img src="http://demosthenes.info/assets/images/milford-sound.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Lake Sound"/>
+                          </li>
+                </ul>
+              </section>
+              <!--//////////////////////////////////////////-->
+              <!-- 		END 360 CAROUSEL PLUGIN-->
+              <!--//////////////////////////////////////////-->
+              
+              
+        </section>
         <!--//////////////////////////////////////////-->
         <!-- 		END AUTO SCROLL HORIZONTAL AND VERTICAL-->
         <!--//////////////////////////////////////////-->
@@ -374,6 +389,7 @@ t6D3.carouselRef6.threeSixtyDim(t6D3.carouselRef6DemoSet);</pre>
             </nav>
             <aside class="contact">
               <p>Follow <a href="http://twitter.com/sunnylam">@sunnylam on Twitter for updates</a>.</p>
+              <p>Help improve this plugin, issue a <a href="https://github.com/sunnylam13/ThreeSixtyFlow.js/pulls">pull request</a>.</p>
             </aside>
           </footer>
     </div>

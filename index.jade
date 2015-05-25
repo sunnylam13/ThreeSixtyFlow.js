@@ -22,14 +22,20 @@ block content
 			//- OPTIONS DEMOS START HERE
 			//- ===================================
 
-			span#options
-
+			h2#options Featured Options
 
 			////////////////////////////////////////////
 			// 		Carousel Resizing
 			////////////////////////////////////////////
 			section.carouselDemo1
-				h2 Carousel Resizing
+				h3 Carousel Resizing
+
+				p You don't have to re-size the carousel using CSS.  You can make your adjustments by changing the 
+					span.codeIt1 carouselWidth
+					|  and 
+					span.codeIt1 carouselHeight
+					|  options.
+				p In the example below we slash the width to 50% of the view area.
 
 				pre
 					| t6D3.carouselRef1 = $('.carousel.carouselDim1');
@@ -55,7 +61,27 @@ block content
 			// 		Vertical Ring Options
 			////////////////////////////////////////////
 			section.verticalDemoOpt1
-				h2 Vertical Ring
+				h3 Vertical Ring
+
+				p You can change the initial position of the carousel ring... all the way to a straight vertical line.
+				p At this time the ring doesn't slide up and down like you would expect however this has potential to create a ferris wheel like effect.
+				p Check back later!
+
+				p To make the changes below simply set 
+					span.codeIt1  changeInitialRingPosition
+					|  to 
+					span.codeIt1 true
+					|  , give 
+					span.codeIt1 rotateX
+					|  and 
+					span.codeIt1 rotateY
+					|  a 
+					span.codeIt1 deg
+					|  value and ... set 
+					span.codeIt1 rotateZImages
+					|  to 
+					span.codeIt1 true
+					|  .
 
 				pre
 					| t6D3.carouselRef2 = $('.carousel.verticalRing1');
@@ -82,26 +108,28 @@ block content
 			////////////////////////////////////////////
 			// 		Spinner Options
 			////////////////////////////////////////////
-			h2 Changed Initial Position Demo
+			
+			section.changeInitial1
+				h3 Change Initial Position
 
-			pre
-				| t6D3.carouselRef3 = $('.carousel.verticalSlash1');
-				| 
-				| t6D3.carouselRef3DemoSet = {
-				| 	changeInitialRingPosition: true,
-				| 	rotateX: -45,
-				| 	rotateY: 90,
-				| 	carouselDimensionSet: true,
-				| 	carouselHeight: "100vh",
-				| 	rotateZImages: true
-				| };
-				| 
-				| t6D3.carouselRef3.threeSixtyDim(t6D3.carouselRef3DemoSet);
+				pre
+					| t6D3.carouselRef3 = $('.carousel.verticalSlash1');
+					| 
+					| t6D3.carouselRef3DemoSet = {
+					| 	changeInitialRingPosition: true,
+					| 	rotateX: -45,
+					| 	rotateY: 90,
+					| 	carouselDimensionSet: true,
+					| 	carouselHeight: "100vh",
+					| 	rotateZImages: true
+					| };
+					| 
+					| t6D3.carouselRef3.threeSixtyDim(t6D3.carouselRef3DemoSet);
 
-			+threeSixtyDim2
-				section.carousel.verticalSlash1
-					ul.spinner
-						+addNineImageSet2
+				+threeSixtyDim2
+					section.carousel.verticalSlash1
+						ul.spinner
+							+addNineImageSet2
 			////////////////////////////////////////////
 			// 		END Spinner Options
 			////////////////////////////////////////////
@@ -109,24 +137,27 @@ block content
 			////////////////////////////////////////////
 			// 		AUTO SCROLL HORIZONTAL
 			////////////////////////////////////////////
-			h2 Auto Scroll Horizontal
+			
+			section.scrollHorizontal1
 
-			pre
-				| t6D3.carouselRef4 = $('.carousel.autoScrollH1');
-				| 
-				| t6D3.carouselRef4DemoSet = {
-				| 	autoScrollHorizontalEnable: true,
-				| 	autoScrollHorizontalTime: 3000,
-				| 	autoScrollPauseEnabled: true,
-				| 	sliderButtonsUpDownEnable: false
-				| };
-				| 
-				| t6D3.carouselRef4.threeSixtyDim(t6D3.carouselRef4DemoSet);
+				h3 Auto Scroll Horizontal
 
-			+threeSixtyDim2
-				section.carousel.autoScrollH1
-					ul.spinner
-						+addNineImageSet2
+				pre
+					| t6D3.carouselRef4 = $('.carousel.autoScrollH1');
+					| 
+					| t6D3.carouselRef4DemoSet = {
+					| 	autoScrollHorizontalEnable: true,
+					| 	autoScrollHorizontalTime: 3000,
+					| 	autoScrollPauseEnabled: true,
+					| 	sliderButtonsUpDownEnable: false
+					| };
+					| 
+					| t6D3.carouselRef4.threeSixtyDim(t6D3.carouselRef4DemoSet);
+
+				+threeSixtyDim2
+					section.carousel.autoScrollH1
+						ul.spinner
+							+addNineImageSet2
 			////////////////////////////////////////////
 			// 		END AUTO SCROLL HORIZONTAL
 			////////////////////////////////////////////
@@ -135,24 +166,25 @@ block content
 			////////////////////////////////////////////
 			// 		AUTO SCROLL VERTICAL
 			////////////////////////////////////////////
-			h2 Auto Scroll Vertical
+			section.scrollVertical1
+				h3 Auto Scroll Vertical
 
-			pre
-				| t6D3.carouselRef5 = $('.carousel.autoScrollV1');
-				| 
-				| t6D3.carouselRef5DemoSet = {
-				|	autoScrollVerticalEnable: true,
-				| 	autoScrollVerticalTime: 100,
-				| 	autoScrollPauseEnabled: true,
-				| 	sliderButtonsRightLeftEnable: false
-				| };
-				| 
-				| t6D3.carouselRef5.threeSixtyDim(t6D3.carouselRef5DemoSet);
+				pre
+					| t6D3.carouselRef5 = $('.carousel.autoScrollV1');
+					| 
+					| t6D3.carouselRef5DemoSet = {
+					|	autoScrollVerticalEnable: true,
+					| 	autoScrollVerticalTime: 100,
+					| 	autoScrollPauseEnabled: true,
+					| 	sliderButtonsRightLeftEnable: false
+					| };
+					| 
+					| t6D3.carouselRef5.threeSixtyDim(t6D3.carouselRef5DemoSet);
 
-			+threeSixtyDim2
-				section.carousel.autoScrollV1
-					ul.spinner
-						+addNineImageSet2
+				+threeSixtyDim2
+					section.carousel.autoScrollV1
+						ul.spinner
+							+addNineImageSet2
 			////////////////////////////////////////////
 			// 		END AUTO SCROLL VERTICAL
 			////////////////////////////////////////////
@@ -161,30 +193,31 @@ block content
 			////////////////////////////////////////////
 			// 		AUTO SCROLL HORIZONTAL AND VERTICAL
 			////////////////////////////////////////////
-			h2 Auto Scroll Horizontal and Vertical
+			section.scrollHV1
+				h3 Auto Scroll Horizontal and Vertical
 
-			pre
-				| t6D3.carouselRef6 = $('.carousel.autoScrollHV1');
-				| 
-				| t6D3.carouselRef6DemoSet = {
-				| 	// horizontal
-				| 	autoScrollHorizontalEnable: true,
-				| 	autoScrollHorizontalTime: 200,
-				| 	autoScrollPauseEnabled: true,
-				| 	sliderButtonsUpDownEnable: false,
-				| 	// vertical
-				| 	autoScrollVerticalEnable: true,
-				| 	autoScrollVerticalTime: 100,
-				| 	autoScrollPauseEnabled: true,
-				| 	sliderButtonsRightLeftEnable: false
-				| };
-				| 
-				| t6D3.carouselRef6.threeSixtyDim(t6D3.carouselRef6DemoSet);
+				pre
+					| t6D3.carouselRef6 = $('.carousel.autoScrollHV1');
+					| 
+					| t6D3.carouselRef6DemoSet = {
+					| 	// horizontal
+					| 	autoScrollHorizontalEnable: true,
+					| 	autoScrollHorizontalTime: 200,
+					| 	autoScrollPauseEnabled: true,
+					| 	sliderButtonsUpDownEnable: false,
+					| 	// vertical
+					| 	autoScrollVerticalEnable: true,
+					| 	autoScrollVerticalTime: 100,
+					| 	autoScrollPauseEnabled: true,
+					| 	sliderButtonsRightLeftEnable: false
+					| };
+					| 
+					| t6D3.carouselRef6.threeSixtyDim(t6D3.carouselRef6DemoSet);
 
-			+threeSixtyDim2
-				section.carousel.autoScrollHV1
-					ul.spinner
-						+addNineImageSet2
+				+threeSixtyDim2
+					section.carousel.autoScrollHV1
+						ul.spinner
+							+addNineImageSet2
 			////////////////////////////////////////////
 			// 		END AUTO SCROLL HORIZONTAL AND VERTICAL
 			////////////////////////////////////////////

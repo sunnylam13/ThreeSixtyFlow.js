@@ -6,7 +6,7 @@
 
 $.fn.threeSixtyDim = function(options) {
 
-console.log('threeSixtyDim plugin active.');
+// console.log('threeSixtyDim plugin active.');
 
 // ----------------------------------------
 // THIS  ------------------
@@ -522,7 +522,7 @@ t6D1.autoScrollPause = function (scrollAxis,intervalItem,gallerySpinDir,scrollTi
 		case "horizontal":
 			// set initial autoscrollpausestate to false
 			t6D1.autoScrollPauseStateH = "off";
-			console.log('t6D1.autoScrollPauseStateH is %', t6D1.autoScrollPauseStateH);
+			// console.log('t6D1.autoScrollPauseStateH is %', t6D1.autoScrollPauseStateH);
 
 			// you need the condition check to occur in the same if else statement, using two ifs results in two checks
 			thisCarousel.on('click', function(e) {
@@ -531,8 +531,8 @@ t6D1.autoScrollPause = function (scrollAxis,intervalItem,gallerySpinDir,scrollTi
 				if (t6D1.autoScrollPauseStateH == "off" && opts.autoScrollPauseEnabled) {
 					window.clearInterval(intervalItem);
 					t6D1.autoScrollPauseStateH = "on";
-					console.log('interval cleared.');
-					console.log('t6D1.autoScrollPauseStateH is %', t6D1.autoScrollPauseStateH);
+					// console.log('interval cleared.');
+					// console.log('t6D1.autoScrollPauseStateH is %', t6D1.autoScrollPauseStateH);
 				} else if (t6D1.autoScrollPauseStateH == "on" && opts.autoScrollPauseEnabled) {
 					
 					intervalItem = setInterval( function() { t6D1.galleryspinLeftRight(gallerySpinDir) }, scrollTime );
@@ -547,8 +547,8 @@ t6D1.autoScrollPause = function (scrollAxis,intervalItem,gallerySpinDir,scrollTi
 					// }
 					
 					t6D1.autoScrollPauseStateH = "off";
-					console.log('t6D1.autoScrollPauseStateH is %', t6D1.autoScrollPauseStateH);
-					console.log('interval started');
+					// console.log('t6D1.autoScrollPauseStateH is %', t6D1.autoScrollPauseStateH);
+					// console.log('interval started');
 				}
 			});
 			break;
@@ -562,8 +562,8 @@ t6D1.autoScrollPause = function (scrollAxis,intervalItem,gallerySpinDir,scrollTi
 				if (t6D1.autoScrollPauseStateV == "off" && opts.autoScrollPauseEnabled) {
 					window.clearInterval(intervalItem);
 					t6D1.autoScrollPauseStateV = "on";
-					console.log('interval cleared.');
-					console.log('t6D1.autoScrollPauseStateH is %', t6D1.autoScrollPauseStateV);
+					// console.log('interval cleared.');
+					// console.log('t6D1.autoScrollPauseStateH is %', t6D1.autoScrollPauseStateV);
 				} else if (t6D1.autoScrollPauseStateV == "on" && opts.autoScrollPauseEnabled) {
 					
 					intervalItem = setInterval( function() { t6D1.galleryspinUpDown(gallerySpinDir) }, scrollTime );
@@ -578,8 +578,8 @@ t6D1.autoScrollPause = function (scrollAxis,intervalItem,gallerySpinDir,scrollTi
 					// }
 					
 					t6D1.autoScrollPauseStateV = "off";
-					console.log('t6D1.autoScrollPauseStateH is %', t6D1.autoScrollPauseStateV);
-					console.log('interval started');
+					// console.log('t6D1.autoScrollPauseStateH is %', t6D1.autoScrollPauseStateV);
+					// console.log('interval started');
 				}
 			});
 

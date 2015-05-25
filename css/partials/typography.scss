@@ -16,14 +16,20 @@
 ////////////////////////////////////////////
 
 // FONTS  ------------------------------------------------
-// for headers
-// $montserrat: 'Montserrat', sans-serif;
-// for text
-// $lora: 'Lora', serif;
+$preFontFamily: "Courier New",Courier,"Lucida Sans Typewriter","Lucida Typewriter",monospace;
 // // END FONTS ------------------------------------------------
 
 // COLOURS  ------------------------------------------------
 // colours must go before the base
+
+$headerBackground: black;
+$headerLinkColourHover: black;
+$headerLinkBackHover: white;
+
+$hoverLinkBorderColour: #253049;
+
+$preOption1: #7d89a3;
+$preOption2: #404040;
 
 // // END COLOURS ------------------------------------------------
 
@@ -35,7 +41,7 @@ $basefontfamily:'Open Sans', sans-serif;
 $basefontsize:16px;
 $baselineheight:16px;
 $baseFontColor: white;
-$baseHoverColor: #ab4d63;
+$baseHoverColor: #ff9100;
 $basebackcolor: black;
 // // END BASE ------------------------------------------------
 
@@ -50,21 +56,6 @@ $basebackcolor: black;
 ////////////////////////////////////////////
 
 // suggest you build some classes ahead of time which you can assign as required
-
-// I almost always get rid of text decoration so why no just get rid of it by default?
-a {
-	text-decoration: none;
-	color: $baseFontColor;
-	&:link {
-		color: $baseFontColor;
-	}
-	&:visited {
-		color: $baseFontColor;
-	}
-	&:hover {
-		color: $baseFontColor;
-	}
-}
 
 .italicIt {
 	font-style: italic;
@@ -86,6 +77,9 @@ a {
 	color: red;
 }
 
-pre {
-	font-family: Arial, sans-serif;
+.codeIt1 {
+	background: $preOption1;
+	border-radius: 5px;
+	padding: 5px;
+	font-style: italic;
 }
