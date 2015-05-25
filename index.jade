@@ -2,97 +2,192 @@ extends index.layout.030215.1.jade
 
 block content
 
-	main
-		// earliest original was mostly CSS based and forked from http://codepen.io/dudleystorey/pen/kiajB
+	.wrapper
+		main
+			// earliest original was mostly CSS based and forked from http://codepen.io/dudleystorey/pen/kiajB
 
-		//- ===================================
-		//- 		PRIMARY EXPERIMENT BLOCK
-		//- ===================================
-		h2 Primary Experiment Block
-		+threeSixtyDim2
-			section.carousel.primaryExp1
-				ul.spinner
-					+addNineImageSet2
-		//- END PRIMARY EXPERIMENT BLOCK
-		
+			//- ===================================
+			//- 		PRIMARY EXPERIMENT BLOCK
+			//- ===================================
+			section.primaryDemo1
+				+threeSixtyDim2
+					section.carousel.primaryExp1
+						ul.spinner
+							+addNineImageSet2
+			//- END PRIMARY EXPERIMENT BLOCK
 
+			
 
-		//- ===================================
-		//- OPTIONS DEMOS START HERE
-		//- ===================================
+			//- ===================================
+			//- OPTIONS DEMOS START HERE
+			//- ===================================
 
-		span#options
-
-		////////////////////////////////////////////
-		// 		Carousel Options
-		////////////////////////////////////////////
-		h2 Carousel Dimensions Demo
-		+threeSixtyDim2
-			section.carousel.carouselDim1
-				ul.spinner
-					+addNineImageSet2
-		////////////////////////////////////////////
-		// 		END Carousel Options
-		////////////////////////////////////////////
-
-		////////////////////////////////////////////
-		// 		Spinner Options
-		////////////////////////////////////////////
-		h2 Spinner Options Demo
-		+threeSixtyDim2
-			section.carousel.verticalRing1
-				ul.spinner
-					+addNineImageSet2
-		////////////////////////////////////////////
-		// 		END Spinner Options
-		////////////////////////////////////////////
-
-		////////////////////////////////////////////
-		// 		Spinner Options
-		////////////////////////////////////////////
-		h2 Spinner Options Demo
-		+threeSixtyDim2
-			section.carousel.verticalSlash1
-				ul.spinner
-					+addNineImageSet2
-		////////////////////////////////////////////
-		// 		END Spinner Options
-		////////////////////////////////////////////
-
-		////////////////////////////////////////////
-		// 		AUTO SCROLL HORIZONTAL
-		////////////////////////////////////////////
-		h2 Auto Scroll Horizontal
-		+threeSixtyDim2
-			section.carousel.autoScrollH1
-				ul.spinner
-					+addNineImageSet2
-		////////////////////////////////////////////
-		// 		END AUTO SCROLL HORIZONTAL
-		////////////////////////////////////////////
+			span#options
 
 
-		////////////////////////////////////////////
-		// 		AUTO SCROLL VERTICAL
-		////////////////////////////////////////////
-		h2 Auto Scroll Vertical
-		+threeSixtyDim2
-			section.carousel.autoScrollV1
-				ul.spinner
-					+addNineImageSet2
-		////////////////////////////////////////////
-		// 		END AUTO SCROLL VERTICAL
-		////////////////////////////////////////////
+			////////////////////////////////////////////
+			// 		Carousel Resizing
+			////////////////////////////////////////////
+			section.carouselDemo1
+				h2 Carousel Resizing
+
+				pre
+					| t6D3.carouselRef1 = $('.carousel.carouselDim1');
+					| 
+					| t6D3.carouselRef1DemoSet = {
+					|	// carousel parent
+					|	carouselDimensionSet: true,
+					|	carouselWidth: "50%",
+					|	carouselHeight: "50vh"
+					| };
+					| 
+					| t6D3.carouselRef1.threeSixtyDim(t6D3.carouselRef1DemoSet);
+
+				+threeSixtyDim2
+					section.carousel.carouselDim1
+						ul.spinner
+							+addNineImageSet2
+			////////////////////////////////////////////
+			// 		END Carousel Options
+			////////////////////////////////////////////
+
+			////////////////////////////////////////////
+			// 		Vertical Ring Options
+			////////////////////////////////////////////
+			section.verticalDemoOpt1
+				h2 Vertical Ring
+
+				pre
+					| t6D3.carouselRef2 = $('.carousel.verticalRing1');
+					| 
+					| t6D3.carouselRef2DemoSet = {
+					| 	changeInitialRingPosition: true,
+					| 	rotateX: -90,
+					| 	rotateY: 90,
+					| 	carouselDimensionSet: true,
+					| 	carouselHeight: "100vh",
+					| 	rotateZImages: true
+					| };
+					| 
+					| t6D3.carouselRef2.threeSixtyDim(t6D3.carouselRef2DemoSet);
+
+				+threeSixtyDim2
+					section.carousel.verticalRing1
+						ul.spinner
+							+addNineImageSet2
+			////////////////////////////////////////////
+			// 		END Vertical Ring
+			////////////////////////////////////////////
+
+			////////////////////////////////////////////
+			// 		Spinner Options
+			////////////////////////////////////////////
+			h2 Changed Initial Position Demo
+
+			pre
+				| t6D3.carouselRef3 = $('.carousel.verticalSlash1');
+				| 
+				| t6D3.carouselRef3DemoSet = {
+				| 	changeInitialRingPosition: true,
+				| 	rotateX: -45,
+				| 	rotateY: 90,
+				| 	carouselDimensionSet: true,
+				| 	carouselHeight: "100vh",
+				| 	rotateZImages: true
+				| };
+				| 
+				| t6D3.carouselRef3.threeSixtyDim(t6D3.carouselRef3DemoSet);
+
+			+threeSixtyDim2
+				section.carousel.verticalSlash1
+					ul.spinner
+						+addNineImageSet2
+			////////////////////////////////////////////
+			// 		END Spinner Options
+			////////////////////////////////////////////
+
+			////////////////////////////////////////////
+			// 		AUTO SCROLL HORIZONTAL
+			////////////////////////////////////////////
+			h2 Auto Scroll Horizontal
+
+			pre
+				| t6D3.carouselRef4 = $('.carousel.autoScrollH1');
+				| 
+				| t6D3.carouselRef4DemoSet = {
+				| 	autoScrollHorizontalEnable: true,
+				| 	autoScrollHorizontalTime: 3000,
+				| 	autoScrollPauseEnabled: true,
+				| 	sliderButtonsUpDownEnable: false
+				| };
+				| 
+				| t6D3.carouselRef4.threeSixtyDim(t6D3.carouselRef4DemoSet);
+
+			+threeSixtyDim2
+				section.carousel.autoScrollH1
+					ul.spinner
+						+addNineImageSet2
+			////////////////////////////////////////////
+			// 		END AUTO SCROLL HORIZONTAL
+			////////////////////////////////////////////
 
 
-		////////////////////////////////////////////
-		// 		AUTO SCROLL HORIZONTAL AND VERTICAL
-		////////////////////////////////////////////
-		h2 Auto Scroll Horizontal and Vertical
-		+threeSixtyDim2
-			section.carousel.autoScrollHV1
-				ul.spinner
-					+addNineImageSet2
-		////////////////////////////////////////////
-		// 		END AUTO SCROLL HORIZONTAL AND VERTICAL
-		////////////////////////////////////////////
+			////////////////////////////////////////////
+			// 		AUTO SCROLL VERTICAL
+			////////////////////////////////////////////
+			h2 Auto Scroll Vertical
+
+			pre
+				| t6D3.carouselRef5 = $('.carousel.autoScrollV1');
+				| 
+				| t6D3.carouselRef5DemoSet = {
+				|	autoScrollVerticalEnable: true,
+				| 	autoScrollVerticalTime: 100,
+				| 	autoScrollPauseEnabled: true,
+				| 	sliderButtonsRightLeftEnable: false
+				| };
+				| 
+				| t6D3.carouselRef5.threeSixtyDim(t6D3.carouselRef5DemoSet);
+
+			+threeSixtyDim2
+				section.carousel.autoScrollV1
+					ul.spinner
+						+addNineImageSet2
+			////////////////////////////////////////////
+			// 		END AUTO SCROLL VERTICAL
+			////////////////////////////////////////////
+
+
+			////////////////////////////////////////////
+			// 		AUTO SCROLL HORIZONTAL AND VERTICAL
+			////////////////////////////////////////////
+			h2 Auto Scroll Horizontal and Vertical
+
+			pre
+				| t6D3.carouselRef6 = $('.carousel.autoScrollHV1');
+				| 
+				| t6D3.carouselRef6DemoSet = {
+				| 	// horizontal
+				| 	autoScrollHorizontalEnable: true,
+				| 	autoScrollHorizontalTime: 200,
+				| 	autoScrollPauseEnabled: true,
+				| 	sliderButtonsUpDownEnable: false,
+				| 	// vertical
+				| 	autoScrollVerticalEnable: true,
+				| 	autoScrollVerticalTime: 100,
+				| 	autoScrollPauseEnabled: true,
+				| 	sliderButtonsRightLeftEnable: false
+				| };
+				| 
+				| t6D3.carouselRef6.threeSixtyDim(t6D3.carouselRef6DemoSet);
+
+			+threeSixtyDim2
+				section.carousel.autoScrollHV1
+					ul.spinner
+						+addNineImageSet2
+			////////////////////////////////////////////
+			// 		END AUTO SCROLL HORIZONTAL AND VERTICAL
+			////////////////////////////////////////////
+
+		aside.sidebar1
+			//- WIP

@@ -115,8 +115,6 @@ t6D3.carouselRef5DemoSet = {
 // END AUTOSCROLL VERTICAL ------------------------------------------------
 
 // AUTOSCROLL HORIZONTAL VERTICAL  ------------------------------------------------
-
-// END AUTOSCROLL HORIZONTAL VERTICAL ------------------------------------------------
 t6D3.carouselRef6 = $('.carousel.autoScrollHV1');
 t6D3.carouselRef6DemoSet = {
 	// horizontal
@@ -130,6 +128,8 @@ t6D3.carouselRef6DemoSet = {
 	autoScrollPauseEnabled: true,
 	sliderButtonsRightLeftEnable: false
 };
+// END AUTOSCROLL HORIZONTAL VERTICAL ------------------------------------------------
+
 // ----------------------------------------
 // END DEMOS  ------------------
 // ----------------------------------------

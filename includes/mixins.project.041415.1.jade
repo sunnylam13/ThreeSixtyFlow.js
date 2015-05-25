@@ -5,6 +5,30 @@
 //- These mixins are specific to this project only.
 //- move mixins here only if they are required in other sections of the site
 
+mixin siteHeader1
+	header
+		nav.primary1
+			a(href="./index.html", alt="Home Page").logoBuild
+				h1 ThreeSixtyFlow
+			a(href="./index.html#options") Featured Options
+			a(href="https://github.com/sunnylam13/ThreeSixtyFlow.js") Documentation
+			//- a(href="./index.html#license") License
+		aside
+			p 3D Carousel Slider Without Doing the Math
+
+mixin siteFooter1
+	footer
+		nav.primary1
+			a(href="./index.html", alt="Home Page").logoBuild
+				h1 ThreeSixtyFlow
+			a(href="./index.html#options") Featured Options
+			a(href="https://github.com/sunnylam13/ThreeSixtyFlow.js") Documentation
+			//- a(href="./index.html#license") License
+		aside.contact
+			p Follow 
+				a(href="http://twitter.com/sunnylam") @sunnylam on Twitter for updates
+				|.
+
 mixin imgInsertTemplateData1(imgLink,altText,datalink,datacaption)
 	//- FOR LISTS
 	//- this does li images as part of a ul or ol list

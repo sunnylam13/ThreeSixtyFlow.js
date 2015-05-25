@@ -34,9 +34,9 @@
 $basefontfamily:'Open Sans', sans-serif;
 $basefontsize:16px;
 $baselineheight:16px;
-$baseFontColor: lighten(#653082,10%);
+$baseFontColor: white;
 $baseHoverColor: #ab4d63;
-$basebackcolor: lightgrey;
+$basebackcolor: black;
 // // END BASE ------------------------------------------------
 
 
@@ -54,6 +54,16 @@ $basebackcolor: lightgrey;
 // I almost always get rid of text decoration so why no just get rid of it by default?
 a {
 	text-decoration: none;
+	color: $baseFontColor;
+	&:link {
+		color: $baseFontColor;
+	}
+	&:visited {
+		color: $baseFontColor;
+	}
+	&:hover {
+		color: $baseFontColor;
+	}
 }
 
 .italicIt {
@@ -76,3 +86,6 @@ a {
 	color: red;
 }
 
+pre {
+	font-family: Arial, sans-serif;
+}

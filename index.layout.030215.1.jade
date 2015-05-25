@@ -12,14 +12,16 @@ html(lang="en")
 		//- if needed apply a .wrapper either here or within the individual sections
 
 		block header
-			section.header
-				nav.primary1
-					a(href="./index.html", alt="Home Page").logoBuild ThreeSixtyFlow
-					a(href="./index.html#options") Options
+			.wrapper
+				//- see mixins.project.041415.1.jade
+				+siteHeader1
 
 		block content
 
 		block footer
+			.wrapper
+				//- see mixins.project.041415.1.jade
+				+siteFooter1
 
 		//- currently best practice to include scripts just before end of body
 		include ./includes/scripts.jade
