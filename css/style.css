@@ -221,10 +221,12 @@ body {
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
   background: black;
-  color: white; }
+  color: white;
+  padding-top: 2%;
+  padding-bottom: 2%; }
 
 .wrapper {
-  max-width: 1100px;
+  max-width: 1300px;
   margin: 0 auto; }
 
 ol, ul {
@@ -234,7 +236,7 @@ li {
   list-style-type: none; }
 
 p {
-  line-height: 26.56px;
+  line-height: 32px;
   margin-bottom: 20px;
   font-size: 16px; }
 
@@ -288,7 +290,8 @@ ul.spinner {
 
 ul.spinner li {
   max-width: 425px;
-  outline: 1px solid transparent; }
+  outline: 1px solid transparent;
+  list-style-type: none; }
 
 ul.spinner img {
   max-width: 425px;
@@ -632,6 +635,10 @@ section pre {
   margin-top: 5%;
   margin-bottom: 5%; }
 
+main ul li {
+  list-style: square;
+  line-height: 32px; }
+
 main h2 {
   font-size: 40px;
   margin-top: 5%;
@@ -735,6 +742,10 @@ header aside {
     font-size: 28.8px; }
   header aside span {
     font-style: italic; }
+
+section.carousel {
+  margin-top: 5%;
+  margin-bottom: 5%; }
 
 footer {
   width: 100%;

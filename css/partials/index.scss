@@ -30,6 +30,11 @@ section pre {
 	@include sectionMargins041515(5%,5%);
 }
 
+main ul li {
+	list-style: square;
+	line-height: $baselineheight*2;
+}
+
 main h2 {
 	font-size: $basefontsize*2.5;
 	@include sectionMargins041515(5%,5%);
@@ -125,6 +130,18 @@ header aside {
 // 		END HEADER
 ////////////////////////////////////////////
 
+
+////////////////////////////////////////////
+// 		CAROUSELS
+////////////////////////////////////////////
+
+section.carousel {
+	@include sectionMargins041515(5%,5%);
+}
+
+////////////////////////////////////////////
+// 		END CAROUSELS
+////////////////////////////////////////////
 
 
 ////////////////////////////////////////////

@@ -30,7 +30,7 @@
 ///////////////////////////////////////////////
 
 @mixin baseParagraphStyle {
-	line-height: $baselineheight*1.66;
+	line-height: $baselineheight*2;
 	margin-bottom: 20px;
 	font-size: $basefontsize;
 }
@@ -61,10 +61,11 @@ body {
 	// position: relative;
 	// z-index: 10;
 	color: $baseFontColor;
+	@include sectionPadding041515(2%,2%);
 }
 
 .wrapper {
-	max-width: 1100px;
+	max-width: 1300px;
 	margin: 0 auto;
 	// position: relative;
 	// z-index: 10;

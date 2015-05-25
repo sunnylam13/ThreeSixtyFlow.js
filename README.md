@@ -3,22 +3,21 @@
 This plugin gives you the ability to quickly and easily create a 3D carousel slider for your web site *without* having to:
 
 * Do the math for Javascript or CSS transforms yourself. (If you hate doing math yet want your gallery to appear like it's floating in space this plugin is for you.)
-* Figure out how to position the slider buttons using CSS for up-down or right-left scrolling.  (Flexbox in the CSS solves all your positioning woes and you can switch these controls on or off using simple true/false statements -- use them only if you need them.)
-* Crafting your own animation sequence to make the 3D carousel move on its own.
+* Figure out how to position the slider buttons using CSS for up-down or right-left scrolling.  (CSS flexbox solves all your positioning and responsive woes and you can switch these controls on or off using simple true/false statements -- use them only if you need them.)
+* Craft your own animation sequence to make the 3D carousel move on its own.
 
 ## What Else Can It Do For You?
 
 The plugin will...
 
-* Show more than just images... you can also use `<div>`, `<section>` or other kind of elements as "slides".  (Simply change the `itemTarget` property from `#spinner img` to `#spinner YOURELEMENTBLOCK`)
+* Show more than just images... you can also use `<div>`, `<section>` or other kind of elements as "slides".  (Simply change the `itemTarget` property from `.spinner img` to `.spinner YOURELEMENTBLOCK`)
 * Display dozens of images or other element blocks -- ThreeSixtyFlow adapts and expands to hold them all with plenty of space in between thanks to the power of math.
 
 ## What This Plugin Does Not Do
 
 This plugin isn't for every developer's case.
 
-* This plugin does not make the 3D image carousel responsive.
-* The images do not rotate images when the carousel is vertical in any way at this time due to a limitation on the way `transform-origin` was used.
+* The carousel doesn't slide to the next image when it is vertical in any way due to a limitation on the way `transform-origin` works.
 * If you set the carousel to be perfectly vertical on the screen like a pole, the images will rotate so that they're in the right orientation however it's not perfect... yet.
 * The size of image items or other display items is limited to 425px at this time.  (You can change this in the CSS however you'll have to play with the `translateY` and `translateX` plugin options -- see below.)
 
@@ -43,15 +42,21 @@ See the code example below:
 	        <li><img src="http://demosthenes.info/assets/images/wanaka-tree.jpg" alt=""/></li>
 	        <li><img src="http://demosthenes.info/assets/images/still-lake.jpg" alt=""/></li>
 	        <li><img src="http://demosthenes.info/assets/images/pink-milford-sound.jpg" alt=""/></li>
-	        <li><img src="http://demosthenes.info/assets/images/paradise.jpg" alt=""/></li>
-	        <li><img src="http://demosthenes.info/assets/images/morekai.jpg" alt=""/></li>
-	        <li><img src="http://demosthenes.info/assets/images/milky-blue-lagoon.jpg" alt=""/></li>
-	        <li><img src="http://demosthenes.info/assets/images/lake-tekapo.jpg" alt=""/></li>
-	        <li><img src="http://demosthenes.info/assets/images/wanaka-tree.jpg" alt=""/></li>
-	        <li><img src="http://demosthenes.info/assets/images/milford-sound.jpg" alt=""/></li>
 	  </ul>
+	</section>
 
 You can have as many 3D carousels you want as long as you follow the above structure each time.
+
+NOTE:  If you want the modal ability to work, you can supply two data attributes `data-imagemodallink` (for a link to the larger version of your carousel image for example) and `data-captionmodalinfo` (for caption text).
+
+This might look something like:
+
+	<section id="carousel">
+	  <ul id="spinner">
+	        <li><img src="http://demosthenes.info/assets/images/wanaka-tree.jpg" alt="" data-imagemodallink="http://demosthenes.info/assets/images/wanaka-tree.jpg" data-captionmodalinfo="Wanaka Tree"/></li>
+	        ...
+	  </ul>
+	</section>
 
 #### Jade Note
 

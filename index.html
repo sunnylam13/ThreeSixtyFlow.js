@@ -65,6 +65,68 @@
               
               
         </section>
+        <!--//////////////////////////////////////////-->
+        <!-- 		Intro-->
+        <!--//////////////////////////////////////////-->
+        <section id="introduction">
+          <p>ThreeSixtyFlow.js gives you the ability to quickly and easily add 3D carousel sliders to your website <span class="italicIt">without</span> having to:  </p>
+          <ul>
+            <li>Do the math for Javascript or CSS transforms yourself. (If you hate doing math yet want your gallery to appear like it's floating in space this plugin is for you.)</li>
+            <li>Figure out how to position the slider buttons using CSS for up-down or right-left scrolling.  (CSS flexbox solves all your positioning and responsive woes and you can switch these controls on or off using simple true/false statements -- use them only if you need them.)</li>
+            <li>Craft your own animation sequence to make the 3D carousel move on its own.</li>
+          </ul>
+        </section>
+        <!--//////////////////////////////////////////-->
+        <!-- 		END Intro-->
+        <!--//////////////////////////////////////////-->
+        <!--//////////////////////////////////////////-->
+        <!-- 		What Else Can It Do For You?-->
+        <!--//////////////////////////////////////////-->
+        <section id="otherBenefits">
+          <h2>What Else Can It Do For You?</h2>
+          <p>The plugin will...</p>
+          <ul>
+            <li>Show more than just images... you can also use other kinds of element blocks as "slides".  (Simply change the 'itemTarget'.)</li>
+            <li>Display dozens of images or other element blocks -- ThreeSixtyFlow adapts and expands to hold them all with plenty of space in between thanks to the power of math.</li>
+          </ul>
+        </section>
+        <!--//////////////////////////////////////////-->
+        <!-- 		END What Else Can It Do For You?-->
+        <!--//////////////////////////////////////////-->
+        
+        <!--//////////////////////////////////////////-->
+        <!-- 		What This Plugin Does Not Do-->
+        <!--//////////////////////////////////////////-->
+        <section id="whatItsNot">
+          <h2>What This Plugin Does Not Do</h2>
+          <p>This plugin isn't for every developer's case.</p>
+          <ul>
+            <li>The carousel doesn't slide to the next image when it is vertical in any way due to a limitation on the way "transform-origin" works.</li>
+            <li>If you set the carousel to be perfectly vertical on the screen like a pole, the images will rotate so that they're in the right orientation however it's not perfect... yet.</li>
+            <li>The size of image items or other display items is limited to 425px at this time.  (You can change this in the CSS however you'll have to play with the "translateY" and "translateX" plugin options -- see below.)</li>
+          </ul>
+        </section>
+        <!--//////////////////////////////////////////-->
+        <!-- 		END What This Plugin Does Not Do-->
+        <!--//////////////////////////////////////////-->
+        <!--//////////////////////////////////////////-->
+        <!-- 		How to Use It-->
+        <!--//////////////////////////////////////////-->
+        <section id="howToUseIt">
+          <h2>How to Use It</h2>
+          <h3>HTML</h3>
+          <p>First setup your HTML file to:</p>
+          <ul>
+            <li>have one parent element with the id of <span class="codeIt1">.carousel</span> (the <span class="codeIt1">.carousel</span> is a <span class="boldIt">must have</span> class)</li>
+            <li>under the parent, have a child list <span class="codeIt1">ul</span> with id of <span class="codeIt1">.spinner</span> (the <span class="codeIt1">.spinner</span> is needed for this plugin so it's a <span class="boldIt">must have</span> class... also recommend using <span class="codeIt1">ul</span>)</li>
+            <li>have each of your images (or element blocks) inside of each of the <span class="codeIt1">li</span> elements</li>
+          </ul>
+          <p><span class="boldIt">NOTE</span>:  If you're displaying something other than images, you'll need to change the option of <span class="codeIt1">itemTarget</span> from the default <span class="codeIt1">.spinner img</span> to <span class="codeIt1">.spinner [class/ID of block]</span>.</p>
+          <p>You can have as many 3D carousels you want as long as you follow the above structure each time.</p>
+        </section>
+        <!--//////////////////////////////////////////-->
+        <!-- 		END How to Use It-->
+        <!--//////////////////////////////////////////-->
         <h2 id="options">Featured Options</h2>
         <!--//////////////////////////////////////////-->
         <!-- 		Carousel Resizing-->
