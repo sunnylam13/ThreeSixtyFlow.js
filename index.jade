@@ -71,13 +71,45 @@ block content
 			
 
 			////////////////////////////////////////////
+			///// 		INSTALL
+			///////////////////////////////////////////////
+
+			section#install-threeSixty
+				h2#install-download Download
+
+				ul
+					//- li CSS
+					//- 	ul
+					//- 		li
+					//- 			a() 360main.css
+					//- 			| un-minified
+					li SCSS/SASS
+						ul.download-submenu
+							li
+								a(href="https://github.com/sunnylam13/ThreeSixtyFlow.js/blob/master/css/partials/360main.scss") 360main.scss
+					li Javascript
+						ul.download-submenu
+							li
+								a(href="https://github.com/sunnylam13/ThreeSixtyFlow.js/blob/master/js/360main.js") 360main.js
+								| un-minified
+
+				p Or download it directly from 
+					a(href="https://github.com/sunnylam13/ThreeSixtyFlow.js/archive/master.zip") GitHub
+					| .
+				
+			///////////////////////////////////////////////
+			///// 		END INSTALL
+			///////////////////////////////////////////////
+
+
+			////////////////////////////////////////////
 			// 		How to Use It
 			////////////////////////////////////////////
 			
 			a(name="get-started")
 
 			section#howToUseIt
-				h2 How to Use It
+				h2#get-started How to Use It
 
 				//- ===================================
 				//- 		HTML INSTRUCTIONS
@@ -192,7 +224,7 @@ block content
 				//- 		JAVASCRIPT INSTRUCTIONS
 				//- ===================================
 
-				h3 Javascript
+				h3#init-jquery Javascript
 
 				p The Javascript is un-minified so if you need to "peek under the hood" you shouldn't have any trouble.
 
@@ -215,6 +247,8 @@ block content
 
 				
 				//- PASSING OPTIONS CASE  ------------------------------------------------
+				a(name="passing-options-jquery")#passing-options-jquery
+				
 				p What if you don't want the default settings?
 
 				p You can pass options to the plugin using an object.
@@ -262,13 +296,13 @@ block content
 
 			a(name="featured-options")
 
-			h2#options Featured Options
+			h2#featured-options Featured Options
 
 			////////////////////////////////////////////
 			// 		Carousel Resizing
 			////////////////////////////////////////////
 			section.carouselDemo1
-				h3 Carousel Resizing
+				h3#carousel-resizing Carousel Resizing
 
 				p You don't have to re-size the carousel using CSS.  You can make your adjustments by changing the 
 					span.codeIt1 carouselWidth
@@ -301,7 +335,7 @@ block content
 			// 		Vertical Ring Options
 			////////////////////////////////////////////
 			section.verticalDemoOpt1
-				h3 Vertical Ring
+				h3#vertical-ring Vertical Ring
 
 				p You can change the initial position of the carousel ring... all the way to a straight vertical line.
 				p At this time the ring doesn't slide up and down like you would expect however this has potential to create a ferris wheel like effect.
@@ -350,7 +384,7 @@ block content
 			////////////////////////////////////////////
 			
 			section.changeInitial1
-				h3 Change Initial Position
+				h3#change-initial-one Change Initial Position
 
 				pre
 					| t6D3.carouselRef3 = $('.carousel.verticalSlash1');
@@ -380,7 +414,7 @@ block content
 			
 			section.scrollHorizontal1
 
-				h3 Auto Scroll Horizontal
+				h3#auto-scroll-horizontal Auto Scroll Horizontal
 
 				pre
 					| t6D3.carouselRef4 = $('.carousel.autoScrollH1');
@@ -407,7 +441,7 @@ block content
 			// 		AUTO SCROLL VERTICAL
 			////////////////////////////////////////////
 			section.scrollVertical1
-				h3 Auto Scroll Vertical
+				h3#auto-scroll-vertical Auto Scroll Vertical
 
 				pre
 					| t6D3.carouselRef5 = $('.carousel.autoScrollV1');
@@ -434,7 +468,7 @@ block content
 			// 		AUTO SCROLL HORIZONTAL AND VERTICAL
 			////////////////////////////////////////////
 			section.scrollHV1
-				h3 Auto Scroll Horizontal and Vertical
+				h3#auto-scroll-hv1 Auto Scroll Horizontal and Vertical
 
 				pre
 					| t6D3.carouselRef6 = $('.carousel.autoScrollHV1');
@@ -469,11 +503,26 @@ block content
 		//- ===================================
 		//- SIDEBAR
 		//- ===================================
-		nav.sidebar1
-			ul
-				li
-					a(href="#get-started") Getting Started
-						ul
+		aside.sidebar1
+			nav
+				ul
+					li
+						a(href="#install-threeSixty") Install
+						ul.side-submenu
+							+linkTemplate033115a("Download","#install-download")
+					li
+						a(href="#get-started") Getting Started
+						ul.side-submenu
 							+linkTemplate033115a("Initalize with jQuery","#init-jquery")
-				+linkTemplate033115a("Featured Options","#featured-options")
-				+linkTemplate033115a("ThreeSixtyFlow in Use","#featured-options")
+							+linkTemplate033115a("Passing Options","#passing-options-jquery")
+					+linkTemplate033115a("Featured Options","#featured-options")
+					+linkTemplate033115a("ThreeSixtyFlow in Use","#featured-options")
+						li
+							a(href="#featured-options") ThreeSixtyFlow in Use
+							ul.side-submenu
+								+linkTemplate033115a("Carousel Resizing","#carousel-resizing")
+								+linkTemplate033115a("Vertical Ring","#vertical-ring")
+								+linkTemplate033115a("Change Initial Position","#change-initial-one")
+								+linkTemplate033115a("Auto Scroll Horizontal","#auto-scroll-horizontal")
+								+linkTemplate033115a("Auto Scroll Vertical","#auto-scroll-vertical")
+								+linkTemplate033115a("Auto Scroll Horizontal and Vertical","#auto-scroll-hv1")

@@ -7,7 +7,7 @@
 
 mixin siteHeader1
 	header
-		a(name="top-of-page")
+		a(name="top-of-page")#top-of-page
 		nav.primary1
 			a(href="./index.html", alt="Home Page").logoBuild
 				h1 ThreeSixtyFlow
@@ -34,6 +34,7 @@ mixin siteFooter1
 			p Help improve this plugin, issue a 
 				a(href="https://github.com/sunnylam13/ThreeSixtyFlow.js/pulls") pull request
 				| .
+		a(href="#top-of-page") Back to Top
 
 mixin imgInsertTemplateData1(imgLink,altText,datalink,datacaption)
 	//- FOR LISTS

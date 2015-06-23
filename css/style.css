@@ -691,7 +691,14 @@ main h2 {
   flex: 1 auto;
   max-width: 25%; }
 
-.sidebar1 ul li ul li a {
+.sidebar1 li {
+  margin-bottom: 1em; }
+
+.sidebar1 .side-submenu li {
+  margin-bottom: 1em;
+  margin-top: 1em; }
+
+.sidebar1 .side-submenu li a {
   margin-left: 1em; }
 
 section pre {
@@ -815,6 +822,15 @@ header aside {
 section.carousel {
   margin-top: 5%;
   margin-bottom: 5%; }
+
+section#install-threeSixty .download-submenu li {
+  margin-left: 1em; }
+
+section#install-threeSixty .download-submenu li a {
+  margin-right: 0.5em; }
+
+section#install-threeSixty p {
+  margin-top: 0.5em; }
 
 footer {
   width: 100%;

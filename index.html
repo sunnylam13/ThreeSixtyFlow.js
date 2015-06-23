@@ -20,7 +20,7 @@
     
     
     <div class="wrapper">
-          <header><a name="top-of-page"></a>
+          <header><a name="top-of-page" id="top-of-page"></a>
             <nav class="primary1"><a href="./index.html" alt="Home Page" class="logoBuild">
                 <h1>ThreeSixtyFlow</h1></a><a href="./index.html#options">Featured Options</a><a href="https://github.com/sunnylam13/ThreeSixtyFlow.js">Documentation</a>
             </nav>
@@ -107,10 +107,33 @@
         <!-- 		END What This Plugin Does Not Do-->
         <!--//////////////////////////////////////////-->
         <!--//////////////////////////////////////////-->
+        <!--/// 		INSTALL-->
+        <!--/////////////////////////////////////////////-->
+        <section id="install-threeSixty">
+          <h2 id="install-download">Download</h2>
+          <ul>
+            <li>SCSS/SASS
+              <ul class="download-submenu">
+                <li><a href="https://github.com/sunnylam13/ThreeSixtyFlow.js/blob/master/css/partials/360main.scss">360main.scss</a></li>
+              </ul>
+            </li>
+            <li>Javascript
+              <ul class="download-submenu">
+                <li><a href="https://github.com/sunnylam13/ThreeSixtyFlow.js/blob/master/js/360main.js">360main.js</a>un-minified</li>
+              </ul>
+            </li>
+          </ul>
+          <p>Or download it directly from <a href="https://github.com/sunnylam13/ThreeSixtyFlow.js/archive/master.zip">GitHub</a>.</p>
+        </section>
+        <!--/////////////////////////////////////////////-->
+        <!--/// 		END INSTALL-->
+        <!--/////////////////////////////////////////////-->
+        
+        <!--//////////////////////////////////////////-->
         <!-- 		How to Use It-->
         <!--//////////////////////////////////////////--><a name="get-started"></a>
         <section id="howToUseIt">
-          <h2>How to Use It</h2>
+          <h2 id="get-started">How to Use It</h2>
           <h3>HTML</h3>
           <p>First setup your HTML file to:</p>
           <ul>
@@ -140,7 +163,7 @@ section</pre>
           <h4>SCSS/SASS</h4>
           <p>If you use SCSS/SASS, the file to reference is <span class="codeIt1">360main.scss</span> in the <span class="codeIt1">css/partials/</span> folder.</p>
           <p>As with CSS, you should write your own customized CSS code that comes last and overrides the plugin code.</p>
-          <h3>Javascript</h3>
+          <h3 id="init-jquery">Javascript</h3>
           <p>The Javascript is un-minified so if you need to "peek under the hood" you shouldn't have any trouble.</p>
           <p>What follows are use cases.</p><a name="init-jquery"></a>
           <p>To use the plugin simply give it a reference.</p>
@@ -148,7 +171,7 @@ section</pre>
           <pre> 
 var $parentElement = $('#carousel');
 $parentElement.threeSixtyDim();</pre>
-          <p>This will create your ThreeSixtyFlow carousel with the default options.</p>
+          <p>This will create your ThreeSixtyFlow carousel with the default options.</p><a name="passing-options-jquery" id="passing-options-jquery"></a>
           <p>What if you don't want the default settings?</p>
           <p>You can pass options to the plugin using an object.</p>
           <p><span class="boldIt">Example</span>:  Setting the carousel to automatically scroll and rotate to the right.</p>
@@ -169,12 +192,12 @@ $parentElement.threeSixtyDim({
         <!--//////////////////////////////////////////-->
         <!-- 		END How to Use It-->
         <!--//////////////////////////////////////////--><a name="featured-options"></a>
-        <h2 id="options">Featured Options</h2>
+        <h2 id="featured-options">Featured Options</h2>
         <!--//////////////////////////////////////////-->
         <!-- 		Carousel Resizing-->
         <!--//////////////////////////////////////////-->
         <section class="carouselDemo1">
-          <h3>Carousel Resizing</h3>
+          <h3 id="carousel-resizing">Carousel Resizing</h3>
           <p>You don't have to re-size the carousel using CSS.  You can make your adjustments by changing the <span class="codeIt1">carouselWidth</span> and <span class="codeIt1">carouselHeight</span> options.</p>
           <p>In the example below we slash the width to 50% of the view area.</p>
           <pre>t6D3.carouselRef1 = $('.carousel.carouselDim1');
@@ -223,7 +246,7 @@ t6D3.carouselRef1.threeSixtyDim(t6D3.carouselRef1DemoSet);</pre>
         <!-- 		Vertical Ring Options-->
         <!--//////////////////////////////////////////-->
         <section class="verticalDemoOpt1">
-          <h3>Vertical Ring</h3>
+          <h3 id="vertical-ring">Vertical Ring</h3>
           <p>You can change the initial position of the carousel ring... all the way to a straight vertical line.</p>
           <p>At this time the ring doesn't slide up and down like you would expect however this has potential to create a ferris wheel like effect.</p>
           <p>Check back later!</p>
@@ -276,7 +299,7 @@ t6D3.carouselRef2.threeSixtyDim(t6D3.carouselRef2DemoSet);</pre>
         <!-- 		Spinner Options-->
         <!--//////////////////////////////////////////-->
         <section class="changeInitial1">
-          <h3>Change Initial Position</h3>
+          <h3 id="change-initial-one">Change Initial Position</h3>
           <pre>t6D3.carouselRef3 = $('.carousel.verticalSlash1');
  
 t6D3.carouselRef3DemoSet = {
@@ -325,7 +348,7 @@ t6D3.carouselRef3.threeSixtyDim(t6D3.carouselRef3DemoSet);</pre>
         <!-- 		AUTO SCROLL HORIZONTAL-->
         <!--//////////////////////////////////////////-->
         <section class="scrollHorizontal1">
-          <h3>Auto Scroll Horizontal</h3>
+          <h3 id="auto-scroll-horizontal">Auto Scroll Horizontal</h3>
           <pre>t6D3.carouselRef4 = $('.carousel.autoScrollH1');
  
 t6D3.carouselRef4DemoSet = {
@@ -373,7 +396,7 @@ t6D3.carouselRef4.threeSixtyDim(t6D3.carouselRef4DemoSet);</pre>
         <!-- 		AUTO SCROLL VERTICAL-->
         <!--//////////////////////////////////////////-->
         <section class="scrollVertical1">
-          <h3>Auto Scroll Vertical</h3>
+          <h3 id="auto-scroll-vertical">Auto Scroll Vertical</h3>
           <pre>t6D3.carouselRef5 = $('.carousel.autoScrollV1');
  
 t6D3.carouselRef5DemoSet = {
@@ -421,7 +444,7 @@ t6D3.carouselRef5.threeSixtyDim(t6D3.carouselRef5DemoSet);</pre>
         <!-- 		AUTO SCROLL HORIZONTAL AND VERTICAL-->
         <!--//////////////////////////////////////////-->
         <section class="scrollHV1">
-          <h3>Auto Scroll Horizontal and Vertical</h3>
+          <h3 id="auto-scroll-hv1">Auto Scroll Horizontal and Vertical</h3>
           <pre>t6D3.carouselRef6 = $('.carousel.autoScrollHV1');
  
 t6D3.carouselRef6DemoSet = {
@@ -471,16 +494,34 @@ t6D3.carouselRef6.threeSixtyDim(t6D3.carouselRef6DemoSet);</pre>
         <!-- 		END AUTO SCROLL HORIZONTAL AND VERTICAL-->
         <!--//////////////////////////////////////////-->
       </main>
-      <nav class="sidebar1">
-        <ul>
-          <li><a href="#get-started">Getting Started
-              <ul>
+      <aside class="sidebar1">
+        <nav>
+          <ul>
+            <li><a href="#install-threeSixty">Install</a>
+              <ul class="side-submenu">
+                    <li><a href="#install-download">Download</a></li>
+              </ul>
+            </li>
+            <li><a href="#get-started">Getting Started</a>
+              <ul class="side-submenu">
                     <li><a href="#init-jquery">Initalize with jQuery</a></li>
-              </ul></a></li>
-              <li><a href="#featured-options">Featured Options</a></li>
-              <li><a href="#featured-options">ThreeSixtyFlow in Use</a></li>
-        </ul>
-      </nav>
+                    <li><a href="#passing-options-jquery">Passing Options</a></li>
+              </ul>
+            </li>
+                <li><a href="#featured-options">Featured Options</a></li>
+                <li><a href="#featured-options">ThreeSixtyFlow in Use</a>
+                  <ul class="side-submenu">
+                        <li><a href="#carousel-resizing">Carousel Resizing</a></li>
+                        <li><a href="#vertical-ring">Vertical Ring</a></li>
+                        <li><a href="#change-initial-one">Change Initial Position</a></li>
+                        <li><a href="#auto-scroll-horizontal">Auto Scroll Horizontal</a></li>
+                        <li><a href="#auto-scroll-vertical">Auto Scroll Vertical</a></li>
+                        <li><a href="#auto-scroll-hv1">Auto Scroll Horizontal and Vertical</a></li>
+                  </ul>
+                </li>
+          </ul>
+        </nav>
+      </aside>
     </div>
     <div class="wrapper">
           <footer>
@@ -490,11 +531,13 @@ t6D3.carouselRef6.threeSixtyDim(t6D3.carouselRef6DemoSet);</pre>
             <aside class="contact">
               <p>Follow <a href="http://twitter.com/sunnylam">@sunnylam on Twitter for updates</a>.</p>
               <p>Help improve this plugin, issue a <a href="https://github.com/sunnylam13/ThreeSixtyFlow.js/pulls">pull request</a>.</p>
-            </aside>
+            </aside><a href="#top-of-page">Back to Top</a>
           </footer>
     </div>
     <!-- SCRIPTS-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.sticky.js"></script>
+    <script type="text/javascript" src="./js/jquery.smooth-scroll.min.js"></script>
     <script type="text/javascript" src="./js/360main.js"></script>
     <script type="text/javascript" src="./js/scripts.js"></script>
   </body>
