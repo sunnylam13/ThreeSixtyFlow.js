@@ -7,12 +7,12 @@
 // 		VARIABLES
 ////////////////////////////////////////////
 
-// normally these variables would be in another file however this is for the plugin so they've been placed here
+	// normally these variables would be in another file however this is for the plugin so they've been placed here
 
-// the z-offset should be increased by -1000px for every 36 gallery items that exceeds 36... use Javascript
-$transOriginZOffset: -2000px;
-// for testing use 100vh, for default use 50vh
-$viewPortHeight: 50vh;
+	// the z-offset should be increased by -1000px for every 36 gallery items that exceeds 36... use Javascript
+	$transOriginZOffset: -2000px;
+	// for testing use 100vh, for default use 50vh
+	$viewPortHeight: 50vh;
 
 ////////////////////////////////////////////
 // 		END VARIABLES
@@ -23,9 +23,9 @@ $viewPortHeight: 50vh;
 // 		IMPORTS
 ////////////////////////////////////////////
 
-// the Font Awesome stylesheet must be imported
-// this may require updating periodically
-@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
+	// the Font Awesome stylesheet must be imported
+	// this may require updating periodically
+	@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
 
 ////////////////////////////////////////////
 // 		END IMPORTS
@@ -36,31 +36,31 @@ $viewPortHeight: 50vh;
 // 		CAROUSEL
 ////////////////////////////////////////////
 
-.carousel {
-	// /* need to set a perspective on the parent of all elements and children here */
-	perspective: 200px;
-	background: black;
-	// padding-top: 20%;
-	/*margin-bottom: 3rem;*/
-	// height:100vh;
-	height:$viewPortHeight;
-	// height:300px;
-	// height: 50vh;
-	overflow: hidden;
+	.carousel {
+		// /* need to set a perspective on the parent of all elements and children here */
+		perspective: 200px;
+		background: black;
+		// padding-top: 20%;
+		/*margin-bottom: 3rem;*/
+		// height:100vh;
+		height:$viewPortHeight;
+		// height:300px;
+		// height: 50vh;
+		overflow: hidden;
 
-	position: relative;
+		position: relative;
 
-	//flexbox parent
-	//this is used to centre ul.spinner which has no dimensions, it is just a point on the page
-	@include flexboxColumn1;
-	// @include flexboxRow1;
-	justify-content: center;
-	align-content: center;
-	align-items: center;
+		//flexbox parent
+		//this is used to centre ul.spinner which has no dimensions, it is just a point on the page
+		@include flexboxColumn1;
+		// @include flexboxRow1;
+		justify-content: center;
+		align-content: center;
+		align-items: center;
 
-	// temporary margins
-	// margin-top: 17%;
-}
+		// temporary margins
+		// margin-top: 17%;
+	}
 
 ////////////////////////////////////////////
 // 		END CAROUSEL
@@ -71,124 +71,128 @@ $viewPortHeight: 50vh;
 // 		FIGURE SPINNER
 ////////////////////////////////////////////
 
-// NOTE:  
-// Thursday, May 21, 2015 3:09 PM:  the wobbling occurs because the first image is where the origin point begins, once you rotate to another image that isn't the first, then when you rotate on the X axis the point of origin has changed
+	// NOTE:  
+	// Thursday, May 21, 2015 3:09 PM:  the wobbling occurs because the first image is where the origin point begins, once you rotate to another image that isn't the first, then when you rotate on the X axis the point of origin has changed
 
-ul.spinner {
-	transform-style: preserve-3d;
-	// height: 300px;
-	/*change the origin for the animation... The transform-origin CSS property lets you modify the origin for transformations of an element.  A -ve z-offset means into the page usually unless the element has already been rotated, while +ve means towards the user's eye. */
-	/*the z-offset of the ul.spinner must match those of the img's within it*/
-	transform-origin: 50% 50% $transOriginZOffset;
-	// transition: 1s;
-	@include transitionEffectAllEaseIn(1s);
+	// ----------------------------------------
+	// SPINNER PARENT  ------------------
+	// ----------------------------------------
+		ul.spinner {
+				transform-style: preserve-3d;
+				// height: 300px;
+				/*change the origin for the animation... The transform-origin CSS property lets you modify the origin for transformations of an element.  A -ve z-offset means into the page usually unless the element has already been rotated, while +ve means towards the user's eye. */
+				/*the z-offset of the ul.spinner must match those of the img's within it*/
+				transform-origin: 50% 50% $transOriginZOffset;
+				// transition: 1s;
+				@include transitionEffectAllEaseIn(1s);
 
-	// USER SELECTABLE
-	// change the plane of view so it seems like you're looking partially from the top at an angle... you must also add this to your Javascript otherwise it will be overwritten...
-	// may mean I need to set this on the images?
-	// we may have to manually translate ul.spinner x and y to the correct position
-	// the translation seems to correct the wobbling
-	transform: rotateY(0deg) rotateX(0deg) translateY(-6.5em) translateX(-9em);
+				// USER SELECTABLE
+				// change the plane of view so it seems like you're looking partially from the top at an angle... you must also add this to your Javascript otherwise it will be overwritten...
+				// may mean I need to set this on the images?
+				// we may have to manually translate ul.spinner x and y to the correct position
+				// the translation seems to correct the wobbling
+				transform: rotateY(0deg) rotateX(0deg) translateY(-6.5em) translateX(-9em);
 
-	// disabling/enabling flexbox has no effect since elements are now absolute positioned
-	// @include flexboxRow1;
-	// flex-flow:row nowrap;
-	// // flex-flow:row wrap;
-	// justify-content:center;
-	// align-content:center;
-	// align-items:center;
-	
-	// make ul.spinner above the div.controlframe
-	z-index: 5;
-}
+				// disabling/enabling flexbox has no effect since elements are now absolute positioned
+				// @include flexboxRow1;
+				// flex-flow:row nowrap;
+				// // flex-flow:row wrap;
+				// justify-content:center;
+				// align-content:center;
+				// align-items:center;
+				
+				// make ul.spinner above the div.controlframe
+				z-index: 5;
+			}
+	// ----------------------------------------
+	// END SPINNER PARENT  ------------------
+	// ----------------------------------------
 
-// ----------------------------------------
-// IMAGES  ------------------
-// ----------------------------------------
+	// ----------------------------------------
+	// IMAGES  ------------------
+	// ----------------------------------------
 
-ul.spinner li {
-	// width: 40%;
-	max-width: 425px;
-	// position: absolute;
-	// background: #100000;
-	// using absolute positioning here doesn't do anything
-	// left: 30%;
-	// transform-origin: 50% 50% -2000px;
-	outline: 1px solid transparent;
-	list-style-type: none;
-}
+		ul.spinner li {
+			// width: 40%;
+			max-width: 425px;
+			// position: absolute;
+			// background: #100000;
+			// using absolute positioning here doesn't do anything
+			// left: 30%;
+			// transform-origin: 50% 50% -2000px;
+			outline: 1px solid transparent;
+			list-style-type: none;
+		}
 
-ul.spinner img {
-	// width: 40%;
-	max-width: 425px;
-	position: absolute;
-	// background: #100000;
-	// using absolute positioning here doesn't do anything
-	// left: 30%;
-	transform-origin: 50% 50% $transOriginZOffset;
-	outline: 1px solid transparent;
-}
+		ul.spinner img {
+			// width: 40%;
+			max-width: 425px;
+			position: absolute;
+			// background: #100000;
+			// using absolute positioning here doesn't do anything
+			// left: 30%;
+			transform-origin: 50% 50% $transOriginZOffset;
+			outline: 1px solid transparent;
+		}
 
-// since we'll be using JS to set the rotateY of each image, this isn't necessary
-// NOTE:  if using ul li then the nth-child must be placed on the li and not the img
+		// since we'll be using JS to set the rotateY of each image, this isn't necessary
+		// NOTE:  if using ul li then the nth-child must be placed on the li and not the img
 
-ul.spinner li:nth-child(1) img {
-	transform: rotateY(0deg);
-}
+		ul.spinner li:nth-child(1) img {
+			transform: rotateY(0deg);
+		}
 
-ul.spinner li:nth-child(2) img {
-	/*-ve degrees are counter clockwise*/
-	transform: rotateY(-45deg);
-}
+		ul.spinner li:nth-child(2) img {
+			/*-ve degrees are counter clockwise*/
+			transform: rotateY(-45deg);
+		}
 
-ul.spinner li:nth-child(3) img {
-	transform: rotateY(-90deg);
-}
+		ul.spinner li:nth-child(3) img {
+			transform: rotateY(-90deg);
+		}
 
-ul.spinner li:nth-child(4) img {
-	transform: rotateY(-135deg);
-}
+		ul.spinner li:nth-child(4) img {
+			transform: rotateY(-135deg);
+		}
 
-ul.spinner li:nth-child(5) img {
-	transform: rotateY(-180deg);
-}
+		ul.spinner li:nth-child(5) img {
+			transform: rotateY(-180deg);
+		}
 
-ul.spinner li:nth-child(6) img {
-	transform: rotateY(-225deg);
-}
+		ul.spinner li:nth-child(6) img {
+			transform: rotateY(-225deg);
+		}
 
-ul.spinner li:nth-child(7) img {
-	transform: rotateY(-270deg);
-}
+		ul.spinner li:nth-child(7) img {
+			transform: rotateY(-270deg);
+		}
 
-ul.spinner li:nth-child(8) img {
-	transform: rotateY(-315deg);
-}
+		ul.spinner li:nth-child(8) img {
+			transform: rotateY(-315deg);
+		}
 
-// ul.spinner li:nth-child(9) img {
-// 	transform: rotateY(-360deg);
-// }
+		// ul.spinner li:nth-child(9) img {
+		// 	transform: rotateY(-360deg);
+		// }
 
-// /* you can only have a maximum of 360 degrees worth of images */
+		// /* you can only have a maximum of 360 degrees worth of images */
 
-/*ul.spinner img:nth-child(9) {
-	transform: rotateY(-360deg);
-}*/
-
-
-/*ul.spinner img:nth-child(10) {
-	transform: rotateY(-405deg);
-}
-
-ul.spinner img:nth-child(11) {
-	transform: rotateY(-450deg);
-}*/
-
-// ----------------------------------------
-// END IMAGES  ------------------
-// ----------------------------------------
+		/*ul.spinner img:nth-child(9) {
+			transform: rotateY(-360deg);
+		}*/
 
 
+		/*ul.spinner img:nth-child(10) {
+			transform: rotateY(-405deg);
+		}
+
+		ul.spinner img:nth-child(11) {
+			transform: rotateY(-450deg);
+		}*/
+
+	// ----------------------------------------
+	// END IMAGES  ------------------
+	// ----------------------------------------
 
 ////////////////////////////////////////////
 // 		END FIGURE SPINNER
@@ -198,137 +202,134 @@ ul.spinner img:nth-child(11) {
 // 		CONTROLS
 ////////////////////////////////////////////
 
-// ----------------------------------------
-// Control Frame  ------------------
-// ----------------------------------------
-.carousel .controlframe {
-	width: 100%;
-	position: absolute;
-	top: 0;
-	bottom:0;
-	right:0;
-	left:0;
+	// ----------------------------------------
+	// Control Frame  ------------------
+	// ----------------------------------------
+		.carousel .controlframe {
+			width: 100%;
+			position: absolute;
+			top: 0;
+			bottom:0;
+			right:0;
+			left:0;
 
-	// we want the control frame horizontal to be over top of the .spinner in case images cross the buttons later... yet it must be below the vertical control frame
-	// Saturday, May 23, 2015 8:41 PML  having the control frame with higher z-index interferes with click events on the images
-	// z-index: 10;
+			// we want the control frame horizontal to be over top of the .spinner in case images cross the buttons later... yet it must be below the vertical control frame
+			// Saturday, May 23, 2015 8:41 PML  having the control frame with higher z-index interferes with click events on the images
+			// z-index: 10;
 
-	//flexbox parent
-	@include flexboxColumn1;
+			//flexbox parent
+			@include flexboxColumn1;
 
-	.controls span.fa {
-		color: black;
-		background: white;
-		width: 2em;
-		height: 2em;
-		padding: 2%;
-		border-radius: 50%;
-		// margin-bottom: 25%;
+			.controls span.fa {
+				color: black;
+				background: white;
+				width: 2em;
+				height: 2em;
+				padding: 2%;
+				border-radius: 50%;
+				// margin-bottom: 25%;
 
-		@include flexboxColumn1;
-		justify-content: center;
-		align-content: center;
-		align-items: center;
+				@include flexboxColumn1;
+				justify-content: center;
+				align-content: center;
+				align-items: center;
 
-		@include transitionEffectAllEaseIn(0.5s);
+				@include transitionEffectAllEaseIn(0.5s);
 
-		&.fa-chevron-up {
-			padding: 0 0 12% 4%;
-			margin-top: 25%;
+				&.fa-chevron-up {
+					padding: 0 0 12% 4%;
+					margin-top: 25%;
+				}
+
+				&.fa-chevron-down {
+					padding: 0 0 2% 4%;
+					margin-bottom: 25%;
+				}
+
+				&.fa-chevron-left {
+					// background: blue;
+					padding-right: 2.5%;
+					margin-left: 2%;
+				}
+
+				&.fa-chevron-right {
+					// background: green;
+					padding-left: 2.5%;
+					margin-right: 2%;
+				}
+
+			}
+
+			.controls span.fa:hover {
+				color: white;
+				background: #2ecc71;
+				cursor: pointer;
+			}
+		}
+	// ----------------------------------------
+	// END Control Frame  ------------------
+	// ----------------------------------------
+
+	// ----------------------------------------
+	// VERTICAL CONTROLS (UP, DOWN)  ------------------
+	// ----------------------------------------
+		.carousel .controls.vertical1, .carousel .controls.vertical2 {
+
+			// set a height on the verticals so that the buttons are pushed to the upper and lower edges... away from the centre
+			height: $viewPortHeight/2;
+
+			//flexbox parent
+			@include flexboxRow1;
+			flex-flow: row nowrap;
+			justify-content: center;
+			align-content: center;
 		}
 
-		&.fa-chevron-down {
-			padding: 0 0 2% 4%;
-			margin-bottom: 25%;
+		.carousel .controls.vertical1 {
+			align-items: flex-start;
 		}
 
-		&.fa-chevron-left {
-			// background: blue;
-			padding-right: 2.5%;
-			margin-left: 2%;
+		.carousel .controls.vertical2 {
+			align-items: flex-end;
 		}
+	// ----------------------------------------
+	// END VERTICAL CONTROLS (UP, DOWN)  ------------------
+	// ----------------------------------------
 
-		&.fa-chevron-right {
-			// background: green;
-			padding-left: 2.5%;
-			margin-right: 2%;
+	// ----------------------------------------
+	// HORIZONTAL CONTROLS (LEFT, RIGHT)  ------------------
+	// ----------------------------------------
+		.carousel .controls.horizontal {
+
+			width: 100%;
+
+			//flexbox parent
+			@include flexboxRow1;
+			flex-flow: row nowrap;
+			justify-content: center;
+			align-content: center;
+
+			div {
+				flex: 1 50%;
+			}
+			
+			div:nth-child(1) {
+				//flexbox parent
+				@include flexboxRow1;
+				justify-content: flex-start;
+				align-content: flex-start;
+			}
+
+			div:nth-child(2) {
+				//flexbox parent
+				@include flexboxRow1;
+				justify-content: flex-end;
+				align-content: flex-end;
+			}
 		}
-
-	}
-
-	.controls span.fa:hover {
-		color: white;
-		background: #2ecc71;
-		cursor: pointer;
-	}
-}
-// ----------------------------------------
-// END Control Frame  ------------------
-// ----------------------------------------
-
-
-
-// ----------------------------------------
-// VERTICAL CONTROLS (UP, DOWN)  ------------------
-// ----------------------------------------
-.carousel .controls.vertical1, .carousel .controls.vertical2 {
-
-	// set a height on the verticals so that the buttons are pushed to the upper and lower edges... away from the centre
-	height: $viewPortHeight/2;
-
-	//flexbox parent
-	@include flexboxRow1;
-	flex-flow: row nowrap;
-	justify-content: center;
-	align-content: center;
-}
-
-.carousel .controls.vertical1 {
-	align-items: flex-start;
-}
-
-.carousel .controls.vertical2 {
-	align-items: flex-end;
-}
-// ----------------------------------------
-// END VERTICAL CONTROLS (UP, DOWN)  ------------------
-// ----------------------------------------
-
-// ----------------------------------------
-// HORIZONTAL CONTROLS (LEFT, RIGHT)  ------------------
-// ----------------------------------------
-.carousel .controls.horizontal {
-
-	width: 100%;
-
-	//flexbox parent
-	@include flexboxRow1;
-	flex-flow: row nowrap;
-	justify-content: center;
-	align-content: center;
-
-	div {
-		flex: 1 50%;
-	}
-	
-	div:nth-child(1) {
-		//flexbox parent
-		@include flexboxRow1;
-		justify-content: flex-start;
-		align-content: flex-start;
-	}
-
-	div:nth-child(2) {
-		//flexbox parent
-		@include flexboxRow1;
-		justify-content: flex-end;
-		align-content: flex-end;
-	}
-}
-// ----------------------------------------
-// END HORIZONTAL CONTROLS (LEFT, RIGHT)  ------------------
-// ----------------------------------------
-
+	// ----------------------------------------
+	// END HORIZONTAL CONTROLS (LEFT, RIGHT)  ------------------
+	// ----------------------------------------
 
 ////////////////////////////////////////////
 // 		END CONTROLS
@@ -338,70 +339,70 @@ ul.spinner img:nth-child(11) {
 // 		LARGE MODAL 1
 ////////////////////////////////////////////
 
-// NOTE:  the large modal 1 must be dynamically generated as the user may not have built a static modal already...
-// we'll build it within #carousel and append it...
-// it'll have to be absolutely positioned relative to the body
-// so #carousel should not have position: relative at all
-// alternative:  we could append the large modal relative to the body by building it outside of #carousel
+	// NOTE:  the large modal 1 must be dynamically generated as the user may not have built a static modal already...
+	// we'll build it within #carousel and append it...
+	// it'll have to be absolutely positioned relative to the body
+	// so #carousel should not have position: relative at all
+	// alternative:  we could append the large modal relative to the body by building it outside of #carousel
 
-.largeModal1 {
-	color: white;
+	.largeModal1 {
+		color: white;
 
-	position: absolute;
-	$absoluteAnchorVal: 10%;
-	top: $absoluteAnchorVal;
-	bottom: $absoluteAnchorVal;
-	right: $absoluteAnchorVal;
-	left: $absoluteAnchorVal;
+		position: absolute;
+		$absoluteAnchorVal: 10%;
+		top: $absoluteAnchorVal;
+		bottom: $absoluteAnchorVal;
+		right: $absoluteAnchorVal;
+		left: $absoluteAnchorVal;
 
-	z-index: 10;
+		z-index: 10;
 
-	// flexbox parent
-	@include flexboxColumn1;
-	align-content: space-around;
+		// flexbox parent
+		@include flexboxColumn1;
+		align-content: space-around;
 
-	// DEFAULT STATUS
-	// this must come 'after' display flex
-	display:none;
-	z-index: 0;
+		// DEFAULT STATUS
+		// this must come 'after' display flex
+		display:none;
+		z-index: 0;
 
-}
-
-// .largeModal1 .displayField {
-// 	width: 80%;
-// 	// flexbox parent
-// 	@include flexboxColumn1;
-// }
-
-.largeModal1 .imgFrame {
-	width: 100%;
-
-	// flexbox parent
-	@include flexboxColumn1;
-	justify-content: center;
-}
-
-.largeModal1 .imgFrame img {
-	max-width: 100%;
-	height: $viewPortHeight*0.5;
-	border-radius: 10px;
-	border: 5px solid white;
-}
-
-.largeModal1 .caption {
-	width: 100%;
-	text-align: center;
-	@include sectionPadding041515(1%,1%);
-
-	//flexbox parent
-	@include flexboxColumn1;
-	justify-content: center;
-
-	p {
-		display: inline-block;
-		@include marginPaddingReset1;
 	}
-}
+
+	// .largeModal1 .displayField {
+	// 	width: 80%;
+	// 	// flexbox parent
+	// 	@include flexboxColumn1;
+	// }
+
+	.largeModal1 .imgFrame {
+		width: 100%;
+
+		// flexbox parent
+		@include flexboxColumn1;
+		justify-content: center;
+	}
+
+	.largeModal1 .imgFrame img {
+		max-width: 100%;
+		height: $viewPortHeight*0.5;
+		border-radius: 10px;
+		border: 5px solid white;
+	}
+
+	.largeModal1 .caption {
+		width: 100%;
+		text-align: center;
+		@include sectionPadding041515(1%,1%);
+
+		//flexbox parent
+		@include flexboxColumn1;
+		justify-content: center;
+
+		p {
+			display: inline-block;
+			@include marginPaddingReset1;
+		}
+	}
 
 ////////////////////////////////////////////
 // 		END LARGE MODAL 1

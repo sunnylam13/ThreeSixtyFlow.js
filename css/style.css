@@ -334,15 +334,15 @@ ul.spinner li:nth-child(8) img {
   transform: rotateY(-315deg); }
 
 /*ul.spinner img:nth-child(9) {
-	transform: rotateY(-360deg);
-}*/
+			transform: rotateY(-360deg);
+		}*/
 /*ul.spinner img:nth-child(10) {
-	transform: rotateY(-405deg);
-}
+			transform: rotateY(-405deg);
+		}
 
-ul.spinner img:nth-child(11) {
-	transform: rotateY(-450deg);
-}*/
+		ul.spinner img:nth-child(11) {
+			transform: rotateY(-450deg);
+		}*/
 .carousel .controlframe {
   width: 100%;
   position: absolute;
