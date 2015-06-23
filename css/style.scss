@@ -113,7 +113,9 @@ p {
 // 		MAIN CODE
 ////////////////////////////////////////////
 
+// plugin CSS loaded first
 @import 'partials/360main.scss';
+@import 'partials/site-wide';
 @import 'partials/index.scss';
 
 ////////////////////////////////////////////

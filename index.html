@@ -20,7 +20,7 @@
     
     
     <div class="wrapper">
-          <header>
+          <header><a name="top-of-page"></a>
             <nav class="primary1"><a href="./index.html" alt="Home Page" class="logoBuild">
                 <h1>ThreeSixtyFlow</h1></a><a href="./index.html#options">Featured Options</a><a href="https://github.com/sunnylam13/ThreeSixtyFlow.js">Documentation</a>
             </nav>
@@ -30,40 +30,38 @@
           </header>
     </div>
     <!-- earliest original was mostly CSS based and forked from http://codepen.io/dudleystorey/pen/kiajB-->
+    <section class="primaryDemo1">
+          <!--//////////////////////////////////////////-->
+          <!-- 		360 CAROUSEL PLUGIN-->
+          <!--//////////////////////////////////////////-->
+          <section class="carousel primaryExp1">
+            <ul class="spinner">
+                      <li><img src="http://demosthenes.info/assets/images/wanaka-tree.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Wanaka Tree"/>
+                      </li>
+                      <li><img src="http://demosthenes.info/assets/images/still-lake.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Wanaka Tree"/>
+                      </li>
+                      <li><img src="http://demosthenes.info/assets/images/pink-milford-sound.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Milford Sound"/>
+                      </li>
+                      <li><img src="http://demosthenes.info/assets/images/paradise.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Paradise Lost"/>
+                      </li>
+                      <li><img src="http://demosthenes.info/assets/images/morekai.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Morekai"/>
+                      </li>
+                      <li><img src="http://demosthenes.info/assets/images/milky-blue-lagoon.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700"/>
+                      </li>
+                      <li><img src="http://demosthenes.info/assets/images/lake-tekapo.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Lake Tekapo"/>
+                      </li>
+                      <li><img src="http://demosthenes.info/assets/images/wanaka-tree.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Wanaka Tree"/>
+                      </li>
+                      <li><img src="http://demosthenes.info/assets/images/milford-sound.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Lake Sound"/>
+                      </li>
+            </ul>
+          </section>
+          <!--//////////////////////////////////////////-->
+          <!-- 		END 360 CAROUSEL PLUGIN-->
+          <!--//////////////////////////////////////////-->
+    </section>
     <div class="wrapper">
       <main>
-        <section class="primaryDemo1">
-              <!--//////////////////////////////////////////-->
-              <!-- 		360 CAROUSEL PLUGIN-->
-              <!--//////////////////////////////////////////-->
-              <section class="carousel primaryExp1">
-                <ul class="spinner">
-                          <li><img src="http://demosthenes.info/assets/images/wanaka-tree.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Wanaka Tree"/>
-                          </li>
-                          <li><img src="http://demosthenes.info/assets/images/still-lake.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Wanaka Tree"/>
-                          </li>
-                          <li><img src="http://demosthenes.info/assets/images/pink-milford-sound.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Milford Sound"/>
-                          </li>
-                          <li><img src="http://demosthenes.info/assets/images/paradise.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Paradise Lost"/>
-                          </li>
-                          <li><img src="http://demosthenes.info/assets/images/morekai.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Morekai"/>
-                          </li>
-                          <li><img src="http://demosthenes.info/assets/images/milky-blue-lagoon.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700"/>
-                          </li>
-                          <li><img src="http://demosthenes.info/assets/images/lake-tekapo.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Lake Tekapo"/>
-                          </li>
-                          <li><img src="http://demosthenes.info/assets/images/wanaka-tree.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Wanaka Tree"/>
-                          </li>
-                          <li><img src="http://demosthenes.info/assets/images/milford-sound.jpg" alt="" data-imagemodallink="http://lorempixel.com/1400/700" data-captionmodalinfo="Lake Sound"/>
-                          </li>
-                </ul>
-              </section>
-              <!--//////////////////////////////////////////-->
-              <!-- 		END 360 CAROUSEL PLUGIN-->
-              <!--//////////////////////////////////////////-->
-              
-              
-        </section>
         <!--//////////////////////////////////////////-->
         <!-- 		Intro-->
         <!--//////////////////////////////////////////-->
@@ -110,7 +108,7 @@
         <!--//////////////////////////////////////////-->
         <!--//////////////////////////////////////////-->
         <!-- 		How to Use It-->
-        <!--//////////////////////////////////////////-->
+        <!--//////////////////////////////////////////--><a name="get-started"></a>
         <section id="howToUseIt">
           <h2>How to Use It</h2>
           <h3>HTML</h3>
@@ -123,9 +121,9 @@
           <p><span class="boldIt">NOTE</span>:  If you're displaying something other than images, you'll need to change the option of <span class="codeIt1">itemTarget</span> from the default <span class="codeIt1">.spinner img</span> to <span class="codeIt1">.spinner [class/ID of block]</span>.</p>
           <p>This might look something like (omitting the &lt; and &gt;):</p>
           <pre>section id="carousel"
-ul id="spinner"
-	li
-		img src='http://demosthenes.info/assets/images/wanaka-tree.jpg" alt="" data-imagemodallink="http://demosthenes.info/assets/images/wanaka-tree.jpg" data-captionmodalinfo="Wanaka Tree"/''
+	ul id="spinner"
+		li
+			img src='http://demosthenes.info/assets/images/wanaka-tree.jpg" alt="" data-imagemodallink="http://demosthenes.info/assets/images/wanaka-tree.jpg" data-captionmodalinfo="Wanaka Tree"/''
 	ul
 section</pre>
           <p><span class="italicIt">You can also view this example </span><a href="https://github.com/sunnylam13/ThreeSixtyFlow.js/#html-code-example-1">here</a>.</p>
@@ -142,8 +140,9 @@ section</pre>
           <h4>SCSS/SASS</h4>
           <p>If you use SCSS/SASS, the file to reference is <span class="codeIt1">360main.scss</span> in the <span class="codeIt1">css/partials/</span> folder.</p>
           <p>As with CSS, you should write your own customized CSS code that comes last and overrides the plugin code.</p>
+          <h3>Javascript</h3>
           <p>The Javascript is un-minified so if you need to "peek under the hood" you shouldn't have any trouble.</p>
-          <p>What follows are use cases.</p>
+          <p>What follows are use cases.</p><a name="init-jquery"></a>
           <p>To use the plugin simply give it a reference.</p>
           <p>For example:</p>
           <pre> 
@@ -169,7 +168,7 @@ $parentElement.threeSixtyDim({
         </section>
         <!--//////////////////////////////////////////-->
         <!-- 		END How to Use It-->
-        <!--//////////////////////////////////////////-->
+        <!--//////////////////////////////////////////--><a name="featured-options"></a>
         <h2 id="options">Featured Options</h2>
         <!--//////////////////////////////////////////-->
         <!-- 		Carousel Resizing-->
@@ -216,8 +215,6 @@ t6D3.carouselRef1.threeSixtyDim(t6D3.carouselRef1DemoSet);</pre>
               <!--//////////////////////////////////////////-->
               <!-- 		END 360 CAROUSEL PLUGIN-->
               <!--//////////////////////////////////////////-->
-              
-              
         </section>
         <!--//////////////////////////////////////////-->
         <!-- 		END Carousel Options-->
@@ -271,8 +268,6 @@ t6D3.carouselRef2.threeSixtyDim(t6D3.carouselRef2DemoSet);</pre>
               <!--//////////////////////////////////////////-->
               <!-- 		END 360 CAROUSEL PLUGIN-->
               <!--//////////////////////////////////////////-->
-              
-              
         </section>
         <!--//////////////////////////////////////////-->
         <!-- 		END Vertical Ring-->
@@ -322,8 +317,6 @@ t6D3.carouselRef3.threeSixtyDim(t6D3.carouselRef3DemoSet);</pre>
               <!--//////////////////////////////////////////-->
               <!-- 		END 360 CAROUSEL PLUGIN-->
               <!--//////////////////////////////////////////-->
-              
-              
         </section>
         <!--//////////////////////////////////////////-->
         <!-- 		END Spinner Options-->
@@ -371,8 +364,6 @@ t6D3.carouselRef4.threeSixtyDim(t6D3.carouselRef4DemoSet);</pre>
               <!--//////////////////////////////////////////-->
               <!-- 		END 360 CAROUSEL PLUGIN-->
               <!--//////////////////////////////////////////-->
-              
-              
         </section>
         <!--//////////////////////////////////////////-->
         <!-- 		END AUTO SCROLL HORIZONTAL-->
@@ -421,8 +412,6 @@ t6D3.carouselRef5.threeSixtyDim(t6D3.carouselRef5DemoSet);</pre>
               <!--//////////////////////////////////////////-->
               <!-- 		END 360 CAROUSEL PLUGIN-->
               <!--//////////////////////////////////////////-->
-              
-              
         </section>
         <!--//////////////////////////////////////////-->
         <!-- 		END AUTO SCROLL VERTICAL-->
@@ -477,15 +466,21 @@ t6D3.carouselRef6.threeSixtyDim(t6D3.carouselRef6DemoSet);</pre>
               <!--//////////////////////////////////////////-->
               <!-- 		END 360 CAROUSEL PLUGIN-->
               <!--//////////////////////////////////////////-->
-              
-              
         </section>
         <!--//////////////////////////////////////////-->
         <!-- 		END AUTO SCROLL HORIZONTAL AND VERTICAL-->
         <!--//////////////////////////////////////////-->
       </main>
-      <aside class="sidebar1">
-      </aside>
+      <nav class="sidebar1">
+        <ul>
+          <li><a href="#get-started">Getting Started
+              <ul>
+                    <li><a href="#init-jquery">Initalize with jQuery</a></li>
+              </ul></a></li>
+              <li><a href="#featured-options">Featured Options</a></li>
+              <li><a href="#featured-options">ThreeSixtyFlow in Use</a></li>
+        </ul>
+      </nav>
     </div>
     <div class="wrapper">
           <footer>

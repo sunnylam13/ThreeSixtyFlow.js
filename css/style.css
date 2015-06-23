@@ -624,12 +624,6 @@ ul.spinner li:nth-child(8) img {
     margin: 0;
     padding: 0; }
 
-/* 
-* This is the code for the demo site.
-* index.jade
-* index.layout.jade
-* 
-*/
 a {
   text-decoration: none;
   color: white;
@@ -644,13 +638,38 @@ a {
   a:hover {
     color: #ff9100; }
 
-section pre {
-  background: #404040;
-  border-radius: 10px;
-  padding: 2%;
-  font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
-  margin-top: 5%;
-  margin-bottom: 5%; }
+.wrapper {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-align-content: space-around;
+  -ms-flex-line-pack: distribute;
+  align-content: space-around;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-content: space-between;
+  -ms-flex-line-pack: justify;
+  align-content: space-between;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start; }
+
+main {
+  -webkit-flex: 1 auto;
+  -ms-flex: 1 auto;
+  flex: 1 auto;
+  max-width: 75%;
+  margin-right: 1em; }
 
 main ul li {
   list-style: square;
@@ -661,11 +680,39 @@ main h2 {
   margin-top: 5%;
   margin-bottom: 5%; }
 
+/* 
+	* Tuesday, June 23, 2015 3:08 PM
+	* apply sticky nav to this sidebar
+	* 
+	*/
+.sidebar1 {
+  -webkit-flex: 1 auto;
+  -ms-flex: 1 auto;
+  flex: 1 auto;
+  max-width: 25%; }
+
+.sidebar1 ul li ul li a {
+  margin-left: 1em; }
+
+section pre {
+  background: #404040;
+  border-radius: 10px;
+  padding: 2%;
+  font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+  margin-top: 5%;
+  margin-bottom: 5%; }
+
 section h3 {
   font-size: 28.8px;
   margin-top: 5%;
   margin-bottom: 5%; }
 
+/* 
+* This is the code for the demo site.
+* index.jade
+* index.layout.jade
+* 
+*/
 header {
   width: 100%;
   display: -webkit-flex;

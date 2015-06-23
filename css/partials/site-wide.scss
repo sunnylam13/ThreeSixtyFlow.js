@@ -1,0 +1,117 @@
+
+////////////////////////////////////////////
+///// 		TYPOGRAPHY
+///////////////////////////////////////////////
+
+	// I almost always get rid of text decoration so why no just get rid of it by default?
+	a {
+		text-decoration: none;
+		color: $baseFontColor;
+
+		@include transitionEffectAllEaseIn(0.5s);
+
+		&:link {
+			color: $baseFontColor;
+		}
+		&:visited {
+			color: $baseFontColor;
+		}
+		&:hover {
+			// color: $baseFontColor;
+			color: $baseHoverColor;
+		}
+	}
+
+///////////////////////////////////////////////
+///// 		END TYPOGRAPHY
+///////////////////////////////////////////////
+
+
+
+////////////////////////////////////////////
+///// 		WRAPPER
+///////////////////////////////////////////////
+
+	.wrapper {
+		@include flexboxRow1;
+		justify-content: space-between;
+		align-content: space-between;
+		align-items: flex-start;
+	}	
+
+///////////////////////////////////////////////
+///// 		END WRAPPER
+///////////////////////////////////////////////
+
+////////////////////////////////////////////
+// 		MAIN
+////////////////////////////////////////////
+
+	main {
+		flex: 1 auto;
+		max-width: 75%;
+
+		margin-right: 1em;
+	}
+
+	main ul li {
+		list-style: square;
+		line-height: $baselineheight*2;
+	}
+
+	main h2 {
+		font-size: $basefontsize*2.5;
+		@include sectionMargins041515(5%,5%);
+	}
+
+////////////////////////////////////////////
+// 		END MAIN
+////////////////////////////////////////////
+
+
+////////////////////////////////////////////
+///// 		SIDEBAR
+///////////////////////////////////////////////
+
+	/* 
+	* Tuesday, June 23, 2015 3:08 PM
+	* apply sticky nav to this sidebar
+	* 
+	*/
+
+	.sidebar1 {
+		flex: 1 auto;
+		max-width: 25%;
+	}
+
+	.sidebar1 ul li ul li a {
+		margin-left: 1em;
+	}
+
+///////////////////////////////////////////////
+///// 		END SIDEBAR
+///////////////////////////////////////////////
+
+
+////////////////////////////////////////////
+///// 		SECTIONS
+///////////////////////////////////////////////
+
+	section pre {
+		// background: $preOption1;
+		background: $preOption2;
+		border-radius: 10px;
+		padding: 2%;
+		font-family: $preFontFamily;
+		@include sectionMargins041515(5%,5%);
+	}
+
+	section h3 {
+		font-size: $basefontsize*1.8;
+		@include sectionMargins041515(5%,5%);
+	}
+
+///////////////////////////////////////////////
+///// 		END SECTIONS
+///////////////////////////////////////////////
+

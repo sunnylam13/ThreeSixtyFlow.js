@@ -5,57 +5,6 @@
 * 
 */
 
-////////////////////////////////////////////
-// 		GENERAL
-////////////////////////////////////////////
-
-	// I almost always get rid of text decoration so why no just get rid of it by default?
-	a {
-		text-decoration: none;
-		color: $baseFontColor;
-
-		@include transitionEffectAllEaseIn(0.5s);
-
-		&:link {
-			color: $baseFontColor;
-		}
-		&:visited {
-			color: $baseFontColor;
-		}
-		&:hover {
-			// color: $baseFontColor;
-			color: $baseHoverColor;
-		}
-	}
-
-	section pre {
-		// background: $preOption1;
-		background: $preOption2;
-		border-radius: 10px;
-		padding: 2%;
-		font-family: $preFontFamily;
-		@include sectionMargins041515(5%,5%);
-	}
-
-	main ul li {
-		list-style: square;
-		line-height: $baselineheight*2;
-	}
-
-	main h2 {
-		font-size: $basefontsize*2.5;
-		@include sectionMargins041515(5%,5%);
-	}
-
-	section h3 {
-		font-size: $basefontsize*1.8;
-		@include sectionMargins041515(5%,5%);
-	}
-
-
-////////////////////////////////////////////
-// 		END GENERAL
-////////////////////////////////////////////
 
 ////////////////////////////////////////////
 // 		HEADER
