@@ -5,453 +5,462 @@ block content
 	// earliest original was mostly CSS based and forked from http://codepen.io/dudleystorey/pen/kiajB
 
 	.wrapper
+
+		//- ===================================
+		//- 		MAIN CONTENT
+		//- ===================================
+
 		main
+					
+					//- ===================================
+					//- 		PRIMARY EXPERIMENT BLOCK
+					//- ===================================
+					section.primaryDemo1
+						+threeSixtyDim2
+							section.carousel.primaryExp1
+								ul.spinner
+									+addNineImageSet2
+					//- END PRIMARY EXPERIMENT BLOCK
+
+					////////////////////////////////////////////
+					// 		Intro
+					////////////////////////////////////////////
+					section#introduction
+						p ThreeSixtyFlow.js gives you the ability to quickly and easily add 3D carousel sliders to your website 
+							span.italicIt without
+							|  having to:  
+						ul
+							li Do the math for Javascript or CSS transforms yourself. (If you hate doing math yet want your gallery to appear like it's floating in space this plugin is for you.)
+							li Figure out how to position the slider buttons using CSS for up-down or right-left scrolling.  (CSS flexbox solves all your positioning and responsive woes and you can switch these controls on or off using simple true/false statements -- use them only if you need them.)
+							li Craft your own animation sequence to make the 3D carousel move on its own.
+					////////////////////////////////////////////
+					// 		END Intro
+					////////////////////////////////////////////
+
+					
+					
+					////////////////////////////////////////////
+					// 		What Else Can It Do For You?
+					////////////////////////////////////////////
+					section#otherBenefits
+						h2 What Else Can It Do For You?
+
+						p The plugin will...
+
+						ul
+							li Show more than just images... you can also use other kinds of element blocks as "slides".  (Simply change the 'itemTarget'.)
+							li Display dozens of images or other element blocks -- ThreeSixtyFlow adapts and expands to hold them all with plenty of space in between thanks to the power of math.
+					////////////////////////////////////////////
+					// 		END What Else Can It Do For You?
+					////////////////////////////////////////////
+
+
+					////////////////////////////////////////////
+					// 		What This Plugin Does Not Do
+					////////////////////////////////////////////
+					section#whatItsNot
+						h2 What This Plugin Does Not Do
+
+						p This plugin isn't for every developer's case.
+
+						ul
+							li The carousel doesn't slide to the next image when it is vertical in any way due to a limitation on the way "transform-origin" works.
+							li If you set the carousel to be perfectly vertical on the screen like a pole, the images will rotate so that they're in the right orientation however it's not perfect... yet.
+							li The size of image items or other display items is limited to 425px at this time.  (You can change this in the CSS however you'll have to play with the "translateY" and "translateX" plugin options -- see below.)
+					////////////////////////////////////////////
+					// 		END What This Plugin Does Not Do
+					////////////////////////////////////////////
+					
+
+					////////////////////////////////////////////
+					// 		How to Use It
+					////////////////////////////////////////////
+					
+					section#howToUseIt
+						h2 How to Use It
+
+						//- ===================================
+						//- 		HTML INSTRUCTIONS
+						//- ===================================
+
+						h3 HTML
+
+						p First setup your HTML file to:
+
+						ul
+							li have one parent element with the id of 
+								span.codeIt1 .carousel
+								|  (the 
+								span.codeIt1 .carousel
+								|  is a 
+								span.boldIt must have
+								|  class)
+							li under the parent, have a child list 
+								span.codeIt1 ul
+								|  with id of 
+								span.codeIt1 .spinner
+								|  (the 
+								span.codeIt1 .spinner
+								|  is needed for this plugin so it's a 
+								span.boldIt must have
+								|  class... also recommend using 
+								span.codeIt1 ul
+								| )
+							li have each of your images (or element blocks) inside of each of the 
+								span.codeIt1 li
+								|  elements
+
+						p
+							span.boldIt NOTE
+							|:  If you're displaying something other than images, you'll need to change the option of 
+							span.codeIt1 itemTarget
+							|  from the default 
+							span.codeIt1 .spinner img
+							|  to 
+							span.codeIt1 .spinner [class/ID of block]
+							| .
+
+						//- CODE BLOCK EX1  ------------------------------------------------
+						p This might look something like (omitting the &lt; and &gt;):
+
+						pre
+							| section id="carousel"
+							| ul id="spinner"
+							| 	li
+							| 		img src='http://demosthenes.info/assets/images/wanaka-tree.jpg" alt="" data-imagemodallink="http://demosthenes.info/assets/images/wanaka-tree.jpg" data-captionmodalinfo="Wanaka Tree"/''
+							| 	ul
+							| section
+
+						p
+							span.italicIt You can also view this example 
+							a(href="https://github.com/sunnylam13/ThreeSixtyFlow.js/#html-code-example-1") here
+							| .
+
+						//- END CODE BLOCK EX1 ------------------------------------------------
+
+						p You can have as many 3D carousels you want as long as you follow the above structure each time.
+
+						//- END HTML INSTRUCTIONS
+
+						p NOTE:  If you want the modal ability to work, you can supply two data attributes 
+							span.codeIt1 data-imagemodallink
+							|  (for a link to the larger version of your carousel image for example) and 
+							span.codeIt1 data-captionmodalinfo
+							|  (for caption text).		
+
+
+						h4 Jade Note
+
+						p The original Jade node templating files I used are provided as well.
+
+						p You will find most of the test/demo code in 
+							span.codeIt1 mixins.project.041415.1.jade
+							|  , 
+							span.codeIt1 index.jade
+							| .
+
+
+						//- ===================================
+						//- 		CSS INSTRUCTIONS
+						//- ===================================
+
+						h3 CSS
+
+						p The original CSS code was written with SCSS however it was compiled to an un-minified version (
+								span.codeIt1 style.css
+								| ).
+
+						p The un-minified CSS however lacks any comments.
+
+						p If you want to change the stylesheet you should reference `style.css` and overwrite the properties in your own customized stylesheet that is loaded last in your HTML or Jade file.
+
+						p NOTE:  The stylesheet does import Font Awesome 4.3.0 for the slider buttons.
+
+						h4 SCSS/SASS
+
+						p If you use SCSS/SASS, the file to reference is 
+							span.codeIt1 360main.scss
+							|  in the 
+							span.codeIt1 css/partials/
+							|  folder.
+
+						p As with CSS, you should write your own customized CSS code that comes last and overrides the plugin code.
+
+						//- END CSS INSTRUCTIONS
 			
-			//- ===================================
-			//- 		PRIMARY EXPERIMENT BLOCK
-			//- ===================================
-			section.primaryDemo1
-				+threeSixtyDim2
-					section.carousel.primaryExp1
-						ul.spinner
-							+addNineImageSet2
-			//- END PRIMARY EXPERIMENT BLOCK
-
-			////////////////////////////////////////////
-			// 		Intro
-			////////////////////////////////////////////
-			section#introduction
-				p ThreeSixtyFlow.js gives you the ability to quickly and easily add 3D carousel sliders to your website 
-					span.italicIt without
-					|  having to:  
-				ul
-					li Do the math for Javascript or CSS transforms yourself. (If you hate doing math yet want your gallery to appear like it's floating in space this plugin is for you.)
-					li Figure out how to position the slider buttons using CSS for up-down or right-left scrolling.  (CSS flexbox solves all your positioning and responsive woes and you can switch these controls on or off using simple true/false statements -- use them only if you need them.)
-					li Craft your own animation sequence to make the 3D carousel move on its own.
-			////////////////////////////////////////////
-			// 		END Intro
-			////////////////////////////////////////////
-
-			
-			
-			////////////////////////////////////////////
-			// 		What Else Can It Do For You?
-			////////////////////////////////////////////
-			section#otherBenefits
-				h2 What Else Can It Do For You?
-
-				p The plugin will...
-
-				ul
-					li Show more than just images... you can also use other kinds of element blocks as "slides".  (Simply change the 'itemTarget'.)
-					li Display dozens of images or other element blocks -- ThreeSixtyFlow adapts and expands to hold them all with plenty of space in between thanks to the power of math.
-			////////////////////////////////////////////
-			// 		END What Else Can It Do For You?
-			////////////////////////////////////////////
-
-
-			////////////////////////////////////////////
-			// 		What This Plugin Does Not Do
-			////////////////////////////////////////////
-			section#whatItsNot
-				h2 What This Plugin Does Not Do
-
-				p This plugin isn't for every developer's case.
-
-				ul
-					li The carousel doesn't slide to the next image when it is vertical in any way due to a limitation on the way "transform-origin" works.
-					li If you set the carousel to be perfectly vertical on the screen like a pole, the images will rotate so that they're in the right orientation however it's not perfect... yet.
-					li The size of image items or other display items is limited to 425px at this time.  (You can change this in the CSS however you'll have to play with the "translateY" and "translateX" plugin options -- see below.)
-			////////////////////////////////////////////
-			// 		END What This Plugin Does Not Do
-			////////////////////////////////////////////
-			
-
-			////////////////////////////////////////////
-			// 		How to Use It
-			////////////////////////////////////////////
-			
-			section#howToUseIt
-				h2 How to Use It
-
-				//- ===================================
-				//- 		HTML INSTRUCTIONS
-				//- ===================================
-
-				h3 HTML
-
-				p First setup your HTML file to:
-
-				ul
-					li have one parent element with the id of 
-						span.codeIt1 .carousel
-						|  (the 
-						span.codeIt1 .carousel
-						|  is a 
-						span.boldIt must have
-						|  class)
-					li under the parent, have a child list 
-						span.codeIt1 ul
-						|  with id of 
-						span.codeIt1 .spinner
-						|  (the 
-						span.codeIt1 .spinner
-						|  is needed for this plugin so it's a 
-						span.boldIt must have
-						|  class... also recommend using 
-						span.codeIt1 ul
-						| )
-					li have each of your images (or element blocks) inside of each of the 
-						span.codeIt1 li
-						|  elements
-
-				p
-					span.boldIt NOTE
-					|:  If you're displaying something other than images, you'll need to change the option of 
-					span.codeIt1 itemTarget
-					|  from the default 
-					span.codeIt1 .spinner img
-					|  to 
-					span.codeIt1 .spinner [class/ID of block]
-					| .
+						//- ===================================
+						//- 		JAVASCRIPT INSTRUCTIONS
+						//- ===================================
 
-				//- CODE BLOCK EX1  ------------------------------------------------
-				p This might look something like (omitting the &lt; and &gt;):
+						p The Javascript is un-minified so if you need to "peek under the hood" you shouldn't have any trouble.
 
-				pre
-					| section id="carousel"
-					| ul id="spinner"
-					| 	li
-					| 		img src='http://demosthenes.info/assets/images/wanaka-tree.jpg" alt="" data-imagemodallink="http://demosthenes.info/assets/images/wanaka-tree.jpg" data-captionmodalinfo="Wanaka Tree"/''
-					| 	ul
-					| section
+						p What follows are use cases.
 
-				p
-					span.italicIt You can also view this example 
-					a(href="https://github.com/sunnylam13/ThreeSixtyFlow.js/#html-code-example-1") here
-					| .
+						//- BASIC USE CASE  ------------------------------------------------
+						p To use the plugin simply give it a reference.
 
-				//- END CODE BLOCK EX1 ------------------------------------------------
+						p For example:
 
-				p You can have as many 3D carousels you want as long as you follow the above structure each time.
+						pre 
+							| var $parentElement = $('#carousel');
+							| $parentElement.threeSixtyDim();
 
-				//- END HTML INSTRUCTIONS
+						p This will create your ThreeSixtyFlow carousel with the default options.
 
-				p NOTE:  If you want the modal ability to work, you can supply two data attributes 
-					span.codeIt1 data-imagemodallink
-					|  (for a link to the larger version of your carousel image for example) and 
-					span.codeIt1 data-captionmodalinfo
-					|  (for caption text).		
+						//- END BASIC USE CASE ------------------------------------------------
 
-
-				h4 Jade Note
-
-				p The original Jade node templating files I used are provided as well.
-
-				p You will find most of the test/demo code in 
-					span.codeIt1 mixins.project.041415.1.jade
-					|  , 
-					span.codeIt1 index.jade
-					| .
-
-
-				//- ===================================
-				//- 		CSS INSTRUCTIONS
-				//- ===================================
-
-				h3 CSS
-
-				p The original CSS code was written with SCSS however it was compiled to an un-minified version (
-						span.codeIt1 style.css
-						| ).
-
-				p The un-minified CSS however lacks any comments.
-
-				p If you want to change the stylesheet you should reference `style.css` and overwrite the properties in your own customized stylesheet that is loaded last in your HTML or Jade file.
-
-				p NOTE:  The stylesheet does import Font Awesome 4.3.0 for the slider buttons.
-
-				h4 SCSS/SASS
-
-				p If you use SCSS/SASS, the file to reference is 
-					span.codeIt1 360main.scss
-					|  in the 
-					span.codeIt1 css/partials/
-					|  folder.
-
-				p As with CSS, you should write your own customized CSS code that comes last and overrides the plugin code.
-
-				//- END CSS INSTRUCTIONS
-	
-				//- ===================================
-				//- 		JAVASCRIPT INSTRUCTIONS
-				//- ===================================
-
-				p The Javascript is un-minified so if you need to "peek under the hood" you shouldn't have any trouble.
-
-				p What follows are use cases.
-
-				//- BASIC USE CASE  ------------------------------------------------
-				p To use the plugin simply give it a reference.
-
-				p For example:
-
-				pre 
-					| var $parentElement = $('#carousel');
-					| $parentElement.threeSixtyDim();
-
-				p This will create your ThreeSixtyFlow carousel with the default options.
-
-				//- END BASIC USE CASE ------------------------------------------------
-
-				
-				//- PASSING OPTIONS CASE  ------------------------------------------------
-				p What if you don't want the default settings?
-
-				p You can pass options to the plugin using an object.
-
-				p
-					span.boldIt Example
-					| :  Setting the carousel to automatically scroll and rotate to the right.
-
-				pre
-					| var $parentElement = $('#carousel');
-
-					| var tDOptions = {
-					| 	autoScrollHorizontalEnable: true,
-					| 	autoScrollToRight: true
-					| };
-
-					| $parentElement.threeSixtyDim(tDOptions);
-
-				p or...
-
-				pre
-					| var $parentElement = $('#carousel');
-
-					| $parentElement.threeSixtyDim({
-					| 	autoScrollHorizontalEnable: true,
-					| 	autoScrollToRight: true
-					| });
-
-				p The full list of options can be found 
-					a(href="https://github.com/sunnylam13/ThreeSixtyFlow.js/#three-sixty-options") here
-					| .
-
-				//- END PASSING OPTIONS CASE ------------------------------------------------
-
-				//- END JAVASCRIPT INSTRUCTIONS
-
-			////////////////////////////////////////////
-			// 		END How to Use It
-			////////////////////////////////////////////
-			
-
-			
-
-			//- ===================================
-			//- OPTIONS DEMOS START HERE
-			//- ===================================
-
-			h2#options Featured Options
-
-			////////////////////////////////////////////
-			// 		Carousel Resizing
-			////////////////////////////////////////////
-			section.carouselDemo1
-				h3 Carousel Resizing
-
-				p You don't have to re-size the carousel using CSS.  You can make your adjustments by changing the 
-					span.codeIt1 carouselWidth
-					|  and 
-					span.codeIt1 carouselHeight
-					|  options.
-				p In the example below we slash the width to 50% of the view area.
-
-				pre
-					| t6D3.carouselRef1 = $('.carousel.carouselDim1');
-					| 
-					| t6D3.carouselRef1DemoSet = {
-					|	// carousel parent
-					|	carouselDimensionSet: true,
-					|	carouselWidth: "50%",
-					|	carouselHeight: "50vh"
-					| };
-					| 
-					| t6D3.carouselRef1.threeSixtyDim(t6D3.carouselRef1DemoSet);
-
-				+threeSixtyDim2
-					section.carousel.carouselDim1
-						ul.spinner
-							+addNineImageSet2
-			////////////////////////////////////////////
-			// 		END Carousel Options
-			////////////////////////////////////////////
-
-			////////////////////////////////////////////
-			// 		Vertical Ring Options
-			////////////////////////////////////////////
-			section.verticalDemoOpt1
-				h3 Vertical Ring
-
-				p You can change the initial position of the carousel ring... all the way to a straight vertical line.
-				p At this time the ring doesn't slide up and down like you would expect however this has potential to create a ferris wheel like effect.
-				p Check back later!
-
-				p To make the changes below simply set 
-					span.codeIt1  changeInitialRingPosition
-					|  to 
-					span.codeIt1 true
-					|  , give 
-					span.codeIt1 rotateX
-					|  and 
-					span.codeIt1 rotateY
-					|  a 
-					span.codeIt1 deg
-					|  value and ... set 
-					span.codeIt1 rotateZImages
-					|  to 
-					span.codeIt1 true
-					|  .
-
-				pre
-					| t6D3.carouselRef2 = $('.carousel.verticalRing1');
-					| 
-					| t6D3.carouselRef2DemoSet = {
-					| 	changeInitialRingPosition: true,
-					| 	rotateX: -90,
-					| 	rotateY: 90,
-					| 	carouselDimensionSet: true,
-					| 	carouselHeight: "100vh",
-					| 	rotateZImages: true
-					| };
-					| 
-					| t6D3.carouselRef2.threeSixtyDim(t6D3.carouselRef2DemoSet);
-
-				+threeSixtyDim2
-					section.carousel.verticalRing1
-						ul.spinner
-							+addNineImageSet2
-			////////////////////////////////////////////
-			// 		END Vertical Ring
-			////////////////////////////////////////////
-
-			////////////////////////////////////////////
-			// 		Spinner Options
-			////////////////////////////////////////////
-			
-			section.changeInitial1
-				h3 Change Initial Position
-
-				pre
-					| t6D3.carouselRef3 = $('.carousel.verticalSlash1');
-					| 
-					| t6D3.carouselRef3DemoSet = {
-					| 	changeInitialRingPosition: true,
-					| 	rotateX: -45,
-					| 	rotateY: 90,
-					| 	carouselDimensionSet: true,
-					| 	carouselHeight: "100vh",
-					| 	rotateZImages: true
-					| };
-					| 
-					| t6D3.carouselRef3.threeSixtyDim(t6D3.carouselRef3DemoSet);
-
-				+threeSixtyDim2
-					section.carousel.verticalSlash1
-						ul.spinner
-							+addNineImageSet2
-			////////////////////////////////////////////
-			// 		END Spinner Options
-			////////////////////////////////////////////
-
-			////////////////////////////////////////////
-			// 		AUTO SCROLL HORIZONTAL
-			////////////////////////////////////////////
-			
-			section.scrollHorizontal1
-
-				h3 Auto Scroll Horizontal
-
-				pre
-					| t6D3.carouselRef4 = $('.carousel.autoScrollH1');
-					| 
-					| t6D3.carouselRef4DemoSet = {
-					| 	autoScrollHorizontalEnable: true,
-					| 	autoScrollHorizontalTime: 3000,
-					| 	autoScrollPauseEnabled: true,
-					| 	sliderButtonsUpDownEnable: false
-					| };
-					| 
-					| t6D3.carouselRef4.threeSixtyDim(t6D3.carouselRef4DemoSet);
-
-				+threeSixtyDim2
-					section.carousel.autoScrollH1
-						ul.spinner
-							+addNineImageSet2
-			////////////////////////////////////////////
-			// 		END AUTO SCROLL HORIZONTAL
-			////////////////////////////////////////////
-
-
-			////////////////////////////////////////////
-			// 		AUTO SCROLL VERTICAL
-			////////////////////////////////////////////
-			section.scrollVertical1
-				h3 Auto Scroll Vertical
-
-				pre
-					| t6D3.carouselRef5 = $('.carousel.autoScrollV1');
-					| 
-					| t6D3.carouselRef5DemoSet = {
-					|	autoScrollVerticalEnable: true,
-					| 	autoScrollVerticalTime: 100,
-					| 	autoScrollPauseEnabled: true,
-					| 	sliderButtonsRightLeftEnable: false
-					| };
-					| 
-					| t6D3.carouselRef5.threeSixtyDim(t6D3.carouselRef5DemoSet);
-
-				+threeSixtyDim2
-					section.carousel.autoScrollV1
-						ul.spinner
-							+addNineImageSet2
-			////////////////////////////////////////////
-			// 		END AUTO SCROLL VERTICAL
-			////////////////////////////////////////////
-
-
-			////////////////////////////////////////////
-			// 		AUTO SCROLL HORIZONTAL AND VERTICAL
-			////////////////////////////////////////////
-			section.scrollHV1
-				h3 Auto Scroll Horizontal and Vertical
-
-				pre
-					| t6D3.carouselRef6 = $('.carousel.autoScrollHV1');
-					| 
-					| t6D3.carouselRef6DemoSet = {
-					| 	// horizontal
-					| 	autoScrollHorizontalEnable: true,
-					| 	autoScrollHorizontalTime: 200,
-					| 	autoScrollPauseEnabled: true,
-					| 	sliderButtonsUpDownEnable: false,
-					| 	// vertical
-					| 	autoScrollVerticalEnable: true,
-					| 	autoScrollVerticalTime: 100,
-					| 	autoScrollPauseEnabled: true,
-					| 	sliderButtonsRightLeftEnable: false
-					| };
-					| 
-					| t6D3.carouselRef6.threeSixtyDim(t6D3.carouselRef6DemoSet);
-
-				+threeSixtyDim2
-					section.carousel.autoScrollHV1
-						ul.spinner
-							+addNineImageSet2
-			////////////////////////////////////////////
-			// 		END AUTO SCROLL HORIZONTAL AND VERTICAL
-			////////////////////////////////////////////
+						
+						//- PASSING OPTIONS CASE  ------------------------------------------------
+						p What if you don't want the default settings?
+
+						p You can pass options to the plugin using an object.
+
+						p
+							span.boldIt Example
+							| :  Setting the carousel to automatically scroll and rotate to the right.
+
+						pre
+							| var $parentElement = $('#carousel');
+
+							| var tDOptions = {
+							| 	autoScrollHorizontalEnable: true,
+							| 	autoScrollToRight: true
+							| };
+
+							| $parentElement.threeSixtyDim(tDOptions);
+
+						p or...
+
+						pre
+							| var $parentElement = $('#carousel');
+
+							| $parentElement.threeSixtyDim({
+							| 	autoScrollHorizontalEnable: true,
+							| 	autoScrollToRight: true
+							| });
+
+						p The full list of options can be found 
+							a(href="https://github.com/sunnylam13/ThreeSixtyFlow.js/#three-sixty-options") here
+							| .
+
+						//- END PASSING OPTIONS CASE ------------------------------------------------
+
+						//- END JAVASCRIPT INSTRUCTIONS
+
+					////////////////////////////////////////////
+					// 		END How to Use It
+					////////////////////////////////////////////
+					
+
+					
+
+					//- ===================================
+					//- OPTIONS DEMOS START HERE
+					//- ===================================
+
+					h2#options Featured Options
+
+					////////////////////////////////////////////
+					// 		Carousel Resizing
+					////////////////////////////////////////////
+					section.carouselDemo1
+						h3 Carousel Resizing
+
+						p You don't have to re-size the carousel using CSS.  You can make your adjustments by changing the 
+							span.codeIt1 carouselWidth
+							|  and 
+							span.codeIt1 carouselHeight
+							|  options.
+						p In the example below we slash the width to 50% of the view area.
+
+						pre
+							| t6D3.carouselRef1 = $('.carousel.carouselDim1');
+							| 
+							| t6D3.carouselRef1DemoSet = {
+							|	// carousel parent
+							|	carouselDimensionSet: true,
+							|	carouselWidth: "50%",
+							|	carouselHeight: "50vh"
+							| };
+							| 
+							| t6D3.carouselRef1.threeSixtyDim(t6D3.carouselRef1DemoSet);
+
+						+threeSixtyDim2
+							section.carousel.carouselDim1
+								ul.spinner
+									+addNineImageSet2
+					////////////////////////////////////////////
+					// 		END Carousel Options
+					////////////////////////////////////////////
+
+					////////////////////////////////////////////
+					// 		Vertical Ring Options
+					////////////////////////////////////////////
+					section.verticalDemoOpt1
+						h3 Vertical Ring
+
+						p You can change the initial position of the carousel ring... all the way to a straight vertical line.
+						p At this time the ring doesn't slide up and down like you would expect however this has potential to create a ferris wheel like effect.
+						p Check back later!
+
+						p To make the changes below simply set 
+							span.codeIt1  changeInitialRingPosition
+							|  to 
+							span.codeIt1 true
+							|  , give 
+							span.codeIt1 rotateX
+							|  and 
+							span.codeIt1 rotateY
+							|  a 
+							span.codeIt1 deg
+							|  value and ... set 
+							span.codeIt1 rotateZImages
+							|  to 
+							span.codeIt1 true
+							|  .
+
+						pre
+							| t6D3.carouselRef2 = $('.carousel.verticalRing1');
+							| 
+							| t6D3.carouselRef2DemoSet = {
+							| 	changeInitialRingPosition: true,
+							| 	rotateX: -90,
+							| 	rotateY: 90,
+							| 	carouselDimensionSet: true,
+							| 	carouselHeight: "100vh",
+							| 	rotateZImages: true
+							| };
+							| 
+							| t6D3.carouselRef2.threeSixtyDim(t6D3.carouselRef2DemoSet);
+
+						+threeSixtyDim2
+							section.carousel.verticalRing1
+								ul.spinner
+									+addNineImageSet2
+					////////////////////////////////////////////
+					// 		END Vertical Ring
+					////////////////////////////////////////////
+
+					////////////////////////////////////////////
+					// 		Spinner Options
+					////////////////////////////////////////////
+					
+					section.changeInitial1
+						h3 Change Initial Position
+
+						pre
+							| t6D3.carouselRef3 = $('.carousel.verticalSlash1');
+							| 
+							| t6D3.carouselRef3DemoSet = {
+							| 	changeInitialRingPosition: true,
+							| 	rotateX: -45,
+							| 	rotateY: 90,
+							| 	carouselDimensionSet: true,
+							| 	carouselHeight: "100vh",
+							| 	rotateZImages: true
+							| };
+							| 
+							| t6D3.carouselRef3.threeSixtyDim(t6D3.carouselRef3DemoSet);
+
+						+threeSixtyDim2
+							section.carousel.verticalSlash1
+								ul.spinner
+									+addNineImageSet2
+					////////////////////////////////////////////
+					// 		END Spinner Options
+					////////////////////////////////////////////
+
+					////////////////////////////////////////////
+					// 		AUTO SCROLL HORIZONTAL
+					////////////////////////////////////////////
+					
+					section.scrollHorizontal1
+
+						h3 Auto Scroll Horizontal
+
+						pre
+							| t6D3.carouselRef4 = $('.carousel.autoScrollH1');
+							| 
+							| t6D3.carouselRef4DemoSet = {
+							| 	autoScrollHorizontalEnable: true,
+							| 	autoScrollHorizontalTime: 3000,
+							| 	autoScrollPauseEnabled: true,
+							| 	sliderButtonsUpDownEnable: false
+							| };
+							| 
+							| t6D3.carouselRef4.threeSixtyDim(t6D3.carouselRef4DemoSet);
+
+						+threeSixtyDim2
+							section.carousel.autoScrollH1
+								ul.spinner
+									+addNineImageSet2
+					////////////////////////////////////////////
+					// 		END AUTO SCROLL HORIZONTAL
+					////////////////////////////////////////////
+
+
+					////////////////////////////////////////////
+					// 		AUTO SCROLL VERTICAL
+					////////////////////////////////////////////
+					section.scrollVertical1
+						h3 Auto Scroll Vertical
+
+						pre
+							| t6D3.carouselRef5 = $('.carousel.autoScrollV1');
+							| 
+							| t6D3.carouselRef5DemoSet = {
+							|	autoScrollVerticalEnable: true,
+							| 	autoScrollVerticalTime: 100,
+							| 	autoScrollPauseEnabled: true,
+							| 	sliderButtonsRightLeftEnable: false
+							| };
+							| 
+							| t6D3.carouselRef5.threeSixtyDim(t6D3.carouselRef5DemoSet);
+
+						+threeSixtyDim2
+							section.carousel.autoScrollV1
+								ul.spinner
+									+addNineImageSet2
+					////////////////////////////////////////////
+					// 		END AUTO SCROLL VERTICAL
+					////////////////////////////////////////////
+
+
+					////////////////////////////////////////////
+					// 		AUTO SCROLL HORIZONTAL AND VERTICAL
+					////////////////////////////////////////////
+					section.scrollHV1
+						h3 Auto Scroll Horizontal and Vertical
+
+						pre
+							| t6D3.carouselRef6 = $('.carousel.autoScrollHV1');
+							| 
+							| t6D3.carouselRef6DemoSet = {
+							| 	// horizontal
+							| 	autoScrollHorizontalEnable: true,
+							| 	autoScrollHorizontalTime: 200,
+							| 	autoScrollPauseEnabled: true,
+							| 	sliderButtonsUpDownEnable: false,
+							| 	// vertical
+							| 	autoScrollVerticalEnable: true,
+							| 	autoScrollVerticalTime: 100,
+							| 	autoScrollPauseEnabled: true,
+							| 	sliderButtonsRightLeftEnable: false
+							| };
+							| 
+							| t6D3.carouselRef6.threeSixtyDim(t6D3.carouselRef6DemoSet);
+
+						+threeSixtyDim2
+							section.carousel.autoScrollHV1
+								ul.spinner
+									+addNineImageSet2
+					////////////////////////////////////////////
+					// 		END AUTO SCROLL HORIZONTAL AND VERTICAL
+					////////////////////////////////////////////
+
+		//- END MAIN CONTENT
+
+		
 
 		//- ===================================
 		//- SIDEBAR

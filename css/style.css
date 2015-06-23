@@ -624,6 +624,12 @@ ul.spinner li:nth-child(8) img {
     margin: 0;
     padding: 0; }
 
+/* 
+* This is the code for the demo site.
+* index.jade
+* index.layout.jade
+* 
+*/
 a {
   text-decoration: none;
   color: white;
@@ -754,6 +760,11 @@ header aside {
   header aside span {
     font-style: italic; }
 
+/* 
+	* This covers everything not covered in the plugin CSS
+	* 360main.scss
+	* 
+	*/
 section.carousel {
   margin-top: 5%;
   margin-bottom: 5%; }

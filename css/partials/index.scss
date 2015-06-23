@@ -1,49 +1,56 @@
+/* 
+* This is the code for the demo site.
+* index.jade
+* index.layout.jade
+* 
+*/
+
 ////////////////////////////////////////////
 // 		GENERAL
 ////////////////////////////////////////////
 
-// I almost always get rid of text decoration so why no just get rid of it by default?
-a {
-	text-decoration: none;
-	color: $baseFontColor;
-
-	@include transitionEffectAllEaseIn(0.5s);
-
-	&:link {
+	// I almost always get rid of text decoration so why no just get rid of it by default?
+	a {
+		text-decoration: none;
 		color: $baseFontColor;
+
+		@include transitionEffectAllEaseIn(0.5s);
+
+		&:link {
+			color: $baseFontColor;
+		}
+		&:visited {
+			color: $baseFontColor;
+		}
+		&:hover {
+			// color: $baseFontColor;
+			color: $baseHoverColor;
+		}
 	}
-	&:visited {
-		color: $baseFontColor;
+
+	section pre {
+		// background: $preOption1;
+		background: $preOption2;
+		border-radius: 10px;
+		padding: 2%;
+		font-family: $preFontFamily;
+		@include sectionMargins041515(5%,5%);
 	}
-	&:hover {
-		// color: $baseFontColor;
-		color: $baseHoverColor;
+
+	main ul li {
+		list-style: square;
+		line-height: $baselineheight*2;
 	}
-}
 
-section pre {
-	// background: $preOption1;
-	background: $preOption2;
-	border-radius: 10px;
-	padding: 2%;
-	font-family: $preFontFamily;
-	@include sectionMargins041515(5%,5%);
-}
+	main h2 {
+		font-size: $basefontsize*2.5;
+		@include sectionMargins041515(5%,5%);
+	}
 
-main ul li {
-	list-style: square;
-	line-height: $baselineheight*2;
-}
-
-main h2 {
-	font-size: $basefontsize*2.5;
-	@include sectionMargins041515(5%,5%);
-}
-
-section h3 {
-	font-size: $basefontsize*1.8;
-	@include sectionMargins041515(5%,5%);
-}
+	section h3 {
+		font-size: $basefontsize*1.8;
+		@include sectionMargins041515(5%,5%);
+	}
 
 
 ////////////////////////////////////////////
@@ -54,77 +61,75 @@ section h3 {
 // 		HEADER
 ////////////////////////////////////////////
 
-header {
-	width: 100%;
-	//flexbox parent
-	@include flexboxColumn1;
-	justify-content: center;
-	align-content: center;
-	align-items: flex-start;
-}
-
-header nav {
-	width: 100%;
-	background: $headerBackground;
-
-	//flexbox parent
-	@include flexboxRow1;
-	align-items: flex-end;
-
-	a {
-		display: block;
-		font-weight: 800;
-		@include marginPaddingReset1;
-		
-		@include transitionEffectAllEaseIn(0.5s);
-
-		//flex child
-		flex: 1 100px;
-
-		padding: 2% 5% 2% 5%;
-		border: 5px solid transparent;
-
-		//flex parent
+	header {
+		width: 100%;
+		//flexbox parent
 		@include flexboxColumn1;
+		justify-content: center;
+		align-content: center;
+		align-items: flex-start;
+	}
 
-		&:hover {
-			background: $headerLinkBackHover;
-			color: $headerLinkColourHover;
+	header nav {
+		width: 100%;
+		background: $headerBackground;
+
+		//flexbox parent
+		@include flexboxRow1;
+		align-items: flex-end;
+
+		a {
+			display: block;
+			font-weight: 800;
+			@include marginPaddingReset1;
+			
+			@include transitionEffectAllEaseIn(0.5s);
+
+			//flex child
+			flex: 1 100px;
+
+			padding: 2% 5% 2% 5%;
 			border: 5px solid transparent;
-			// color: $baseHoverColor;
+
+			//flex parent
+			@include flexboxColumn1;
+
+			&:hover {
+				background: $headerLinkBackHover;
+				color: $headerLinkColourHover;
+				border: 5px solid transparent;
+				// color: $baseHoverColor;
+			}
+		}
+
+		// ----------------------------------------
+		// Header Logo  ------------------
+		// ----------------------------------------
+		a:nth-child(1) {
+			border: 5px solid white;
+			font-size: $basefontsize*2.7;
+
+			&:hover {
+				border: 5px solid $hoverLinkBorderColour;
+			}
+		}
+		// ----------------------------------------
+		// END Header Logo  ------------------
+		// ----------------------------------------
+
+		
+	}
+
+	header aside {
+		padding: 2% 0 2% 0;
+
+		p {
+			font-size: $basefontsize*1.8;
+		}
+		span {
+			font-style: italic;
 		}
 	}
-
-	// ----------------------------------------
-	// Header Logo  ------------------
-	// ----------------------------------------
-	a:nth-child(1) {
-		border: 5px solid white;
-		font-size: $basefontsize*2.7;
-
-		&:hover {
-			border: 5px solid $hoverLinkBorderColour;
-		}
-	}
-	// ----------------------------------------
-	// END Header Logo  ------------------
-	// ----------------------------------------
-
-	
-}
-
-header aside {
-	padding: 2% 0 2% 0;
-
-	p {
-		font-size: $basefontsize*1.8;
-	}
-	span {
-		font-style: italic;
-	}
-}
-
-
 
 ////////////////////////////////////////////
 // 		END HEADER
@@ -134,10 +139,16 @@ header aside {
 ////////////////////////////////////////////
 // 		CAROUSELS
 ////////////////////////////////////////////
+	
+	/* 
+	* This covers everything not covered in the plugin CSS
+	* 360main.scss
+	* 
+	*/
 
-section.carousel {
-	@include sectionMargins041515(5%,5%);
-}
+	section.carousel {
+		@include sectionMargins041515(5%,5%);
+	}
 
 ////////////////////////////////////////////
 // 		END CAROUSELS
@@ -148,73 +159,73 @@ section.carousel {
 // 		FOOTER
 ////////////////////////////////////////////
 
-footer {
-	width: 100%;
-	//flexbox parent
-	@include flexboxColumn1;
-	justify-content: center;
-	align-content: center;
-	align-items: flex-start;
-}
-
-footer nav {
-	width: 100%;
-	background: $headerBackground;
-
-	//flexbox parent
-	@include flexboxRow1;
-	align-items: flex-end;
-
-	a {
-		display: block;
-		font-weight: 800;
-		@include marginPaddingReset1;
-		
-		@include transitionEffectAllEaseIn(0.5s);
-
-		//flex child
-		flex: 1 100px;
-
-		padding: 2% 5% 2% 5%;
-		border: 5px solid transparent;
-
-		//flex parent
+	footer {
+		width: 100%;
+		//flexbox parent
 		@include flexboxColumn1;
+		justify-content: center;
+		align-content: center;
+		align-items: flex-start;
+	}
 
-		&:hover {
-			background: $headerLinkBackHover;
-			color: $headerLinkColourHover;
+	footer nav {
+		width: 100%;
+		background: $headerBackground;
+
+		//flexbox parent
+		@include flexboxRow1;
+		align-items: flex-end;
+
+		a {
+			display: block;
+			font-weight: 800;
+			@include marginPaddingReset1;
+			
+			@include transitionEffectAllEaseIn(0.5s);
+
+			//flex child
+			flex: 1 100px;
+
+			padding: 2% 5% 2% 5%;
 			border: 5px solid transparent;
+
+			//flex parent
+			@include flexboxColumn1;
+
+			&:hover {
+				background: $headerLinkBackHover;
+				color: $headerLinkColourHover;
+				border: 5px solid transparent;
+			}
+		}
+
+		// ----------------------------------------
+		// Header Logo  ------------------
+		// ----------------------------------------
+		a:nth-child(1) {
+			border: 5px solid white;
+
+			&:hover {
+				border: 5px solid $hoverLinkBorderColour;
+			}
+		}
+		// ----------------------------------------
+		// END Header Logo  ------------------
+		// ----------------------------------------
+
+		
+	}
+
+	footer aside {
+		padding: 2% 0 2% 0;
+
+		p {
+			font-size: $basefontsize*1.1;
+		}
+		span {
+			font-style: italic;
 		}
 	}
-
-	// ----------------------------------------
-	// Header Logo  ------------------
-	// ----------------------------------------
-	a:nth-child(1) {
-		border: 5px solid white;
-
-		&:hover {
-			border: 5px solid $hoverLinkBorderColour;
-		}
-	}
-	// ----------------------------------------
-	// END Header Logo  ------------------
-	// ----------------------------------------
-
-	
-}
-
-footer aside {
-	padding: 2% 0 2% 0;
-
-	p {
-		font-size: $basefontsize*1.1;
-	}
-	span {
-		font-style: italic;
-	}
-}
 
 ////////////////////////////////////////////
 // 		END FOOTER
