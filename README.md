@@ -35,6 +35,8 @@ First setup your HTML file to:
 
 NOTE:  If you're displaying something other than images, you'll need to change the option of `itemTarget` from the default `.spinner img` to `.spinner [class/ID of block]`.
 
+<a name="html-code-example-1"></a>
+
 See the code example below:
 
 	<section id="carousel">
@@ -126,6 +128,8 @@ or...
 	});
 
 The full list of options is detailed below.
+
+<a name="three-sixty-options"></a>
 
 ### Options
 

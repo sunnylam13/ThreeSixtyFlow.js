@@ -115,6 +115,24 @@ block content
 					span.codeIt1 .spinner [class/ID of block]
 					| .
 
+				//- CODE BLOCK EX1  ------------------------------------------------
+				p This might look something like (omitting the &lt; and &gt;):
+
+				pre
+					| section id="carousel"
+					| ul id="spinner"
+					| 	li
+					| 		img src='http://demosthenes.info/assets/images/wanaka-tree.jpg" alt="" data-imagemodallink="http://demosthenes.info/assets/images/wanaka-tree.jpg" data-captionmodalinfo="Wanaka Tree"/''
+					| 	ul
+					| section
+
+				p
+					span.italicIt You can also view this example 
+					a(href="https://sunnylam13.github.io/ThreeSixtyFlow.js/#html-code-example-1") here
+					| .
+
+				//- END CODE BLOCK EX1 ------------------------------------------------
+
 				p You can have as many 3D carousels you want as long as you follow the above structure each time.
 
 				//- END HTML INSTRUCTIONS
@@ -153,8 +171,77 @@ block content
 
 				p NOTE:  The stylesheet does import Font Awesome 4.3.0 for the slider buttons.
 
+				h4 SCSS/SASS
+
+				p If you use SCSS/SASS, the file to reference is 
+					span.codeIt1 360main.scss
+					|  in the 
+					span.codeIt1 css/partials/
+					|  folder.
+
+				p As with CSS, you should write your own customized CSS code that comes last and overrides the plugin code.
+
 				//- END CSS INSTRUCTIONS
 	
+				//- ===================================
+				//- 		JAVASCRIPT INSTRUCTIONS
+				//- ===================================
+
+				p The Javascript is un-minified so if you need to "peek under the hood" you shouldn't have any trouble.
+
+				p What follows are use cases.
+
+				//- BASIC USE CASE  ------------------------------------------------
+				p To use the plugin simply give it a reference.
+
+				p For example:
+
+				pre 
+					| var $parentElement = $('#carousel');
+					| $parentElement.threeSixtyDim();
+
+				p This will create your ThreeSixtyFlow carousel with the default options.
+
+				//- END BASIC USE CASE ------------------------------------------------
+
+				
+				//- PASSING OPTIONS CASE  ------------------------------------------------
+				p What if you don't want the default settings?
+
+				p You can pass options to the plugin using an object.
+
+				p
+					span.boldIt Example
+					| :  Setting the carousel to automatically scroll and rotate to the right.
+
+				pre
+					| var $parentElement = $('#carousel');
+
+					| var tDOptions = {
+					| 	autoScrollHorizontalEnable: true,
+					| 	autoScrollToRight: true
+					| };
+
+					| $parentElement.threeSixtyDim(tDOptions);
+
+				p or...
+
+				pre
+					| var $parentElement = $('#carousel');
+
+					| $parentElement.threeSixtyDim({
+					| 	autoScrollHorizontalEnable: true,
+					| 	autoScrollToRight: true
+					| });
+
+				p The full list of options can be found 
+					a(href="https://sunnylam13.github.io/ThreeSixtyFlow.js/#three-sixty-options") here
+					| .
+
+				//- END PASSING OPTIONS CASE ------------------------------------------------
+
+				//- END JAVASCRIPT INSTRUCTIONS
+
 			////////////////////////////////////////////
 			// 		END How to Use It
 			////////////////////////////////////////////
