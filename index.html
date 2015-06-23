@@ -30,9 +30,9 @@
             </aside>
           </header>
     </div>
+    <!-- earliest original was mostly CSS based and forked from http://codepen.io/dudleystorey/pen/kiajB-->
     <div class="wrapper">
       <main>
-        <!-- earliest original was mostly CSS based and forked from http://codepen.io/dudleystorey/pen/kiajB-->
         <section class="primaryDemo1">
               <!--//////////////////////////////////////////-->
               <!-- 		360 CAROUSEL PLUGIN-->
@@ -122,8 +122,16 @@
             <li>have each of your images (or element blocks) inside of each of the <span class="codeIt1">li</span> elements</li>
           </ul>
           <p><span class="boldIt">NOTE</span>:  If you're displaying something other than images, you'll need to change the option of <span class="codeIt1">itemTarget</span> from the default <span class="codeIt1">.spinner img</span> to <span class="codeIt1">.spinner [class/ID of block]</span>.</p>
-          <p>See the code example below:</p>
           <p>You can have as many 3D carousels you want as long as you follow the above structure each time.</p>
+          <p>NOTE:  If you want the modal ability to work, you can supply two data attributes <span class="codeIt1">data-imagemodallink</span> (for a link to the larger version of your carousel image for example) and <span class="codeIt1">data-captionmodalinfo</span> (for caption text).		</p>
+          <h4>Jade Note</h4>
+          <p>The original Jade node templating files I used are provided as well.</p>
+          <p>You will find most of the test/demo code in <span class="codeIt1">mixins.project.041415.1.jade</span> , <span class="codeIt1">index.jade</span>.</p>
+          <h3>CSS</h3>
+          <p>The original CSS code was written with SCSS however it was compiled to an un-minified version (<span class="codeIt1">style.css</span>).</p>
+          <p>The un-minified CSS however lacks any comments.</p>
+          <p>If you want to change the stylesheet you should reference `style.css` and overwrite the properties in your own customized stylesheet that is loaded last in your HTML or Jade file.</p>
+          <p>NOTE:  The stylesheet does import Font Awesome 4.3.0 for the slider buttons.</p>
         </section>
         <!--//////////////////////////////////////////-->
         <!-- 		END How to Use It-->

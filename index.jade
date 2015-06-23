@@ -2,10 +2,11 @@ extends index.layout.030215.1.jade
 
 block content
 
+	// earliest original was mostly CSS based and forked from http://codepen.io/dudleystorey/pen/kiajB
+
 	.wrapper
 		main
-			// earliest original was mostly CSS based and forked from http://codepen.io/dudleystorey/pen/kiajB
-
+			
 			//- ===================================
 			//- 		PRIMARY EXPERIMENT BLOCK
 			//- ===================================
@@ -73,6 +74,10 @@ block content
 			section#howToUseIt
 				h2 How to Use It
 
+				//- ===================================
+				//- 		HTML INSTRUCTIONS
+				//- ===================================
+
 				h3 HTML
 
 				p First setup your HTML file to:
@@ -110,11 +115,46 @@ block content
 					span.codeIt1 .spinner [class/ID of block]
 					| .
 
-				p See the code example below:
-
 				p You can have as many 3D carousels you want as long as you follow the above structure each time.
 
+				//- END HTML INSTRUCTIONS
 
+				p NOTE:  If you want the modal ability to work, you can supply two data attributes 
+					span.codeIt1 data-imagemodallink
+					|  (for a link to the larger version of your carousel image for example) and 
+					span.codeIt1 data-captionmodalinfo
+					|  (for caption text).		
+
+
+				h4 Jade Note
+
+				p The original Jade node templating files I used are provided as well.
+
+				p You will find most of the test/demo code in 
+					span.codeIt1 mixins.project.041415.1.jade
+					|  , 
+					span.codeIt1 index.jade
+					| .
+
+
+				//- ===================================
+				//- 		CSS INSTRUCTIONS
+				//- ===================================
+
+				h3 CSS
+
+				p The original CSS code was written with SCSS however it was compiled to an un-minified version (
+						span.codeIt1 style.css
+						| ).
+
+				p The un-minified CSS however lacks any comments.
+
+				p If you want to change the stylesheet you should reference `style.css` and overwrite the properties in your own customized stylesheet that is loaded last in your HTML or Jade file.
+
+				p NOTE:  The stylesheet does import Font Awesome 4.3.0 for the slider buttons.
+
+				//- END CSS INSTRUCTIONS
+	
 			////////////////////////////////////////////
 			// 		END How to Use It
 			////////////////////////////////////////////
@@ -326,5 +366,8 @@ block content
 			// 		END AUTO SCROLL HORIZONTAL AND VERTICAL
 			////////////////////////////////////////////
 
+		//- ===================================
+		//- SIDEBAR
+		//- ===================================
 		aside.sidebar1
 			//- WIP
